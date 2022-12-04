@@ -1,0 +1,12 @@
+name: channel_reduction
+channels:
+  - defaults
+dependencies:
+  - matplotlib
+  - numpy
+  - torchinfo
+  - scikit-learn
+  - tqdm
+  - tensorboard
+  - pytorch
+prefix: /Users/sorenmadsen/opt/anaconda3/envs/channel_reduction
