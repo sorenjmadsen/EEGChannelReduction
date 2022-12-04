@@ -8,6 +8,6 @@ In this project, we explored the viability of various data reduction techniques 
 
 To get everything up and running, download what you need from this repo, then execute:
 
-...
+'''
 conda create -f environment.yml
-...
+'''
