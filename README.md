@@ -6,8 +6,18 @@ In this project, we explored the viability of various data reduction techniques 
 
 ## Installation and Setup
 
+This code requires conda, if you'd like the easiest setup, but you're welcome to use anything else so long as you follow the requirements outlined in the ``` environment.yml ``` file.
+
 To get everything up and running, download what you need from this repo, then execute:
 
-'''
-conda create -f environment.yml
-'''
+```
+$ conda create -f environment.yml
+```
+
+After installing all necessary dependencies, activate your environment and run the sample script in ```/code/```:
+```
+$ python run_sample_program.py
+```
+
+## Questions
+Feel free to direct any comments, questions, or requests to soren.j.madsen@gmail.com. This is a work in progress to make more accessible, and it won't be at the top of my list for a little while. 
