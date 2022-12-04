@@ -1,0 +1,1882 @@
+Running on device: cuda
+LR: 5e-06 Betas: (0.9, 0.999) Weight Decay (L2): 0.1
+Training on PCA
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/3.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/3.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.4243480889175115 	 val_loss: 1.3176646399447018 	 val_acc: 0.38506
+EPOCH 2:
+train_loss: 1.0493393282966657 	 val_loss: 1.2343854056276693 	 val_acc: 0.44598
+EPOCH 3:
+train_loss: 0.7976051813384037 	 val_loss: 1.1325006731880771 	 val_acc: 0.49088
+EPOCH 4:
+train_loss: 0.5881067952965268 	 val_loss: 1.0766546625253575 	 val_acc: 0.51223
+EPOCH 5:
+train_loss: 0.44085281548866156 	 val_loss: 1.0449772767621222 	 val_acc: 0.53402
+EPOCH 6:
+train_loss: 0.33703755712442296 	 val_loss: 1.035405440880401 	 val_acc: 0.53268
+EPOCH 7:
+train_loss: 0.25287629566217684 	 val_loss: 1.058487808652563 	 val_acc: 0.52157
+EPOCH 8:
+train_loss: 0.19786218768415412 	 val_loss: 1.0206699973461688 	 val_acc: 0.55847
+EPOCH 9:
+train_loss: 0.14874329511851755 	 val_loss: 1.101177344559402 	 val_acc: 0.53802
+EPOCH 10:
+train_loss: 0.1194537767058031 	 val_loss: 1.0047362153104413 	 val_acc: 0.5687
+EPOCH 11:
+train_loss: 0.0937830883823967 	 val_loss: 0.9888187841758601 	 val_acc: 0.58248
+EPOCH 12:
+train_loss: 0.07437768581577062 	 val_loss: 0.9849068458655832 	 val_acc: 0.5896
+EPOCH 13:
+train_loss: 0.0592381216607966 	 val_loss: 0.9760469454772417 	 val_acc: 0.59271
+EPOCH 14:
+train_loss: 0.048808820722390366 	 val_loss: 1.0317657129126712 	 val_acc: 0.58604
+EPOCH 15:
+train_loss: 0.04179686675966206 	 val_loss: 0.9758357839878729 	 val_acc: 0.60516
+EPOCH 16:
+train_loss: 0.03472430723501502 	 val_loss: 0.9739711689343439 	 val_acc: 0.61405
+EPOCH 17:
+train_loss: 0.03153385246727186 	 val_loss: 1.0125111771696211 	 val_acc: 0.6056
+EPOCH 18:
+train_loss: 0.02445176831130913 	 val_loss: 1.0648233507544151 	 val_acc: 0.59271
+EPOCH 19:
+train_loss: 0.02117782577194592 	 val_loss: 1.0533379252135229 	 val_acc: 0.59271
+EPOCH 20:
+train_loss: 0.01805496506359147 	 val_loss: 1.1136098435126254 	 val_acc: 0.59315
+EPOCH 21:
+train_loss: 0.016910281829299892 	 val_loss: 1.3525145593259407 	 val_acc: 0.54913
+EPOCH 22:
+train_loss: 0.020802691488889195 	 val_loss: 1.2389551274941728 	 val_acc: 0.58026
+EPOCH 23:
+train_loss: 0.02508443921133472 	 val_loss: 1.1429849302284445 	 val_acc: 0.57581
+EPOCH 24:
+train_loss: 0.022032260398054643 	 val_loss: 1.0377908276174697 	 val_acc: 0.60871
+EPOCH 25:
+train_loss: 0.014181703373153349 	 val_loss: 1.0629102028837856 	 val_acc: 0.60738
+EPOCH 26:
+train_loss: 0.013408802967554444 	 val_loss: 1.1432182169488572 	 val_acc: 0.59804
+EPOCH 27:
+train_loss: 0.008653337001762369 	 val_loss: 1.057963775835178 	 val_acc: 0.61983
+EPOCH 28:
+train_loss: 0.006212728206477109 	 val_loss: 1.0909023482276587 	 val_acc: 0.61627
+EPOCH 29:
+train_loss: 0.005725535430645853 	 val_loss: 1.0885966653436012 	 val_acc: 0.62472
+EPOCH 30:
+train_loss: 0.004646571257927817 	 val_loss: 1.124680778098249 	 val_acc: 0.61361
+EPOCH 31:
+train_loss: 0.004114176855601343 	 val_loss: 1.1126867030062453 	 val_acc: 0.62695
+EPOCH 32:
+train_loss: 0.004029533157174197 	 val_loss: 1.2043128464647872 	 val_acc: 0.61138
+EPOCH 33:
+train_loss: 0.041108134855114026 	 val_loss: 1.5865164505004428 	 val_acc: 0.48688
+EPOCH 34:
+train_loss: 0.06765946728130955 	 val_loss: 1.4912210577568907 	 val_acc: 0.52201
+EPOCH 35:
+train_loss: 0.016557171705872894 	 val_loss: 1.0896770547240884 	 val_acc: 0.61983
+EPOCH 36:
+train_loss: 0.006017864556073906 	 val_loss: 1.1169437893976581 	 val_acc: 0.61716
+EPOCH 37:
+train_loss: 0.0039914622967169005 	 val_loss: 1.1147529501179791 	 val_acc: 0.62383
+EPOCH 38:
+train_loss: 0.0033782279604508024 	 val_loss: 1.108522834257339 	 val_acc: 0.62872
+EPOCH 39:
+train_loss: 0.0030362893802870832 	 val_loss: 1.120772699403591 	 val_acc: 0.63006
+EPOCH 40:
+train_loss: 0.0031074575478559708 	 val_loss: 1.1297181201190956 	 val_acc: 0.62695
+EPOCH 41:
+train_loss: 0.002878182869966001 	 val_loss: 1.1088921248108454 	 val_acc: 0.6305
+EPOCH 42:
+train_loss: 0.002744479831434348 	 val_loss: 1.1112241847419182 	 val_acc: 0.62561
+EPOCH 43:
+train_loss: 0.0027489189786820585 	 val_loss: 1.11923581449166 	 val_acc: 0.63095
+EPOCH 44:
+train_loss: 0.002845481803397435 	 val_loss: 1.1333294291389029 	 val_acc: 0.62872
+EPOCH 45:
+train_loss: 0.0025771750671911386 	 val_loss: 1.124480681373312 	 val_acc: 0.62783
+EPOCH 46:
+train_loss: 0.0027512910288844815 	 val_loss: 1.1347653967889435 	 val_acc: 0.63361
+EPOCH 47:
+train_loss: 0.002317933293974006 	 val_loss: 1.1325418258139575 	 val_acc: 0.62961
+EPOCH 48:
+train_loss: 0.002401387243714661 	 val_loss: 1.131843917650098 	 val_acc: 0.62961
+EPOCH 49:
+train_loss: 0.002443177600893694 	 val_loss: 1.1317076892967968 	 val_acc: 0.62828
+EPOCH 50:
+train_loss: 0.0023351057943153154 	 val_loss: 1.1359456852646883 	 val_acc: 0.6265
+EPOCH 51:
+train_loss: 0.0023553602681280895 	 val_loss: 1.1368165089194449 	 val_acc: 0.62695
+EPOCH 52:
+train_loss: 0.002184814200575616 	 val_loss: 1.1325785586064698 	 val_acc: 0.62294
+EPOCH 53:
+train_loss: 0.0021632250316544273 	 val_loss: 1.1394825161049054 	 val_acc: 0.62961
+EPOCH 54:
+train_loss: 0.0020860135092893787 	 val_loss: 1.1225992393912714 	 val_acc: 0.6265
+EPOCH 55:
+train_loss: 0.002091258842337673 	 val_loss: 1.1484475893351722 	 val_acc: 0.63228
+EPOCH 56:
+train_loss: 0.0020378231310842904 	 val_loss: 1.1414774768392588 	 val_acc: 0.63095
+EPOCH 57:
+train_loss: 0.0020168871871266963 	 val_loss: 1.1567317303890463 	 val_acc: 0.6305
+EPOCH 58:
+train_loss: 0.0019225554343817422 	 val_loss: 1.1478227963365002 	 val_acc: 0.62828
+EPOCH 59:
+train_loss: 0.0018211419881085506 	 val_loss: 1.1523926189541085 	 val_acc: 0.63139
+EPOCH 60:
+train_loss: 0.0018878453023954867 	 val_loss: 1.1566233924847105 	 val_acc: 0.63139
+EPOCH 61:
+train_loss: 0.0018187076636298218 	 val_loss: 1.1519711640787211 	 val_acc: 0.62828
+EPOCH 62:
+train_loss: 0.0019748673609887627 	 val_loss: 1.1572723746439857 	 val_acc: 0.62783
+EPOCH 63:
+train_loss: 0.0017357876039733435 	 val_loss: 1.1635851977878842 	 val_acc: 0.6345
+EPOCH 64:
+train_loss: 0.0017000768735243646 	 val_loss: 1.1549826470816764 	 val_acc: 0.63139
+EPOCH 65:
+train_loss: 0.001786140948710445 	 val_loss: 1.1580514757583942 	 val_acc: 0.63228
+EPOCH 66:
+train_loss: 0.0018966035720032809 	 val_loss: 1.1501842265188085 	 val_acc: 0.63228
+EPOCH 67:
+train_loss: 0.00179410148945714 	 val_loss: 1.1622568971919915 	 val_acc: 0.6305
+EPOCH 68:
+train_loss: 0.001779985430224113 	 val_loss: 1.145713563490033 	 val_acc: 0.63184
+EPOCH 69:
+train_loss: 0.0017066971849609145 	 val_loss: 1.1619313811023662 	 val_acc: 0.63228
+EPOCH 70:
+train_loss: 0.0017784769448943804 	 val_loss: 1.155681817271355 	 val_acc: 0.63273
+EPOCH 71:
+train_loss: 0.0017876759449159353 	 val_loss: 1.167060336499945 	 val_acc: 0.63317
+EPOCH 72:
+train_loss: 0.001599422848094642 	 val_loss: 1.1461718251006934 	 val_acc: 0.63139
+EPOCH 73:
+train_loss: 0.0017270370660298546 	 val_loss: 1.1589155680597498 	 val_acc: 0.63584
+EPOCH 74:
+train_loss: 0.0017437097686603714 	 val_loss: 1.1622572821937667 	 val_acc: 0.63317
+EPOCH 75:
+train_loss: 0.0020230931742996772 	 val_loss: 1.156077921444232 	 val_acc: 0.63317
+EPOCH 76:
+train_loss: 0.001674059736621551 	 val_loss: 1.1586159524879927 	 val_acc: 0.63361
+EPOCH 77:
+train_loss: 0.0017603325384445883 	 val_loss: 1.162340702131224 	 val_acc: 0.62872
+EPOCH 78:
+train_loss: 0.0017567357374757575 	 val_loss: 1.1679961591510255 	 val_acc: 0.62917
+EPOCH 79:
+train_loss: 0.0017324749216137735 	 val_loss: 1.1562440891866568 	 val_acc: 0.63184
+EPOCH 80:
+train_loss: 0.0016839951082986057 	 val_loss: 1.1443148640228784 	 val_acc: 0.63361
+EPOCH 81:
+train_loss: 0.0016890064027443856 	 val_loss: 1.1665226446006514 	 val_acc: 0.63228
+EPOCH 82:
+train_loss: 0.0017234927215945051 	 val_loss: 1.1535872620039964 	 val_acc: 0.63228
+EPOCH 83:
+train_loss: 0.0017068525482641058 	 val_loss: 1.1672729031556903 	 val_acc: 0.63184
+EPOCH 84:
+train_loss: 0.0017490307716057356 	 val_loss: 1.161124822531418 	 val_acc: 0.63095
+EPOCH 85:
+train_loss: 0.0017423593312324301 	 val_loss: 1.156889966039294 	 val_acc: 0.63228
+EPOCH 86:
+train_loss: 0.00166632780727011 	 val_loss: 1.1551929565342036 	 val_acc: 0.6345
+EPOCH 87:
+train_loss: 0.0016704058642625112 	 val_loss: 1.1587024856543002 	 val_acc: 0.63228
+EPOCH 88:
+train_loss: 0.001661532838584954 	 val_loss: 1.1594732362220777 	 val_acc: 0.63184
+EPOCH 89:
+train_loss: 0.001762415317136804 	 val_loss: 1.1642814523784857 	 val_acc: 0.63095
+EPOCH 90:
+train_loss: 0.0016718819585022733 	 val_loss: 1.1581730428197747 	 val_acc: 0.63273
+EPOCH 91:
+train_loss: 0.0016955806018411831 	 val_loss: 1.1693783450428954 	 val_acc: 0.6305
+EPOCH 92:
+train_loss: 0.0018087498030209565 	 val_loss: 1.156489864823957 	 val_acc: 0.63228
+EPOCH 93:
+train_loss: 0.0017926279051193616 	 val_loss: 1.1594874002056246 	 val_acc: 0.63228
+EPOCH 94:
+train_loss: 0.0017826688866267198 	 val_loss: 1.1583173458905378 	 val_acc: 0.63139
+EPOCH 95:
+train_loss: 0.0017483209190733927 	 val_loss: 1.1575775966431918 	 val_acc: 0.63228
+EPOCH 96:
+train_loss: 0.0017369335826327129 	 val_loss: 1.16275351252311 	 val_acc: 0.63228
+EPOCH 97:
+train_loss: 0.0016113236019647714 	 val_loss: 1.1656805155028735 	 val_acc: 0.63184
+EPOCH 98:
+train_loss: 0.001625225493219937 	 val_loss: 1.1458126779162137 	 val_acc: 0.62428
+EPOCH 99:
+train_loss: 0.001665356665423498 	 val_loss: 1.159443445536588 	 val_acc: 0.63184
+EPOCH 100:
+train_loss: 0.0016234107143140203 	 val_loss: 1.1592963519180994 	 val_acc: 0.63273
+EPOCH 101:
+train_loss: 0.0015873016358701607 	 val_loss: 1.1681565091971668 	 val_acc: 0.63139
+EPOCH 102:
+train_loss: 0.0016093184143854947 	 val_loss: 1.1625119567282713 	 val_acc: 0.62917
+EPOCH 103:
+train_loss: 0.0017733047212525066 	 val_loss: 1.1694247567817813 	 val_acc: 0.63139
+EPOCH 104:
+train_loss: 0.0015486112198601079 	 val_loss: 1.1458721927190976 	 val_acc: 0.63317
+EPOCH 105:
+train_loss: 0.0017350197838539017 	 val_loss: 1.1675856140581853 	 val_acc: 0.63184
+EPOCH 106:
+train_loss: 0.0015861456920844917 	 val_loss: 1.1575819281122335 	 val_acc: 0.62917
+EPOCH 107:
+train_loss: 0.0015846217952727388 	 val_loss: 1.1609439396309371 	 val_acc: 0.63361
+EPOCH 108:
+train_loss: 0.0016376786504295412 	 val_loss: 1.14808497410486 	 val_acc: 0.62472
+EPOCH 109:
+train_loss: 0.001725196798124316 	 val_loss: 1.1692567357473376 	 val_acc: 0.63273
+EPOCH 110:
+train_loss: 0.0016399466886626295 	 val_loss: 1.1583114691860161 	 val_acc: 0.63228
+EPOCH 111:
+train_loss: 0.0015835844642465215 	 val_loss: 1.1579269280466857 	 val_acc: 0.63361
+EPOCH 112:
+train_loss: 0.001677369859384268 	 val_loss: 1.1594698808746995 	 val_acc: 0.63095
+EPOCH 113:
+train_loss: 0.0016235226334359912 	 val_loss: 1.1581148804456363 	 val_acc: 0.63273
+EPOCH 114:
+train_loss: 0.0017469843026628623 	 val_loss: 1.1571352975557345 	 val_acc: 0.63539
+EPOCH 115:
+train_loss: 0.0016766864650661689 	 val_loss: 1.1619933906137077 	 val_acc: 0.63139
+EPOCH 116:
+train_loss: 0.0016519094050784046 	 val_loss: 1.1495658459448626 	 val_acc: 0.62828
+EPOCH 117:
+train_loss: 0.001660717448311752 	 val_loss: 1.1569554142127392 	 val_acc: 0.63006
+EPOCH 118:
+train_loss: 0.001515433562185184 	 val_loss: 1.135536632081724 	 val_acc: 0.63228
+EPOCH 119:
+/WAVE/users/unix/smadsen/Desktop/bci_final/code/metrics/plots.py:11: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show(block=False)
+train_loss: 0.0016707885445625223 	 val_loss: 1.1458388037495906 	 val_acc: 0.63273
+Early stop at epoch: 119
+#############################################################
+# EEGInception - PCA                   
+# Val. Acc.:  0.63584                      
+# Epochs:     120                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################
+Training on KPCA-linear
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/10.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/10.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.482895559781128 	 val_loss: 1.4903499960071018 	 val_acc: 0.27701
+EPOCH 2:
+train_loss: 1.1529758011659401 	 val_loss: 1.5136682386156308 	 val_acc: 0.28546
+EPOCH 3:
+train_loss: 0.9302939003052896 	 val_loss: 1.453197575522825 	 val_acc: 0.3068
+EPOCH 4:
+train_loss: 0.717408054153738 	 val_loss: 1.4406301482706354 	 val_acc: 0.30147
+EPOCH 5:
+train_loss: 0.5626839706833107 	 val_loss: 1.4286422206774407 	 val_acc: 0.32148
+EPOCH 6:
+train_loss: 0.4613025065937288 	 val_loss: 1.447250638853868 	 val_acc: 0.32237
+EPOCH 7:
+train_loss: 0.35328492055120386 	 val_loss: 1.4379663063561856 	 val_acc: 0.32681
+EPOCH 8:
+train_loss: 0.27341469640496074 	 val_loss: 1.462707806166655 	 val_acc: 0.32237
+EPOCH 9:
+train_loss: 0.2147357550852696 	 val_loss: 1.4608975084145124 	 val_acc: 0.32726
+EPOCH 10:
+train_loss: 0.17204248895065888 	 val_loss: 1.5161724207932041 	 val_acc: 0.33615
+EPOCH 11:
+train_loss: 0.13700289660190004 	 val_loss: 1.4748828589974057 	 val_acc: 0.35038
+EPOCH 12:
+train_loss: 0.11081581479569672 	 val_loss: 1.5386793442969313 	 val_acc: 0.33793
+EPOCH 13:
+train_loss: 0.0905331772075804 	 val_loss: 1.5142036861138353 	 val_acc: 0.33971
+EPOCH 14:
+train_loss: 0.0749470184868245 	 val_loss: 1.5135829946774495 	 val_acc: 0.34415
+EPOCH 15:
+train_loss: 0.0629141997557549 	 val_loss: 1.562602948710317 	 val_acc: 0.35082
+EPOCH 16:
+train_loss: 0.05249676773191285 	 val_loss: 1.5899726496526776 	 val_acc: 0.34015
+EPOCH 17:
+train_loss: 0.044252383930432446 	 val_loss: 1.5696256387645104 	 val_acc: 0.34682
+EPOCH 18:
+train_loss: 0.037321189532032444 	 val_loss: 1.5894005216774794 	 val_acc: 0.35394
+EPOCH 19:
+train_loss: 0.03190868014752619 	 val_loss: 1.6212365981343084 	 val_acc: 0.34904
+EPOCH 20:
+train_loss: 0.02755149122252563 	 val_loss: 1.6763554977717943 	 val_acc: 0.3486
+EPOCH 21:
+train_loss: 0.02391580573519964 	 val_loss: 1.681850049980138 	 val_acc: 0.34638
+EPOCH 22:
+train_loss: 0.020705028255983016 	 val_loss: 1.707041065378587 	 val_acc: 0.3446
+EPOCH 23:
+train_loss: 0.018149223556800386 	 val_loss: 1.7060952846639201 	 val_acc: 0.34727
+EPOCH 24:
+train_loss: 0.01580583470651503 	 val_loss: 1.7319575601686366 	 val_acc: 0.34682
+EPOCH 25:
+train_loss: 0.013823633070968849 	 val_loss: 1.8115415698609654 	 val_acc: 0.34371
+EPOCH 26:
+train_loss: 0.012181789420529474 	 val_loss: 1.8231191456940676 	 val_acc: 0.35038
+EPOCH 27:
+train_loss: 0.010207026297815478 	 val_loss: 1.8015389042635186 	 val_acc: 0.35082
+EPOCH 28:
+train_loss: 0.010000581175638483 	 val_loss: 1.7994379036709085 	 val_acc: 0.35171
+EPOCH 29:
+train_loss: 0.009857726199128695 	 val_loss: 1.8086433569080378 	 val_acc: 0.35082
+EPOCH 30:
+train_loss: 0.009743939492775305 	 val_loss: 1.8116686837609526 	 val_acc: 0.35216
+EPOCH 31:
+train_loss: 0.009648624597403734 	 val_loss: 1.813889233928015 	 val_acc: 0.35082
+EPOCH 32:
+train_loss: 0.009458009999789624 	 val_loss: 1.809279746865905 	 val_acc: 0.35482
+EPOCH 33:
+train_loss: 0.009362572645114493 	 val_loss: 1.8240837933260787 	 val_acc: 0.35127
+EPOCH 34:
+train_loss: 0.00918437653376499 	 val_loss: 1.825045296489011 	 val_acc: 0.35038
+EPOCH 35:
+train_loss: 0.009063765920498183 	 val_loss: 1.8259903739916308 	 val_acc: 0.35438
+EPOCH 36:
+train_loss: 0.008889493575486787 	 val_loss: 1.8314477711605084 	 val_acc: 0.35794
+EPOCH 37:
+train_loss: 0.008799172442450721 	 val_loss: 1.834220327190635 	 val_acc: 0.35616
+EPOCH 38:
+train_loss: 0.008574199559809816 	 val_loss: 1.8492812425386087 	 val_acc: 0.35571
+EPOCH 39:
+train_loss: 0.008469593182900317 	 val_loss: 1.8496076749461572 	 val_acc: 0.35038
+EPOCH 40:
+train_loss: 0.008295523749623845 	 val_loss: 1.8496550284678117 	 val_acc: 0.35571
+EPOCH 41:
+train_loss: 0.00821898376955605 	 val_loss: 1.8649452147538454 	 val_acc: 0.35127
+EPOCH 42:
+train_loss: 0.007989268174215346 	 val_loss: 1.8543426058780657 	 val_acc: 0.35394
+EPOCH 43:
+train_loss: 0.007896361735570059 	 val_loss: 1.868995851704969 	 val_acc: 0.35216
+EPOCH 44:
+train_loss: 0.007701234004392379 	 val_loss: 1.9074707125137695 	 val_acc: 0.34949
+EPOCH 45:
+train_loss: 0.007593694492374159 	 val_loss: 1.880212504097002 	 val_acc: 0.34993
+EPOCH 46:
+train_loss: 0.007395854581537366 	 val_loss: 1.893052545769806 	 val_acc: 0.35394
+EPOCH 47:
+train_loss: 0.00720289939792492 	 val_loss: 1.910597244898794 	 val_acc: 0.34904
+EPOCH 48:
+train_loss: 0.006951369357921508 	 val_loss: 1.895644453656537 	 val_acc: 0.34993
+EPOCH 49:
+train_loss: 0.00692618737251055 	 val_loss: 1.902001488817755 	 val_acc: 0.34815
+EPOCH 50:
+train_loss: 0.006907305076262348 	 val_loss: 1.8979006089755692 	 val_acc: 0.34904
+EPOCH 51:
+train_loss: 0.006911812606981586 	 val_loss: 1.9066018346733282 	 val_acc: 0.34815
+EPOCH 52:
+train_loss: 0.006911042618418767 	 val_loss: 1.8986159218264624 	 val_acc: 0.3486
+EPOCH 53:
+train_loss: 0.006890584709613661 	 val_loss: 1.908584901248416 	 val_acc: 0.35305
+EPOCH 54:
+train_loss: 0.006856748831258402 	 val_loss: 1.9032615728149627 	 val_acc: 0.35305
+EPOCH 55:
+train_loss: 0.006821461975819031 	 val_loss: 1.9018367802123677 	 val_acc: 0.34904
+EPOCH 56:
+train_loss: 0.006832129406793921 	 val_loss: 1.9020904834499697 	 val_acc: 0.3486
+EPOCH 57:
+train_loss: 0.006812765589768884 	 val_loss: 1.9037704680942944 	 val_acc: 0.35127
+EPOCH 58:
+train_loss: 0.006763385522955918 	 val_loss: 1.908237708699263 	 val_acc: 0.35216
+EPOCH 59:
+train_loss: 0.006756588458043741 	 val_loss: 1.9072708959651867 	 val_acc: 0.34727
+EPOCH 60:
+train_loss: 0.006744935483041784 	 val_loss: 1.909275968883973 	 val_acc: 0.34815
+EPOCH 61:
+train_loss: 0.006686646886069505 	 val_loss: 1.9104747858118354 	 val_acc: 0.34949
+EPOCH 62:
+train_loss: 0.0067177668543303695 	 val_loss: 1.9108194495063229 	 val_acc: 0.35082
+EPOCH 63:
+train_loss: 0.006650295381429515 	 val_loss: 1.9107609946821045 	 val_acc: 0.3486
+EPOCH 64:
+train_loss: 0.006617809400160809 	 val_loss: 1.9178863393347931 	 val_acc: 0.35127
+EPOCH 65:
+train_loss: 0.00660114060040284 	 val_loss: 1.9122768459293695 	 val_acc: 0.3486
+EPOCH 66:
+train_loss: 0.006598401988815147 	 val_loss: 1.9197756649054605 	 val_acc: 0.35082
+EPOCH 67:
+train_loss: 0.006577632071449335 	 val_loss: 1.9157695013513905 	 val_acc: 0.34993
+EPOCH 68:
+train_loss: 0.006555564643825749 	 val_loss: 1.9132343964038212 	 val_acc: 0.35082
+EPOCH 69:
+train_loss: 0.006503484758033791 	 val_loss: 1.922750969556332 	 val_acc: 0.34904
+EPOCH 70:
+train_loss: 0.006479345060389123 	 val_loss: 1.920777941672453 	 val_acc: 0.35082
+EPOCH 71:
+train_loss: 0.0064981713290070565 	 val_loss: 1.9153541520684794 	 val_acc: 0.35038
+EPOCH 72:
+train_loss: 0.006482869890849924 	 val_loss: 1.9200825877845429 	 val_acc: 0.3486
+EPOCH 73:
+train_loss: 0.006492532140856616 	 val_loss: 1.927053294784684 	 val_acc: 0.35216
+EPOCH 74:
+train_loss: 0.0064965118988443045 	 val_loss: 1.92456023866976 	 val_acc: 0.35216
+EPOCH 75:
+train_loss: 0.006511207275527955 	 val_loss: 1.919050392047182 	 val_acc: 0.34727
+EPOCH 76:
+train_loss: 0.006506580821681303 	 val_loss: 1.924380613364379 	 val_acc: 0.3526
+EPOCH 77:
+train_loss: 0.006463762818382472 	 val_loss: 1.9200887445306214 	 val_acc: 0.3486
+EPOCH 78:
+train_loss: 0.006509061778917081 	 val_loss: 1.915483553970727 	 val_acc: 0.34815
+EPOCH 79:
+train_loss: 0.006513977776856159 	 val_loss: 1.9204211290047772 	 val_acc: 0.35216
+EPOCH 80:
+train_loss: 0.006489112933386294 	 val_loss: 1.9231955614150396 	 val_acc: 0.34815
+EPOCH 81:
+train_loss: 0.006441963065085135 	 val_loss: 1.9180524726128605 	 val_acc: 0.34949
+EPOCH 82:
+train_loss: 0.006465253338197451 	 val_loss: 1.9265330943967025 	 val_acc: 0.35171
+Early stop at epoch: 82
+#############################################################
+# EEGInception - KPCA-linear                   
+# Val. Acc.:  0.35794                      
+# Epochs:     83                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################
+Training on KPCA-poly
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/14.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/14.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.4980866546674199 	 val_loss: 1.4252663261635525 	 val_acc: 0.27079
+EPOCH 2:
+train_loss: 1.2055956634187195 	 val_loss: 1.457788362443629 	 val_acc: 0.27701
+EPOCH 3:
+train_loss: 0.9992506731130859 	 val_loss: 1.4618371862197812 	 val_acc: 0.26945
+EPOCH 4:
+train_loss: 0.805851137561257 	 val_loss: 1.4522394097549791 	 val_acc: 0.2699
+EPOCH 5:
+train_loss: 0.6574963807349258 	 val_loss: 1.4670445117072197 	 val_acc: 0.27212
+EPOCH 6:
+train_loss: 0.5214595072417209 	 val_loss: 1.464821563530033 	 val_acc: 0.27523
+EPOCH 7:
+train_loss: 0.4162367811073527 	 val_loss: 1.4835064696012161 	 val_acc: 0.28012
+EPOCH 8:
+train_loss: 0.3315997763901163 	 val_loss: 1.4799945018782104 	 val_acc: 0.29346
+EPOCH 9:
+train_loss: 0.26461859560335077 	 val_loss: 1.4969961929466578 	 val_acc: 0.28635
+EPOCH 10:
+train_loss: 0.21468809853286835 	 val_loss: 1.5123628486412681 	 val_acc: 0.29524
+EPOCH 11:
+train_loss: 0.174796395120322 	 val_loss: 1.523226864325877 	 val_acc: 0.28679
+EPOCH 12:
+train_loss: 0.14570884687254623 	 val_loss: 1.5230209504635972 	 val_acc: 0.29835
+EPOCH 13:
+train_loss: 0.11977700770643313 	 val_loss: 1.5407824453074421 	 val_acc: 0.28146
+EPOCH 14:
+train_loss: 0.10064682376753148 	 val_loss: 1.561041338918112 	 val_acc: 0.27345
+EPOCH 15:
+train_loss: 0.08645925347560197 	 val_loss: 1.6182849943081952 	 val_acc: 0.25967
+EPOCH 16:
+train_loss: 0.07458149961447498 	 val_loss: 1.5864994384863287 	 val_acc: 0.29346
+EPOCH 17:
+train_loss: 0.06463264819846942 	 val_loss: 1.5902282277439328 	 val_acc: 0.2988
+EPOCH 18:
+train_loss: 0.05714544360930525 	 val_loss: 1.8328716010469912 	 val_acc: 0.249
+EPOCH 19:
+train_loss: 0.05072162872924389 	 val_loss: 1.651003850178353 	 val_acc: 0.29302
+EPOCH 20:
+train_loss: 0.04570753520490422 	 val_loss: 1.6485425638812348 	 val_acc: 0.30102
+EPOCH 21:
+train_loss: 0.041140053492770105 	 val_loss: 1.9971894706988427 	 val_acc: 0.24277
+EPOCH 22:
+train_loss: 0.036750087509206025 	 val_loss: 1.5606664458529984 	 val_acc: 0.29169
+EPOCH 23:
+train_loss: 0.03255097174104926 	 val_loss: 1.9598459172288198 	 val_acc: 0.24944
+EPOCH 24:
+train_loss: 0.032764252495771286 	 val_loss: 1.665740792912453 	 val_acc: 0.30325
+EPOCH 25:
+train_loss: 0.0317695823296951 	 val_loss: 1.5644933454373338 	 val_acc: 0.29257
+EPOCH 26:
+train_loss: 0.03179250066215529 	 val_loss: 1.6718244537153892 	 val_acc: 0.30236
+EPOCH 27:
+train_loss: 0.03114281871978372 	 val_loss: 1.5562228476520716 	 val_acc: 0.2908
+EPOCH 28:
+train_loss: 0.030613101320383397 	 val_loss: 1.6743411114028761 	 val_acc: 0.30591
+EPOCH 29:
+train_loss: 0.03132248348034054 	 val_loss: 1.6651711559056306 	 val_acc: 0.30236
+EPOCH 30:
+train_loss: 0.030927886736546673 	 val_loss: 1.645555680120288 	 val_acc: 0.30502
+EPOCH 31:
+train_loss: 0.029736478154092826 	 val_loss: 1.6117668406124912 	 val_acc: 0.30458
+EPOCH 32:
+train_loss: 0.029554393855099847 	 val_loss: 1.675367053418191 	 val_acc: 0.30903
+EPOCH 33:
+train_loss: 0.029552523815107364 	 val_loss: 1.6844982799374775 	 val_acc: 0.30414
+EPOCH 34:
+train_loss: 0.028657062641495493 	 val_loss: 1.674788080659556 	 val_acc: 0.30591
+EPOCH 35:
+train_loss: 0.028822062139557483 	 val_loss: 1.557720320584897 	 val_acc: 0.29213
+EPOCH 36:
+train_loss: 0.0281040364618701 	 val_loss: 1.6653849619019705 	 val_acc: 0.30992
+EPOCH 37:
+train_loss: 0.02831840971862325 	 val_loss: 1.5725614378377852 	 val_acc: 0.28724
+EPOCH 38:
+train_loss: 0.02727478943551837 	 val_loss: 1.6892887933315832 	 val_acc: 0.30325
+EPOCH 39:
+train_loss: 0.02772956163592684 	 val_loss: 1.640981116343585 	 val_acc: 0.30414
+EPOCH 40:
+train_loss: 0.026957419389848497 	 val_loss: 1.700448145550522 	 val_acc: 0.30636
+EPOCH 41:
+train_loss: 0.027244712018036105 	 val_loss: 1.7082336345682008 	 val_acc: 0.30814
+EPOCH 42:
+train_loss: 0.026374635903179202 	 val_loss: 1.6365163046187992 	 val_acc: 0.30458
+EPOCH 43:
+train_loss: 0.025361774713212593 	 val_loss: 1.6895095961319293 	 val_acc: 0.30814
+EPOCH 44:
+train_loss: 0.025215828582496946 	 val_loss: 1.8009378684979471 	 val_acc: 0.26501
+EPOCH 45:
+train_loss: 0.025329197408755527 	 val_loss: 1.7081769777218465 	 val_acc: 0.30591
+EPOCH 46:
+train_loss: 0.024939148023350177 	 val_loss: 1.716777485495482 	 val_acc: 0.30236
+EPOCH 47:
+train_loss: 0.024920451442382398 	 val_loss: 1.8754894110766471 	 val_acc: 0.25834
+EPOCH 48:
+train_loss: 0.025207243430460827 	 val_loss: 1.5727139729752742 	 val_acc: 0.29613
+EPOCH 49:
+train_loss: 0.025161348444780306 	 val_loss: 1.6968006769281412 	 val_acc: 0.30903
+EPOCH 50:
+train_loss: 0.02512791502838362 	 val_loss: 1.7149027821552834 	 val_acc: 0.30591
+EPOCH 51:
+train_loss: 0.025346980152765947 	 val_loss: 1.716742845741854 	 val_acc: 0.30414
+EPOCH 52:
+train_loss: 0.025403564935924498 	 val_loss: 1.5818200808216532 	 val_acc: 0.29613
+EPOCH 53:
+train_loss: 0.024590497045352516 	 val_loss: 1.6636432538143897 	 val_acc: 0.29835
+EPOCH 54:
+train_loss: 0.025243740095470323 	 val_loss: 1.7178797953291955 	 val_acc: 0.27257
+EPOCH 55:
+train_loss: 0.024685807181009684 	 val_loss: 1.713802987532455 	 val_acc: 0.30591
+EPOCH 56:
+train_loss: 0.024890961501839823 	 val_loss: 1.7177821331793122 	 val_acc: 0.3028
+EPOCH 57:
+train_loss: 0.024536606598192266 	 val_loss: 1.7098032507861451 	 val_acc: 0.30636
+EPOCH 58:
+train_loss: 0.025101901797927314 	 val_loss: 1.6930895305075855 	 val_acc: 0.31036
+EPOCH 59:
+train_loss: 0.024638425319927347 	 val_loss: 1.7091648310791623 	 val_acc: 0.30725
+EPOCH 60:
+train_loss: 0.024535517243856105 	 val_loss: 1.7127063195218442 	 val_acc: 0.30502
+EPOCH 61:
+train_loss: 0.023860740251618134 	 val_loss: 1.7157318599415878 	 val_acc: 0.30769
+EPOCH 62:
+train_loss: 0.024097405680863593 	 val_loss: 1.6981974672049729 	 val_acc: 0.3068
+EPOCH 63:
+train_loss: 0.02425133470729761 	 val_loss: 1.9701161318007552 	 val_acc: 0.25389
+EPOCH 64:
+train_loss: 0.024030496622751654 	 val_loss: 1.7198724946411488 	 val_acc: 0.30591
+EPOCH 65:
+train_loss: 0.024164911649650348 	 val_loss: 1.7131477748868977 	 val_acc: 0.30903
+EPOCH 66:
+train_loss: 0.024883186973281023 	 val_loss: 1.7021076154811505 	 val_acc: 0.3068
+EPOCH 67:
+train_loss: 0.024121380507528073 	 val_loss: 1.637485295495549 	 val_acc: 0.30547
+EPOCH 68:
+train_loss: 0.024466503061662394 	 val_loss: 1.5802328331637028 	 val_acc: 0.29524
+EPOCH 69:
+train_loss: 0.024045156513936607 	 val_loss: 1.6926597968199026 	 val_acc: 0.30547
+EPOCH 70:
+train_loss: 0.023997038155979845 	 val_loss: 1.656101333823489 	 val_acc: 0.30369
+EPOCH 71:
+train_loss: 0.024084628966647984 	 val_loss: 1.7072932778855945 	 val_acc: 0.30814
+EPOCH 72:
+train_loss: 0.024295414778385562 	 val_loss: 1.7165131373187819 	 val_acc: 0.30903
+EPOCH 73:
+train_loss: 0.02436077390737934 	 val_loss: 1.7063305826992003 	 val_acc: 0.3068
+EPOCH 74:
+train_loss: 0.0243217452612589 	 val_loss: 1.7035499850371771 	 val_acc: 0.30769
+EPOCH 75:
+train_loss: 0.024218591208194112 	 val_loss: 1.697220112790132 	 val_acc: 0.30903
+EPOCH 76:
+train_loss: 0.023957528362476114 	 val_loss: 1.7257046300314125 	 val_acc: 0.30591
+EPOCH 77:
+train_loss: 0.024362456351134685 	 val_loss: 1.5845638883041822 	 val_acc: 0.28768
+EPOCH 78:
+train_loss: 0.024195604878515287 	 val_loss: 1.7141912490679247 	 val_acc: 0.30947
+EPOCH 79:
+train_loss: 0.024255149607030367 	 val_loss: 1.681555478712746 	 val_acc: 0.30591
+EPOCH 80:
+train_loss: 0.02434820641774584 	 val_loss: 1.7115691085075528 	 val_acc: 0.30947
+EPOCH 81:
+train_loss: 0.02362768400107735 	 val_loss: 1.6129653238944919 	 val_acc: 0.28768
+EPOCH 82:
+train_loss: 0.024380522384204163 	 val_loss: 1.7177678545476152 	 val_acc: 0.30547
+EPOCH 83:
+train_loss: 0.02400071778895547 	 val_loss: 1.713373466342217 	 val_acc: 0.30591
+EPOCH 84:
+train_loss: 0.02414247782643788 	 val_loss: 1.6380463304890653 	 val_acc: 0.30636
+EPOCH 85:
+train_loss: 0.024160258448703512 	 val_loss: 1.6001407794679796 	 val_acc: 0.29702
+EPOCH 86:
+train_loss: 0.024165133661284366 	 val_loss: 1.5894249559600875 	 val_acc: 0.29302
+EPOCH 87:
+train_loss: 0.024019494896661168 	 val_loss: 1.7197573429493616 	 val_acc: 0.30414
+EPOCH 88:
+train_loss: 0.02460711172230828 	 val_loss: 1.6427065978990096 	 val_acc: 0.30369
+EPOCH 89:
+train_loss: 0.02403349094555835 	 val_loss: 1.7226257957921323 	 val_acc: 0.30725
+EPOCH 90:
+train_loss: 0.024584232132298944 	 val_loss: 1.7192730655329314 	 val_acc: 0.30769
+EPOCH 91:
+train_loss: 0.02363746647251491 	 val_loss: 1.6675549554204436 	 val_acc: 0.30458
+EPOCH 92:
+train_loss: 0.02422343298701669 	 val_loss: 1.719199946368686 	 val_acc: 0.30636
+EPOCH 93:
+train_loss: 0.024475064054393935 	 val_loss: 1.7152133160163288 	 val_acc: 0.30502
+EPOCH 94:
+train_loss: 0.023761758268893717 	 val_loss: 1.7230007699674104 	 val_acc: 0.30636
+EPOCH 95:
+train_loss: 0.02366371874007072 	 val_loss: 1.9950503186174235 	 val_acc: 0.25656
+EPOCH 96:
+train_loss: 0.02424888419140432 	 val_loss: 1.7280890739488315 	 val_acc: 0.30591
+EPOCH 97:
+train_loss: 0.024256441511691026 	 val_loss: 1.7121125784937206 	 val_acc: 0.30725
+EPOCH 98:
+train_loss: 0.024348955485135475 	 val_loss: 1.7011027927027222 	 val_acc: 0.3108
+EPOCH 99:
+train_loss: 0.024048149542053476 	 val_loss: 1.656629858254954 	 val_acc: 0.30591
+EPOCH 100:
+train_loss: 0.024227476217728073 	 val_loss: 1.7237837048936573 	 val_acc: 0.30547
+EPOCH 101:
+train_loss: 0.023746221554353984 	 val_loss: 1.7179742372619917 	 val_acc: 0.30947
+EPOCH 102:
+train_loss: 0.02425695581080894 	 val_loss: 1.725248553786737 	 val_acc: 0.30414
+EPOCH 103:
+train_loss: 0.023852913377336842 	 val_loss: 1.6782224286940182 	 val_acc: 0.30369
+EPOCH 104:
+train_loss: 0.024035599914846478 	 val_loss: 1.7030873726322862 	 val_acc: 0.30547
+EPOCH 105:
+train_loss: 0.024684424251125173 	 val_loss: 1.7139418758989629 	 val_acc: 0.30992
+EPOCH 106:
+train_loss: 0.024345716453031012 	 val_loss: 1.603184196092985 	 val_acc: 0.29569
+EPOCH 107:
+train_loss: 0.023856538300017226 	 val_loss: 1.7141336644440845 	 val_acc: 0.3108
+EPOCH 108:
+train_loss: 0.02379924003026051 	 val_loss: 1.7010021294604818 	 val_acc: 0.30769
+EPOCH 109:
+train_loss: 0.024248215135288596 	 val_loss: 1.6988457423923047 	 val_acc: 0.30992
+EPOCH 110:
+train_loss: 0.02378967614743778 	 val_loss: 1.7237113743801131 	 val_acc: 0.30814
+EPOCH 111:
+train_loss: 0.0238746920552763 	 val_loss: 1.6600700302907376 	 val_acc: 0.30147
+EPOCH 112:
+train_loss: 0.023917118469176494 	 val_loss: 1.7192854161754458 	 val_acc: 0.30814
+EPOCH 113:
+train_loss: 0.023844332977221612 	 val_loss: 1.7121961347277865 	 val_acc: 0.30903
+EPOCH 114:
+train_loss: 0.02371626682485503 	 val_loss: 1.72632572023278 	 val_acc: 0.30369
+EPOCH 115:
+train_loss: 0.024259318332996813 	 val_loss: 1.7194406716993826 	 val_acc: 0.30502
+EPOCH 116:
+train_loss: 0.023509806052319185 	 val_loss: 1.590860749051366 	 val_acc: 0.2908
+EPOCH 117:
+train_loss: 0.023894583187615615 	 val_loss: 1.7155545155246488 	 val_acc: 0.30992
+EPOCH 118:
+train_loss: 0.024035357795910383 	 val_loss: 1.7000347754616953 	 val_acc: 0.30814
+EPOCH 119:
+train_loss: 0.02382150282742304 	 val_loss: 1.714124005137221 	 val_acc: 0.30903
+EPOCH 120:
+train_loss: 0.024394149505122836 	 val_loss: 1.6650888337662648 	 val_acc: 0.30102
+EPOCH 121:
+train_loss: 0.02407726170563637 	 val_loss: 1.6939521696811939 	 val_acc: 0.30947
+EPOCH 122:
+train_loss: 0.023801826223225988 	 val_loss: 1.5721283044703502 	 val_acc: 0.29569
+EPOCH 123:
+train_loss: 0.023675639734973674 	 val_loss: 1.721244796913431 	 val_acc: 0.30636
+EPOCH 124:
+train_loss: 0.02375607976663695 	 val_loss: 1.70067014474984 	 val_acc: 0.30725
+EPOCH 125:
+train_loss: 0.024015619429740606 	 val_loss: 1.5950556262358366 	 val_acc: 0.29702
+EPOCH 126:
+train_loss: 0.024177648460662792 	 val_loss: 1.6868852635453422 	 val_acc: 0.30502
+EPOCH 127:
+train_loss: 0.02355601137614613 	 val_loss: 1.7198416316184024 	 val_acc: 0.30903
+EPOCH 128:
+train_loss: 0.02410600641164682 	 val_loss: 1.7266115358613405 	 val_acc: 0.30769
+EPOCH 129:
+train_loss: 0.0239204645716729 	 val_loss: 1.575907080882153 	 val_acc: 0.29524
+EPOCH 130:
+train_loss: 0.023885215343860518 	 val_loss: 1.9782632310064603 	 val_acc: 0.25567
+EPOCH 131:
+train_loss: 0.023639422521653644 	 val_loss: 1.6298805485327936 	 val_acc: 0.30147
+EPOCH 132:
+train_loss: 0.02392739830873119 	 val_loss: 1.6931591888555875 	 val_acc: 0.30636
+EPOCH 133:
+train_loss: 0.024255318000031507 	 val_loss: 1.7250645717533266 	 val_acc: 0.30769
+EPOCH 134:
+train_loss: 0.023822633886239192 	 val_loss: 1.6935772771567328 	 val_acc: 0.30414
+EPOCH 135:
+train_loss: 0.023669406224155018 	 val_loss: 1.7070178851809803 	 val_acc: 0.30947
+EPOCH 136:
+train_loss: 0.023778286381102305 	 val_loss: 1.6311774444435914 	 val_acc: 0.30369
+EPOCH 137:
+train_loss: 0.024290116974692424 	 val_loss: 1.6077078719197972 	 val_acc: 0.29658
+EPOCH 138:
+train_loss: 0.024343728974399494 	 val_loss: 1.7299257649888233 	 val_acc: 0.30369
+EPOCH 139:
+train_loss: 0.024165939338053583 	 val_loss: 1.8297583083329338 	 val_acc: 0.26234
+EPOCH 140:
+train_loss: 0.02405736928960962 	 val_loss: 1.7062010257035616 	 val_acc: 0.30903
+EPOCH 141:
+train_loss: 0.02444985484845195 	 val_loss: 1.6789715744415907 	 val_acc: 0.30414
+EPOCH 142:
+train_loss: 0.023874419244099297 	 val_loss: 1.670664206313345 	 val_acc: 0.30058
+EPOCH 143:
+train_loss: 0.023568231745714582 	 val_loss: 1.6622317464125784 	 val_acc: 0.30325
+EPOCH 144:
+train_loss: 0.024030693419113916 	 val_loss: 1.7253481822050427 	 val_acc: 0.30903
+Early stop at epoch: 144
+#############################################################
+# EEGInception - KPCA-poly                   
+# Val. Acc.:  0.3108                      
+# Epochs:     145                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################
+Training on KPCA-rbf
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/12.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/12.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.5007707752262065 	 val_loss: 1.4579981588073943 	 val_acc: 0.26456
+EPOCH 2:
+train_loss: 1.1408604742109387 	 val_loss: 1.4988464850919876 	 val_acc: 0.26634
+EPOCH 3:
+train_loss: 0.8891671505187656 	 val_loss: 1.501513083809324 	 val_acc: 0.26901
+EPOCH 4:
+train_loss: 0.6945532345655892 	 val_loss: 1.4588347407528957 	 val_acc: 0.27612
+EPOCH 5:
+train_loss: 0.5408907960520363 	 val_loss: 1.4955411430984362 	 val_acc: 0.27924
+EPOCH 6:
+train_loss: 0.41261537763004014 	 val_loss: 1.478491214384036 	 val_acc: 0.27924
+EPOCH 7:
+train_loss: 0.32273651452552454 	 val_loss: 1.4892071062053107 	 val_acc: 0.2948
+EPOCH 8:
+train_loss: 0.2520431049735182 	 val_loss: 1.4840447755425097 	 val_acc: 0.28857
+EPOCH 9:
+train_loss: 0.19835534560105766 	 val_loss: 1.4945795940118127 	 val_acc: 0.30102
+EPOCH 10:
+train_loss: 0.1569881896846897 	 val_loss: 1.499816761158147 	 val_acc: 0.29124
+EPOCH 11:
+train_loss: 0.127222062416046 	 val_loss: 1.510534880245602 	 val_acc: 0.29391
+EPOCH 12:
+train_loss: 0.10349334899512629 	 val_loss: 1.5265090268956363 	 val_acc: 0.30325
+EPOCH 13:
+train_loss: 0.08573643551964703 	 val_loss: 1.539871721905589 	 val_acc: 0.30458
+EPOCH 14:
+train_loss: 0.07157988736791893 	 val_loss: 1.5443863154471762 	 val_acc: 0.30458
+EPOCH 15:
+train_loss: 0.059658945094781854 	 val_loss: 1.5672392752086173 	 val_acc: 0.29302
+EPOCH 16:
+train_loss: 0.05083596951836489 	 val_loss: 1.565485174672503 	 val_acc: 0.2988
+EPOCH 17:
+train_loss: 0.04340966125131811 	 val_loss: 1.5793502244029158 	 val_acc: 0.30636
+EPOCH 18:
+train_loss: 0.037321055416653884 	 val_loss: 1.5879592703106442 	 val_acc: 0.30591
+EPOCH 19:
+train_loss: 0.03215639020323912 	 val_loss: 1.5952621478039946 	 val_acc: 0.3108
+EPOCH 20:
+train_loss: 0.02798384031558751 	 val_loss: 1.605525458808408 	 val_acc: 0.3028
+EPOCH 21:
+train_loss: 0.024431184617864896 	 val_loss: 1.627812107799036 	 val_acc: 0.30947
+EPOCH 22:
+train_loss: 0.02140626715086066 	 val_loss: 1.627424978258016 	 val_acc: 0.30814
+EPOCH 23:
+train_loss: 0.018294058227893338 	 val_loss: 1.6317851747453347 	 val_acc: 0.30547
+EPOCH 24:
+train_loss: 0.018029861472871195 	 val_loss: 1.6368166296570283 	 val_acc: 0.30547
+EPOCH 25:
+train_loss: 0.01779731209732415 	 val_loss: 1.6336083418827172 	 val_acc: 0.3028
+EPOCH 26:
+train_loss: 0.017543407498175595 	 val_loss: 1.639466744612057 	 val_acc: 0.30325
+EPOCH 27:
+train_loss: 0.017327184609575753 	 val_loss: 1.6407562190302565 	 val_acc: 0.3028
+EPOCH 28:
+train_loss: 0.017118442592034534 	 val_loss: 1.6435759953808802 	 val_acc: 0.30191
+EPOCH 29:
+train_loss: 0.016843406012761138 	 val_loss: 1.6419778499323614 	 val_acc: 0.3028
+EPOCH 30:
+train_loss: 0.016562409322135135 	 val_loss: 1.6434277330991705 	 val_acc: 0.30191
+EPOCH 31:
+train_loss: 0.01634413973316307 	 val_loss: 1.643453263228022 	 val_acc: 0.30458
+EPOCH 32:
+train_loss: 0.01605560724997247 	 val_loss: 1.6497801949818802 	 val_acc: 0.30191
+EPOCH 33:
+train_loss: 0.015786211508444937 	 val_loss: 1.6512352188702333 	 val_acc: 0.30325
+EPOCH 34:
+train_loss: 0.015522356995252062 	 val_loss: 1.650811814563964 	 val_acc: 0.30191
+EPOCH 35:
+train_loss: 0.01523642944413073 	 val_loss: 1.6523050392257141 	 val_acc: 0.30414
+EPOCH 36:
+train_loss: 0.014983355675694643 	 val_loss: 1.6581535560603233 	 val_acc: 0.30502
+EPOCH 37:
+train_loss: 0.014682491456082367 	 val_loss: 1.656081303869547 	 val_acc: 0.30369
+EPOCH 38:
+train_loss: 0.014379975060592982 	 val_loss: 1.6585958259865505 	 val_acc: 0.30325
+EPOCH 39:
+train_loss: 0.014101942307983817 	 val_loss: 1.6630717371291925 	 val_acc: 0.30102
+EPOCH 40:
+train_loss: 0.013774995004116046 	 val_loss: 1.6678510290003097 	 val_acc: 0.30591
+EPOCH 41:
+train_loss: 0.013522635270133794 	 val_loss: 1.6684008863218138 	 val_acc: 0.30102
+EPOCH 42:
+train_loss: 0.013256417608987303 	 val_loss: 1.6719428118285087 	 val_acc: 0.30858
+EPOCH 43:
+train_loss: 0.01292290781495798 	 val_loss: 1.6707761963179508 	 val_acc: 0.30458
+EPOCH 44:
+train_loss: 0.01251038286156399 	 val_loss: 1.671878770900192 	 val_acc: 0.30502
+EPOCH 45:
+train_loss: 0.012493768579517553 	 val_loss: 1.67529824366525 	 val_acc: 0.30369
+EPOCH 46:
+train_loss: 0.012439695113644402 	 val_loss: 1.6776688236596162 	 val_acc: 0.30369
+EPOCH 47:
+train_loss: 0.012443429636673116 	 val_loss: 1.677283730008268 	 val_acc: 0.30636
+EPOCH 48:
+train_loss: 0.012388405470180577 	 val_loss: 1.674214319978974 	 val_acc: 0.30458
+EPOCH 49:
+train_loss: 0.012361450136745705 	 val_loss: 1.6781112088063808 	 val_acc: 0.3068
+EPOCH 50:
+train_loss: 0.012292244488894601 	 val_loss: 1.6781359852247948 	 val_acc: 0.30502
+EPOCH 51:
+train_loss: 0.01230520876159806 	 val_loss: 1.676436662783348 	 val_acc: 0.3068
+EPOCH 52:
+train_loss: 0.012257253195242073 	 val_loss: 1.67545744720817 	 val_acc: 0.30325
+EPOCH 53:
+train_loss: 0.012224290684936112 	 val_loss: 1.6807040408566682 	 val_acc: 0.30369
+EPOCH 54:
+train_loss: 0.012176894667964679 	 val_loss: 1.6754090143369298 	 val_acc: 0.30547
+EPOCH 55:
+train_loss: 0.01211941619015153 	 val_loss: 1.6802342633489666 	 val_acc: 0.30458
+EPOCH 56:
+train_loss: 0.012129662560386542 	 val_loss: 1.6783322331857793 	 val_acc: 0.30502
+EPOCH 57:
+train_loss: 0.012040372834395572 	 val_loss: 1.6805831617896758 	 val_acc: 0.30591
+EPOCH 58:
+train_loss: 0.012062457155138017 	 val_loss: 1.6785481361485208 	 val_acc: 0.30369
+EPOCH 59:
+train_loss: 0.011994805618455584 	 val_loss: 1.6823211402989915 	 val_acc: 0.30636
+EPOCH 60:
+train_loss: 0.011927740082818888 	 val_loss: 1.6835561010015407 	 val_acc: 0.30725
+EPOCH 61:
+train_loss: 0.011909109886407738 	 val_loss: 1.6827129972600754 	 val_acc: 0.30458
+EPOCH 62:
+train_loss: 0.01186401940520025 	 val_loss: 1.6798825751872035 	 val_acc: 0.30636
+EPOCH 63:
+train_loss: 0.011791519082847568 	 val_loss: 1.6830757804074146 	 val_acc: 0.30547
+EPOCH 64:
+train_loss: 0.01174968259305894 	 val_loss: 1.6817568445776672 	 val_acc: 0.30547
+EPOCH 65:
+train_loss: 0.011688732967551439 	 val_loss: 1.6832058365933893 	 val_acc: 0.30458
+Early stop at epoch: 65
+#############################################################
+# EEGInception - KPCA-rbf                   
+# Val. Acc.:  0.3108                      
+# Epochs:     66                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################
+Training on KPCA-sigmoid
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/5.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/5.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.488431736886307 	 val_loss: 1.4394283155171377 	 val_acc: 0.28012
+EPOCH 2:
+train_loss: 1.160192245433338 	 val_loss: 1.432668553964523 	 val_acc: 0.27612
+EPOCH 3:
+train_loss: 0.9086465784007423 	 val_loss: 1.4259053854775157 	 val_acc: 0.30236
+EPOCH 4:
+train_loss: 0.7250819713562437 	 val_loss: 1.4443565195851893 	 val_acc: 0.29835
+EPOCH 5:
+train_loss: 0.5632084243661339 	 val_loss: 1.439390926826771 	 val_acc: 0.30769
+EPOCH 6:
+train_loss: 0.4371750419550133 	 val_loss: 1.417549450963768 	 val_acc: 0.32859
+EPOCH 7:
+train_loss: 0.3387530696022574 	 val_loss: 1.4170943769200952 	 val_acc: 0.33126
+EPOCH 8:
+train_loss: 0.2676598024570621 	 val_loss: 1.4158835640048988 	 val_acc: 0.3446
+EPOCH 9:
+train_loss: 0.20924280886411104 	 val_loss: 1.4286044393958535 	 val_acc: 0.33793
+EPOCH 10:
+train_loss: 0.16611165483269136 	 val_loss: 1.4887249629919412 	 val_acc: 0.3357
+EPOCH 11:
+train_loss: 0.1367522657055171 	 val_loss: 1.5422904862293805 	 val_acc: 0.33037
+EPOCH 12:
+train_loss: 0.1087261038302319 	 val_loss: 1.479640542332767 	 val_acc: 0.34237
+EPOCH 13:
+train_loss: 0.08939207723684568 	 val_loss: 1.4638463573092926 	 val_acc: 0.34415
+EPOCH 14:
+train_loss: 0.07320502648545196 	 val_loss: 1.4775813853926991 	 val_acc: 0.3406
+EPOCH 15:
+train_loss: 0.061031961774605695 	 val_loss: 1.5015755923783871 	 val_acc: 0.34415
+EPOCH 16:
+train_loss: 0.05205787714043926 	 val_loss: 1.52541591187556 	 val_acc: 0.34504
+EPOCH 17:
+train_loss: 0.043954048364646156 	 val_loss: 1.5110891304209257 	 val_acc: 0.36194
+EPOCH 18:
+train_loss: 0.037753961686439824 	 val_loss: 1.5486529197158012 	 val_acc: 0.35171
+EPOCH 19:
+train_loss: 0.03227207319734822 	 val_loss: 1.537483109646783 	 val_acc: 0.35571
+EPOCH 20:
+train_loss: 0.0279137315972464 	 val_loss: 1.5770428344745777 	 val_acc: 0.35527
+EPOCH 21:
+train_loss: 0.024208621751656296 	 val_loss: 1.5823681810491486 	 val_acc: 0.35705
+EPOCH 22:
+train_loss: 0.02123784807178167 	 val_loss: 1.809697011095118 	 val_acc: 0.3317
+EPOCH 23:
+train_loss: 0.018660821611085274 	 val_loss: 1.6046848374236156 	 val_acc: 0.35838
+EPOCH 24:
+train_loss: 0.016312736100032338 	 val_loss: 1.612763219353414 	 val_acc: 0.35616
+EPOCH 25:
+train_loss: 0.014319378826942024 	 val_loss: 1.6361681459151505 	 val_acc: 0.36461
+EPOCH 26:
+train_loss: 0.012743247168766356 	 val_loss: 1.7186678384649814 	 val_acc: 0.35171
+EPOCH 27:
+train_loss: 0.01120926646521833 	 val_loss: 1.775926039335796 	 val_acc: 0.34993
+EPOCH 28:
+train_loss: 0.009795058716979627 	 val_loss: 1.8512991059054646 	 val_acc: 0.34371
+EPOCH 29:
+train_loss: 0.008715670368327148 	 val_loss: 1.8240958666607228 	 val_acc: 0.3526
+EPOCH 30:
+train_loss: 0.007326163510674877 	 val_loss: 1.730818209723936 	 val_acc: 0.35883
+EPOCH 31:
+train_loss: 0.007195023176368529 	 val_loss: 1.741322976254501 	 val_acc: 0.35838
+EPOCH 32:
+train_loss: 0.007108469437554329 	 val_loss: 1.7334455105236275 	 val_acc: 0.35705
+EPOCH 33:
+train_loss: 0.006988088520272487 	 val_loss: 1.74371492096041 	 val_acc: 0.36016
+EPOCH 34:
+train_loss: 0.006942600801933595 	 val_loss: 1.7432154886366997 	 val_acc: 0.35705
+EPOCH 35:
+train_loss: 0.006815315241756595 	 val_loss: 1.756097557617753 	 val_acc: 0.36016
+EPOCH 36:
+train_loss: 0.006712592103499143 	 val_loss: 1.7545233329410626 	 val_acc: 0.36016
+EPOCH 37:
+train_loss: 0.006666003688535117 	 val_loss: 1.7714865134685993 	 val_acc: 0.35794
+EPOCH 38:
+train_loss: 0.006581130643794656 	 val_loss: 1.7605156734415586 	 val_acc: 0.35883
+EPOCH 39:
+train_loss: 0.0064510836132627624 	 val_loss: 1.7586324465216723 	 val_acc: 0.35838
+EPOCH 40:
+train_loss: 0.006384619346166977 	 val_loss: 1.7647493028489434 	 val_acc: 0.35794
+EPOCH 41:
+train_loss: 0.006259835415584355 	 val_loss: 1.7661588582768148 	 val_acc: 0.35883
+EPOCH 42:
+train_loss: 0.0061882077487725095 	 val_loss: 1.7796703398923854 	 val_acc: 0.36194
+EPOCH 43:
+train_loss: 0.006095074009579026 	 val_loss: 1.7824072748584625 	 val_acc: 0.35838
+EPOCH 44:
+train_loss: 0.005968879258841735 	 val_loss: 1.7806142089585262 	 val_acc: 0.35838
+EPOCH 45:
+train_loss: 0.00584138439682992 	 val_loss: 1.7851202782706488 	 val_acc: 0.36416
+EPOCH 46:
+train_loss: 0.005764398282055315 	 val_loss: 1.8035502713308604 	 val_acc: 0.36105
+EPOCH 47:
+train_loss: 0.0056310831669822104 	 val_loss: 1.7974404782269569 	 val_acc: 0.35883
+EPOCH 48:
+train_loss: 0.005524627045859043 	 val_loss: 1.8210373706108003 	 val_acc: 0.3566
+EPOCH 49:
+train_loss: 0.005444542046371365 	 val_loss: 1.8158866678232604 	 val_acc: 0.36016
+EPOCH 50:
+train_loss: 0.005327878827224575 	 val_loss: 1.8236351434691727 	 val_acc: 0.35972
+EPOCH 51:
+train_loss: 0.005128947722552565 	 val_loss: 1.8223121439108299 	 val_acc: 0.35972
+EPOCH 52:
+train_loss: 0.005119319893879462 	 val_loss: 1.8198795822759042 	 val_acc: 0.35838
+EPOCH 53:
+train_loss: 0.005080221315084725 	 val_loss: 1.815604049213232 	 val_acc: 0.35927
+EPOCH 54:
+train_loss: 0.005059845831434217 	 val_loss: 1.819316957207511 	 val_acc: 0.35972
+EPOCH 55:
+train_loss: 0.0050834825829113636 	 val_loss: 1.8240718982634831 	 val_acc: 0.35927
+EPOCH 56:
+train_loss: 0.005032823554839316 	 val_loss: 1.8217291368547235 	 val_acc: 0.36016
+EPOCH 57:
+train_loss: 0.005038336980866554 	 val_loss: 1.8150409294161798 	 val_acc: 0.36105
+EPOCH 58:
+train_loss: 0.005061632506796505 	 val_loss: 1.821130120811652 	 val_acc: 0.35883
+EPOCH 59:
+train_loss: 0.005016475308027473 	 val_loss: 1.8208221625717698 	 val_acc: 0.35972
+EPOCH 60:
+train_loss: 0.004998279440695935 	 val_loss: 1.8234564068562302 	 val_acc: 0.36016
+EPOCH 61:
+train_loss: 0.00498546104629611 	 val_loss: 1.8203908351628264 	 val_acc: 0.36194
+EPOCH 62:
+train_loss: 0.004958584499458275 	 val_loss: 1.8271865345371219 	 val_acc: 0.36105
+EPOCH 63:
+train_loss: 0.004990206478156133 	 val_loss: 1.8225753293636828 	 val_acc: 0.35972
+EPOCH 64:
+train_loss: 0.004959504233702319 	 val_loss: 1.8249214138768284 	 val_acc: 0.36016
+EPOCH 65:
+train_loss: 0.004914208935675084 	 val_loss: 1.8253736988460316 	 val_acc: 0.36105
+EPOCH 66:
+train_loss: 0.004904529538202564 	 val_loss: 1.8263225885792729 	 val_acc: 0.35883
+EPOCH 67:
+train_loss: 0.004896255116741304 	 val_loss: 1.8260504846758847 	 val_acc: 0.36016
+EPOCH 68:
+train_loss: 0.004896242973747599 	 val_loss: 1.830142954290717 	 val_acc: 0.3606
+EPOCH 69:
+train_loss: 0.004900738896418867 	 val_loss: 1.8281750599473128 	 val_acc: 0.36194
+EPOCH 70:
+train_loss: 0.004885357691259358 	 val_loss: 1.835153253977794 	 val_acc: 0.35838
+EPOCH 71:
+train_loss: 0.004809157208091337 	 val_loss: 1.831908882864876 	 val_acc: 0.36194
+Early stop at epoch: 71
+#############################################################
+# EEGInception - KPCA-sigmoid                   
+# Val. Acc.:  0.36461                      
+# Epochs:     72                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################
+Training on KPCA-cosine
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/6.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/6.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 30, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 30, 1, 1126]          [1, 288, 1, 1126]         8,928
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 30, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 30, 1, 1126]          [1, 30, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 30, 1, 1126]          [1, 48, 1, 1126]          1,488
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,177,060
+Trainable params: 10,177,060
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.71
+Estimated Total Size (MB): 84.95
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.5028382950701749 	 val_loss: 1.5078950625393965 	 val_acc: 0.26367
+EPOCH 2:
+train_loss: 1.15269408678989 	 val_loss: 1.5050640214975537 	 val_acc: 0.26545
+EPOCH 3:
+train_loss: 0.9039556878461368 	 val_loss: 1.4548409825568713 	 val_acc: 0.27701
+EPOCH 4:
+train_loss: 0.7126428810474432 	 val_loss: 1.4517444368324792 	 val_acc: 0.28991
+EPOCH 5:
+train_loss: 0.5511439401165527 	 val_loss: 1.4396636744372566 	 val_acc: 0.29791
+EPOCH 6:
+train_loss: 0.4290864119642215 	 val_loss: 1.4436766489170434 	 val_acc: 0.2908
+EPOCH 7:
+train_loss: 0.3381729062194967 	 val_loss: 1.4758579781249592 	 val_acc: 0.30814
+EPOCH 8:
+train_loss: 0.25957414247200294 	 val_loss: 1.451206496397425 	 val_acc: 0.31214
+EPOCH 9:
+train_loss: 0.20065860338208372 	 val_loss: 1.48379729111056 	 val_acc: 0.30725
+EPOCH 10:
+train_loss: 0.16015758411729947 	 val_loss: 1.4847054863017413 	 val_acc: 0.32148
+EPOCH 11:
+train_loss: 0.12951408481789645 	 val_loss: 1.4897082457757669 	 val_acc: 0.31792
+EPOCH 12:
+train_loss: 0.10382034152228797 	 val_loss: 1.4891765233804484 	 val_acc: 0.32904
+EPOCH 13:
+train_loss: 0.08423143997920826 	 val_loss: 1.5035689675940902 	 val_acc: 0.32681
+EPOCH 14:
+train_loss: 0.06982638325556212 	 val_loss: 1.5355484328113376 	 val_acc: 0.33259
+EPOCH 15:
+train_loss: 0.05828495256001056 	 val_loss: 1.5372519048003992 	 val_acc: 0.32503
+EPOCH 16:
+train_loss: 0.04913961310949468 	 val_loss: 1.5515334966453331 	 val_acc: 0.3237
+EPOCH 17:
+train_loss: 0.04204790475082681 	 val_loss: 1.5724528443434747 	 val_acc: 0.33437
+EPOCH 18:
+train_loss: 0.03555049679345857 	 val_loss: 1.5730970127472934 	 val_acc: 0.33393
+EPOCH 19:
+train_loss: 0.03017687158404204 	 val_loss: 1.6026468396891793 	 val_acc: 0.33793
+EPOCH 20:
+train_loss: 0.026201941558896432 	 val_loss: 1.7175787919023566 	 val_acc: 0.32815
+EPOCH 21:
+train_loss: 0.022772371153141 	 val_loss: 1.617059641936289 	 val_acc: 0.33971
+EPOCH 22:
+train_loss: 0.01980589570714087 	 val_loss: 1.786334243719349 	 val_acc: 0.32548
+EPOCH 23:
+train_loss: 0.017476841331721327 	 val_loss: 1.9569175159309968 	 val_acc: 0.31481
+EPOCH 24:
+train_loss: 0.01514213763695938 	 val_loss: 1.6820669334858998 	 val_acc: 0.32726
+EPOCH 25:
+train_loss: 0.013312491826812 	 val_loss: 1.6810569131118065 	 val_acc: 0.33748
+EPOCH 26:
+train_loss: 0.011606624936609446 	 val_loss: 1.7178927548980876 	 val_acc: 0.33704
+EPOCH 27:
+train_loss: 0.00977899008769914 	 val_loss: 1.7285439996877963 	 val_acc: 0.34638
+EPOCH 28:
+train_loss: 0.009632004036105486 	 val_loss: 1.7351201343591907 	 val_acc: 0.34371
+EPOCH 29:
+train_loss: 0.009502296222864044 	 val_loss: 1.734941635571213 	 val_acc: 0.34371
+EPOCH 30:
+train_loss: 0.009401574070225857 	 val_loss: 1.7336214179024854 	 val_acc: 0.34727
+EPOCH 31:
+train_loss: 0.009219048933997439 	 val_loss: 1.745307738399347 	 val_acc: 0.34682
+EPOCH 32:
+train_loss: 0.009111232532074165 	 val_loss: 1.739880393742662 	 val_acc: 0.34727
+EPOCH 33:
+train_loss: 0.00898006386382565 	 val_loss: 1.7430253934327875 	 val_acc: 0.34682
+EPOCH 34:
+train_loss: 0.008838802430418655 	 val_loss: 1.7454824200801822 	 val_acc: 0.34815
+EPOCH 35:
+train_loss: 0.008708461551883658 	 val_loss: 1.742289969278799 	 val_acc: 0.34727
+EPOCH 36:
+train_loss: 0.008600000512760154 	 val_loss: 1.7471532291817935 	 val_acc: 0.34949
+EPOCH 37:
+train_loss: 0.008450472905363332 	 val_loss: 1.7729763953579911 	 val_acc: 0.35038
+EPOCH 38:
+train_loss: 0.008263036024910237 	 val_loss: 1.768518048263613 	 val_acc: 0.34771
+EPOCH 39:
+train_loss: 0.008132435771887565 	 val_loss: 1.7727627822195804 	 val_acc: 0.34904
+EPOCH 40:
+train_loss: 0.008015846306082427 	 val_loss: 1.777856189817568 	 val_acc: 0.34904
+EPOCH 41:
+train_loss: 0.007859220577595456 	 val_loss: 1.7692050709550735 	 val_acc: 0.34904
+EPOCH 42:
+train_loss: 0.007701639495962344 	 val_loss: 1.7722216662773975 	 val_acc: 0.34638
+EPOCH 43:
+train_loss: 0.007528286704734415 	 val_loss: 1.78613423986132 	 val_acc: 0.34638
+EPOCH 44:
+train_loss: 0.007410576508450093 	 val_loss: 1.7858107480025003 	 val_acc: 0.3486
+EPOCH 45:
+train_loss: 0.007244535307070846 	 val_loss: 1.79972665765754 	 val_acc: 0.34638
+EPOCH 46:
+train_loss: 0.007102669700431207 	 val_loss: 1.7999512764514083 	 val_acc: 0.34549
+EPOCH 47:
+train_loss: 0.006957208545292264 	 val_loss: 1.7969425009262132 	 val_acc: 0.34504
+EPOCH 48:
+train_loss: 0.006694515798992273 	 val_loss: 1.8027776700960207 	 val_acc: 0.35038
+EPOCH 49:
+train_loss: 0.006684648009166433 	 val_loss: 1.8007744456481982 	 val_acc: 0.34682
+EPOCH 50:
+train_loss: 0.006679030313189641 	 val_loss: 1.7989103134006654 	 val_acc: 0.3486
+EPOCH 51:
+train_loss: 0.006645777315983521 	 val_loss: 1.8068963669570501 	 val_acc: 0.34682
+EPOCH 52:
+train_loss: 0.0066226835146953825 	 val_loss: 1.8037740086848881 	 val_acc: 0.34549
+EPOCH 53:
+train_loss: 0.006614136510645801 	 val_loss: 1.803620025904754 	 val_acc: 0.34904
+EPOCH 54:
+train_loss: 0.00657564628986015 	 val_loss: 1.804808117399227 	 val_acc: 0.34682
+EPOCH 55:
+train_loss: 0.006574525445867849 	 val_loss: 1.8048732365881872 	 val_acc: 0.34593
+EPOCH 56:
+train_loss: 0.006552552697783656 	 val_loss: 1.8066540682535885 	 val_acc: 0.34682
+EPOCH 57:
+train_loss: 0.006537312036916024 	 val_loss: 1.8056497573926238 	 val_acc: 0.34727
+EPOCH 58:
+train_loss: 0.00652416053803214 	 val_loss: 1.8092662618412856 	 val_acc: 0.34904
+EPOCH 59:
+train_loss: 0.006477378914085822 	 val_loss: 1.8041056458530473 	 val_acc: 0.34815
+EPOCH 60:
+train_loss: 0.006507085176981132 	 val_loss: 1.8135819273019578 	 val_acc: 0.3486
+EPOCH 61:
+train_loss: 0.006444835152406455 	 val_loss: 1.8138129847960005 	 val_acc: 0.34771
+EPOCH 62:
+train_loss: 0.006441846065641893 	 val_loss: 1.81462002888086 	 val_acc: 0.34815
+EPOCH 63:
+train_loss: 0.006408593776577999 	 val_loss: 1.8108908597276092 	 val_acc: 0.34904
+EPOCH 64:
+train_loss: 0.006378040194075614 	 val_loss: 1.8120456561059255 	 val_acc: 0.34949
+EPOCH 65:
+train_loss: 0.006383130780757413 	 val_loss: 1.813410432570832 	 val_acc: 0.34771
+EPOCH 66:
+train_loss: 0.006333698594063103 	 val_loss: 1.814680231550632 	 val_acc: 0.34593
+EPOCH 67:
+train_loss: 0.006315650439985158 	 val_loss: 1.815212158392504 	 val_acc: 0.34815
+EPOCH 68:
+train_loss: 0.006311730438707176 	 val_loss: 1.819154566835066 	 val_acc: 0.34815
+EPOCH 69:
+train_loss: 0.006267786455098817 	 val_loss: 1.8175325147832908 	 val_acc: 0.34771
+EPOCH 70:
+train_loss: 0.006286847979436478 	 val_loss: 1.8120230941807984 	 val_acc: 0.34638
+EPOCH 71:
+train_loss: 0.006240767214886672 	 val_loss: 1.8200195396335368 	 val_acc: 0.34993
+EPOCH 72:
+train_loss: 0.006288779892399452 	 val_loss: 1.8189032546242474 	 val_acc: 0.34815
+EPOCH 73:
+train_loss: 0.006266514185223895 	 val_loss: 1.8220511946398894 	 val_acc: 0.34549
+EPOCH 74:
+train_loss: 0.006249898117126744 	 val_loss: 1.8194918893751157 	 val_acc: 0.34771
+EPOCH 75:
+train_loss: 0.006245476775289648 	 val_loss: 1.824240275738151 	 val_acc: 0.34638
+EPOCH 76:
+train_loss: 0.00623566460083113 	 val_loss: 1.8210000145968086 	 val_acc: 0.34771
+EPOCH 77:
+train_loss: 0.006258646191966252 	 val_loss: 1.8147973603578769 	 val_acc: 0.34815
+EPOCH 78:
+train_loss: 0.006221649112798667 	 val_loss: 1.8232826581543127 	 val_acc: 0.35038
+EPOCH 79:
+train_loss: 0.006255620016704816 	 val_loss: 1.8242152005270098 	 val_acc: 0.3446
+EPOCH 80:
+train_loss: 0.006212878627011712 	 val_loss: 1.8169857040239832 	 val_acc: 0.34904
+EPOCH 81:
+train_loss: 0.006240956907981382 	 val_loss: 1.8174938817628234 	 val_acc: 0.3486
+EPOCH 82:
+train_loss: 0.006253125741514871 	 val_loss: 1.817622663205535 	 val_acc: 0.34771
+EPOCH 83:
+train_loss: 0.006225036666426677 	 val_loss: 1.8170837936929434 	 val_acc: 0.34771
+Early stop at epoch: 83
+#############################################################
+# EEGInception - KPCA-cosine                   
+# Val. Acc.:  0.35038                      
+# Epochs:     84                     
+# LR:         5e-06                     
+# L2:         0.1                      
+# Betas:      (0.9, 0.999)                             
+#############################################################

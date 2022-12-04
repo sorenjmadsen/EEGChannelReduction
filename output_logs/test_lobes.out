@@ -1,0 +1,957 @@
+Running on device: cuda
+Testing on frontal
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data
+Model: ShallowConvNet
+Found 2240 trials
+Selecting 52 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 52]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 52]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 52]          [1, 60, 1102, 52]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 52]         [1, 60, 1102, 1]          187,260
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 205,504
+Trainable params: 205,504
+Non-trainable params: 0
+Total mult-adds (M): 295.77
+===================================================================================================================
+Input size (MB): 0.23
+Forward/backward pass size (MB): 28.56
+Params size (MB): 0.82
+Estimated Total Size (MB): 29.62
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/shallow/frontal_0.0001_(0.9, 0.95)_0.01_0.80036_50
+#############################################################
+# ShallowConvNet - frontal                   
+# Test Acc.:  0.6794642857142857                      
+#############################################################
+Model: DeepConvNet
+Found 2240 trials
+Selecting 52 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+DeepConvNet                              [1, 1, 1126, 52]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 52]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 52]          [1, 25, 1117, 52]         275
+│    └─Conv2d: 2-2                       [1, 25, 1117, 52]         [1, 25, 1117, 1]          32,525
+│    └─BatchNorm2d: 2-3                  [1, 25, 1117, 1]          [1, 25, 1117, 1]          50
+│    └─ELU: 2-4                          [1, 25, 1117, 1]          [1, 25, 1117, 1]          --
+│    └─MaxPool2d: 2-5                    [1, 25, 1117, 1]          [1, 25, 372, 1]           --
+│    └─Conv2d: 2-6                       [1, 25, 372, 1]           [1, 50, 363, 1]           12,550
+│    └─BatchNorm2d: 2-7                  [1, 50, 363, 1]           [1, 50, 363, 1]           100
+│    └─ELU: 2-8                          [1, 50, 363, 1]           [1, 50, 363, 1]           --
+│    └─MaxPool2d: 2-9                    [1, 50, 363, 1]           [1, 50, 121, 1]           --
+│    └─Conv2d: 2-10                      [1, 50, 121, 1]           [1, 100, 112, 1]          50,100
+│    └─ELU: 2-11                         [1, 100, 112, 1]          [1, 100, 112, 1]          --
+│    └─BatchNorm2d: 2-12                 [1, 100, 112, 1]          [1, 100, 112, 1]          200
+│    └─MaxPool2d: 2-13                   [1, 100, 112, 1]          [1, 100, 37, 1]           --
+│    └─Conv2d: 2-14                      [1, 100, 37, 1]           [1, 200, 28, 1]           200,200
+│    └─BatchNorm2d: 2-15                 [1, 200, 28, 1]           [1, 200, 28, 1]           400
+│    └─ELU: 2-16                         [1, 200, 28, 1]           [1, 200, 28, 1]           --
+│    └─MaxPool2d: 2-17                   [1, 200, 28, 1]           [1, 200, 9, 1]            --
+│    └─Flatten: 2-18                     [1, 200, 9, 1]            [1, 1800]                 --
+│    └─Linear: 2-19                      [1, 1800]                 [1, 4]                    7,204
+===================================================================================================================
+Total params: 303,604
+Trainable params: 303,604
+Non-trainable params: 0
+Total mult-adds (M): 68.08
+===================================================================================================================
+Input size (MB): 0.23
+Forward/backward pass size (MB): 12.62
+Params size (MB): 1.21
+Estimated Total Size (MB): 14.07
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/deep/frontal_5e-05_(0.9, 0.95)_0.01_0.74077_35
+#############################################################
+# DeepConvNet - frontal                   
+# Test Acc.:  0.6629464285714286                      
+#############################################################
+Model: EEGNet
+Found 2240 trials
+Selecting 52 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGNet                                   [1, 1, 52, 1126]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 52, 1126]          [1, 125, 52, 1126]        --
+│    └─Conv2d: 2-1                       [1, 1, 52, 1126]          [1, 125, 52, 1126]        8,000
+│    └─BatchNorm2d: 2-2                  [1, 125, 52, 1126]        [1, 125, 52, 1126]        250
+├─Sequential: 1-2                        [1, 125, 52, 1126]        [1, 250, 1, 1126]         --
+│    └─Conv2d: 2-3                       [1, 125, 52, 1126]        [1, 250, 1, 1126]         13,000
+│    └─BatchNorm2d: 2-4                  [1, 250, 1, 1126]         [1, 250, 1, 1126]         500
+│    └─ELU: 2-5                          [1, 250, 1, 1126]         [1, 250, 1, 1126]         --
+├─AvgPool2d: 1-3                         [1, 250, 1, 1126]         [1, 250, 1, 225]          --
+├─Dropout: 1-4                           [1, 250, 1, 225]          [1, 250, 1, 225]          --
+├─Sequential: 1-5                        [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    └─SeparableConv2d: 2-6              [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    │    └─Conv2d: 3-1                  [1, 250, 1, 225]          [1, 250, 1, 225]          4,000
+│    │    └─Conv2d: 3-2                  [1, 250, 1, 225]          [1, 25, 1, 225]           6,250
+│    └─BatchNorm2d: 2-7                  [1, 25, 1, 225]           [1, 25, 1, 225]           50
+│    └─ELU: 2-8                          [1, 25, 1, 225]           [1, 25, 1, 225]           --
+├─AvgPool2d: 1-6                         [1, 25, 1, 225]           [1, 25, 1, 45]            --
+├─Dropout: 1-7                           [1, 25, 1, 45]            [1, 25, 1, 45]            --
+├─Flatten: 1-8                           [1, 25, 1, 45]            [1, 1125]                 --
+├─Linear: 1-9                            [1, 1125]                 [1, 4]                    4,504
+===================================================================================================================
+Total params: 36,554
+Trainable params: 36,554
+Non-trainable params: 0
+Total mult-adds (M): 485.37
+===================================================================================================================
+Input size (MB): 0.23
+Forward/backward pass size (MB): 122.15
+Params size (MB): 0.15
+Estimated Total Size (MB): 122.53
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/eegnet/frontal_3e-05_(0.9, 0.95)_0.01_0.77812_171
+#############################################################
+# EEGNet - frontal                   
+# Test Acc.:  0.740625                      
+#############################################################
+Model: EEGInception
+Found 2240 trials
+Selecting 52 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 52, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 52, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 52, 1, 1126]          [1, 288, 1, 1126]         15,264
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 52, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 52, 1, 1126]          [1, 48, 1, 1126]          2,544
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 52, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 52, 1, 1126]          [1, 52, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 52, 1, 1126]          [1, 48, 1, 1126]          2,544
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,185,508
+Trainable params: 10,185,508
+Non-trainable params: 0
+Total mult-adds (G): 10.00
+===================================================================================================================
+Input size (MB): 0.23
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.74
+Estimated Total Size (MB): 85.08
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/inception/frontal_1e-06_(0.9, 0.95)_0.01_0.61939_52
+#############################################################
+# EEGInception - frontal                   
+# Test Acc.:  0.5866071428571429                      
+#############################################################
+Testing on temporal
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data
+Model: ShallowConvNet
+Found 2240 trials
+Selecting 20 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 20]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 20]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 20]          [1, 60, 1102, 20]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 20]         [1, 60, 1102, 1]          72,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 90,304
+Trainable params: 90,304
+Non-trainable params: 0
+Total mult-adds (M): 113.81
+===================================================================================================================
+Input size (MB): 0.09
+Forward/backward pass size (MB): 11.64
+Params size (MB): 0.36
+Estimated Total Size (MB): 12.09
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/shallow/temporal_0.0001_(0.9, 0.95)_0.01_0.61538_55
+#############################################################
+# ShallowConvNet - temporal                   
+# Test Acc.:  0.5651785714285714                      
+#############################################################
+Model: DeepConvNet
+Found 2240 trials
+Selecting 20 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+DeepConvNet                              [1, 1, 1126, 20]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 20]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 20]          [1, 25, 1117, 20]         275
+│    └─Conv2d: 2-2                       [1, 25, 1117, 20]         [1, 25, 1117, 1]          12,525
+│    └─BatchNorm2d: 2-3                  [1, 25, 1117, 1]          [1, 25, 1117, 1]          50
+│    └─ELU: 2-4                          [1, 25, 1117, 1]          [1, 25, 1117, 1]          --
+│    └─MaxPool2d: 2-5                    [1, 25, 1117, 1]          [1, 25, 372, 1]           --
+│    └─Conv2d: 2-6                       [1, 25, 372, 1]           [1, 50, 363, 1]           12,550
+│    └─BatchNorm2d: 2-7                  [1, 50, 363, 1]           [1, 50, 363, 1]           100
+│    └─ELU: 2-8                          [1, 50, 363, 1]           [1, 50, 363, 1]           --
+│    └─MaxPool2d: 2-9                    [1, 50, 363, 1]           [1, 50, 121, 1]           --
+│    └─Conv2d: 2-10                      [1, 50, 121, 1]           [1, 100, 112, 1]          50,100
+│    └─ELU: 2-11                         [1, 100, 112, 1]          [1, 100, 112, 1]          --
+│    └─BatchNorm2d: 2-12                 [1, 100, 112, 1]          [1, 100, 112, 1]          200
+│    └─MaxPool2d: 2-13                   [1, 100, 112, 1]          [1, 100, 37, 1]           --
+│    └─Conv2d: 2-14                      [1, 100, 37, 1]           [1, 200, 28, 1]           200,200
+│    └─BatchNorm2d: 2-15                 [1, 200, 28, 1]           [1, 200, 28, 1]           400
+│    └─ELU: 2-16                         [1, 200, 28, 1]           [1, 200, 28, 1]           --
+│    └─MaxPool2d: 2-17                   [1, 200, 28, 1]           [1, 200, 9, 1]            --
+│    └─Flatten: 2-18                     [1, 200, 9, 1]            [1, 1800]                 --
+│    └─Linear: 2-19                      [1, 1800]                 [1, 4]                    7,204
+===================================================================================================================
+Total params: 283,604
+Trainable params: 283,604
+Non-trainable params: 0
+Total mult-adds (M): 35.91
+===================================================================================================================
+Input size (MB): 0.09
+Forward/backward pass size (MB): 5.47
+Params size (MB): 1.13
+Estimated Total Size (MB): 6.70
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/deep/temporal_5e-05_(0.9, 0.95)_0.01_0.51045_9
+#############################################################
+# DeepConvNet - temporal                   
+# Test Acc.:  0.4919642857142857                      
+#############################################################
+Model: EEGNet
+Found 2240 trials
+Selecting 20 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGNet                                   [1, 1, 20, 1126]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 20, 1126]          [1, 125, 20, 1126]        --
+│    └─Conv2d: 2-1                       [1, 1, 20, 1126]          [1, 125, 20, 1126]        8,000
+│    └─BatchNorm2d: 2-2                  [1, 125, 20, 1126]        [1, 125, 20, 1126]        250
+├─Sequential: 1-2                        [1, 125, 20, 1126]        [1, 250, 1, 1126]         --
+│    └─Conv2d: 2-3                       [1, 125, 20, 1126]        [1, 250, 1, 1126]         5,000
+│    └─BatchNorm2d: 2-4                  [1, 250, 1, 1126]         [1, 250, 1, 1126]         500
+│    └─ELU: 2-5                          [1, 250, 1, 1126]         [1, 250, 1, 1126]         --
+├─AvgPool2d: 1-3                         [1, 250, 1, 1126]         [1, 250, 1, 225]          --
+├─Dropout: 1-4                           [1, 250, 1, 225]          [1, 250, 1, 225]          --
+├─Sequential: 1-5                        [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    └─SeparableConv2d: 2-6              [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    │    └─Conv2d: 3-1                  [1, 250, 1, 225]          [1, 250, 1, 225]          4,000
+│    │    └─Conv2d: 3-2                  [1, 250, 1, 225]          [1, 25, 1, 225]           6,250
+│    └─BatchNorm2d: 2-7                  [1, 25, 1, 225]           [1, 25, 1, 225]           50
+│    └─ELU: 2-8                          [1, 25, 1, 225]           [1, 25, 1, 225]           --
+├─AvgPool2d: 1-6                         [1, 25, 1, 225]           [1, 25, 1, 45]            --
+├─Dropout: 1-7                           [1, 25, 1, 45]            [1, 25, 1, 45]            --
+├─Flatten: 1-8                           [1, 25, 1, 45]            [1, 1125]                 --
+├─Linear: 1-9                            [1, 1125]                 [1, 4]                    4,504
+===================================================================================================================
+Total params: 28,554
+Trainable params: 28,554
+Non-trainable params: 0
+Total mult-adds (M): 188.10
+===================================================================================================================
+Input size (MB): 0.09
+Forward/backward pass size (MB): 50.08
+Params size (MB): 0.11
+Estimated Total Size (MB): 50.29
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/eegnet/temporal_3e-05_(0.9, 0.95)_0.01_0.60649_187
+#############################################################
+# EEGNet - temporal                   
+# Test Acc.:  0.5607142857142857                      
+#############################################################
+Model: EEGInception
+Found 2240 trials
+Selecting 20 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 20, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 20, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 20, 1, 1126]          [1, 288, 1, 1126]         6,048
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 20, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 20, 1, 1126]          [1, 48, 1, 1126]          1,008
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 20, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 20, 1, 1126]          [1, 20, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 20, 1, 1126]          [1, 48, 1, 1126]          1,008
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,173,220
+Trainable params: 10,173,220
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.09
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.69
+Estimated Total Size (MB): 84.89
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/inception/temporal_1e-06_(0.9, 0.95)_0.01_0.49222_46
+#############################################################
+# EEGInception - temporal                   
+# Test Acc.:  0.46875                      
+#############################################################
+Testing on parietal
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data
+Model: ShallowConvNet
+Found 2240 trials
+Selecting 57 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 57]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 57]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 57]          [1, 60, 1102, 57]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 57]         [1, 60, 1102, 1]          205,260
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 223,504
+Trainable params: 223,504
+Non-trainable params: 0
+Total mult-adds (M): 324.20
+===================================================================================================================
+Input size (MB): 0.26
+Forward/backward pass size (MB): 31.21
+Params size (MB): 0.89
+Estimated Total Size (MB): 32.36
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/shallow/parietal_0.0001_(0.9, 0.95)_0.01_0.88261_113
+#############################################################
+# ShallowConvNet - parietal                   
+# Test Acc.:  0.8214285714285714                      
+#############################################################
+Model: DeepConvNet
+Found 2240 trials
+Selecting 57 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+DeepConvNet                              [1, 1, 1126, 57]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 57]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 57]          [1, 25, 1117, 57]         275
+│    └─Conv2d: 2-2                       [1, 25, 1117, 57]         [1, 25, 1117, 1]          35,650
+│    └─BatchNorm2d: 2-3                  [1, 25, 1117, 1]          [1, 25, 1117, 1]          50
+│    └─ELU: 2-4                          [1, 25, 1117, 1]          [1, 25, 1117, 1]          --
+│    └─MaxPool2d: 2-5                    [1, 25, 1117, 1]          [1, 25, 372, 1]           --
+│    └─Conv2d: 2-6                       [1, 25, 372, 1]           [1, 50, 363, 1]           12,550
+│    └─BatchNorm2d: 2-7                  [1, 50, 363, 1]           [1, 50, 363, 1]           100
+│    └─ELU: 2-8                          [1, 50, 363, 1]           [1, 50, 363, 1]           --
+│    └─MaxPool2d: 2-9                    [1, 50, 363, 1]           [1, 50, 121, 1]           --
+│    └─Conv2d: 2-10                      [1, 50, 121, 1]           [1, 100, 112, 1]          50,100
+│    └─ELU: 2-11                         [1, 100, 112, 1]          [1, 100, 112, 1]          --
+│    └─BatchNorm2d: 2-12                 [1, 100, 112, 1]          [1, 100, 112, 1]          200
+│    └─MaxPool2d: 2-13                   [1, 100, 112, 1]          [1, 100, 37, 1]           --
+│    └─Conv2d: 2-14                      [1, 100, 37, 1]           [1, 200, 28, 1]           200,200
+│    └─BatchNorm2d: 2-15                 [1, 200, 28, 1]           [1, 200, 28, 1]           400
+│    └─ELU: 2-16                         [1, 200, 28, 1]           [1, 200, 28, 1]           --
+│    └─MaxPool2d: 2-17                   [1, 200, 28, 1]           [1, 200, 9, 1]            --
+│    └─Flatten: 2-18                     [1, 200, 9, 1]            [1, 1800]                 --
+│    └─Linear: 2-19                      [1, 1800]                 [1, 4]                    7,204
+===================================================================================================================
+Total params: 306,729
+Trainable params: 306,729
+Non-trainable params: 0
+Total mult-adds (M): 73.11
+===================================================================================================================
+Input size (MB): 0.26
+Forward/backward pass size (MB): 13.74
+Params size (MB): 1.23
+Estimated Total Size (MB): 15.22
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/deep/parietal_5e-05_(0.9, 0.95)_0.01_0.81636_33
+#############################################################
+# DeepConvNet - parietal                   
+# Test Acc.:  0.7651785714285714                      
+#############################################################
+Model: EEGNet
+Found 2240 trials
+Selecting 57 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGNet                                   [1, 1, 57, 1126]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 57, 1126]          [1, 125, 57, 1126]        --
+│    └─Conv2d: 2-1                       [1, 1, 57, 1126]          [1, 125, 57, 1126]        8,000
+│    └─BatchNorm2d: 2-2                  [1, 125, 57, 1126]        [1, 125, 57, 1126]        250
+├─Sequential: 1-2                        [1, 125, 57, 1126]        [1, 250, 1, 1126]         --
+│    └─Conv2d: 2-3                       [1, 125, 57, 1126]        [1, 250, 1, 1126]         14,250
+│    └─BatchNorm2d: 2-4                  [1, 250, 1, 1126]         [1, 250, 1, 1126]         500
+│    └─ELU: 2-5                          [1, 250, 1, 1126]         [1, 250, 1, 1126]         --
+├─AvgPool2d: 1-3                         [1, 250, 1, 1126]         [1, 250, 1, 225]          --
+├─Dropout: 1-4                           [1, 250, 1, 225]          [1, 250, 1, 225]          --
+├─Sequential: 1-5                        [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    └─SeparableConv2d: 2-6              [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    │    └─Conv2d: 3-1                  [1, 250, 1, 225]          [1, 250, 1, 225]          4,000
+│    │    └─Conv2d: 3-2                  [1, 250, 1, 225]          [1, 25, 1, 225]           6,250
+│    └─BatchNorm2d: 2-7                  [1, 25, 1, 225]           [1, 25, 1, 225]           50
+│    └─ELU: 2-8                          [1, 25, 1, 225]           [1, 25, 1, 225]           --
+├─AvgPool2d: 1-6                         [1, 25, 1, 225]           [1, 25, 1, 45]            --
+├─Dropout: 1-7                           [1, 25, 1, 45]            [1, 25, 1, 45]            --
+├─Flatten: 1-8                           [1, 25, 1, 45]            [1, 1125]                 --
+├─Linear: 1-9                            [1, 1125]                 [1, 4]                    4,504
+===================================================================================================================
+Total params: 37,804
+Trainable params: 37,804
+Non-trainable params: 0
+Total mult-adds (M): 531.81
+===================================================================================================================
+Input size (MB): 0.26
+Forward/backward pass size (MB): 133.41
+Params size (MB): 0.15
+Estimated Total Size (MB): 133.82
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/eegnet/parietal_3e-05_(0.9, 0.95)_0.01_0.85949_223
+#############################################################
+# EEGNet - parietal                   
+# Test Acc.:  0.7870535714285715                      
+#############################################################
+Model: EEGInception
+Found 2240 trials
+Selecting 57 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 57, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 57, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 57, 1, 1126]          [1, 288, 1, 1126]         16,704
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 57, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 57, 1, 1126]          [1, 48, 1, 1126]          2,784
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 57, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 57, 1, 1126]          [1, 57, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 57, 1, 1126]          [1, 48, 1, 1126]          2,784
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,187,428
+Trainable params: 10,187,428
+Non-trainable params: 0
+Total mult-adds (G): 10.01
+===================================================================================================================
+Input size (MB): 0.26
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.75
+Estimated Total Size (MB): 85.11
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/inception/parietal_1e-06_(0.9, 0.95)_0.01_0.74833_64
+#############################################################
+# EEGInception - parietal                   
+# Test Acc.:  0.6955357142857143                      
+#############################################################
+Testing on occipital
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/baseline/test/11.edf.data
+Model: ShallowConvNet
+Found 2240 trials
+Selecting 24 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 24]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 24]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 24]          [1, 60, 1102, 24]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 24]         [1, 60, 1102, 1]          86,460
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 104,704
+Trainable params: 104,704
+Non-trainable params: 0
+Total mult-adds (M): 136.55
+===================================================================================================================
+Input size (MB): 0.11
+Forward/backward pass size (MB): 13.75
+Params size (MB): 0.42
+Estimated Total Size (MB): 14.28
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/shallow/occipital_0.0001_(0.9, 0.95)_0.01_0.66341_89
+#############################################################
+# ShallowConvNet - occipital                   
+# Test Acc.:  0.6196428571428572                      
+#############################################################
+Model: DeepConvNet
+Found 2240 trials
+Selecting 24 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+DeepConvNet                              [1, 1, 1126, 24]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 24]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 24]          [1, 25, 1117, 24]         275
+│    └─Conv2d: 2-2                       [1, 25, 1117, 24]         [1, 25, 1117, 1]          15,025
+│    └─BatchNorm2d: 2-3                  [1, 25, 1117, 1]          [1, 25, 1117, 1]          50
+│    └─ELU: 2-4                          [1, 25, 1117, 1]          [1, 25, 1117, 1]          --
+│    └─MaxPool2d: 2-5                    [1, 25, 1117, 1]          [1, 25, 372, 1]           --
+│    └─Conv2d: 2-6                       [1, 25, 372, 1]           [1, 50, 363, 1]           12,550
+│    └─BatchNorm2d: 2-7                  [1, 50, 363, 1]           [1, 50, 363, 1]           100
+│    └─ELU: 2-8                          [1, 50, 363, 1]           [1, 50, 363, 1]           --
+│    └─MaxPool2d: 2-9                    [1, 50, 363, 1]           [1, 50, 121, 1]           --
+│    └─Conv2d: 2-10                      [1, 50, 121, 1]           [1, 100, 112, 1]          50,100
+│    └─ELU: 2-11                         [1, 100, 112, 1]          [1, 100, 112, 1]          --
+│    └─BatchNorm2d: 2-12                 [1, 100, 112, 1]          [1, 100, 112, 1]          200
+│    └─MaxPool2d: 2-13                   [1, 100, 112, 1]          [1, 100, 37, 1]           --
+│    └─Conv2d: 2-14                      [1, 100, 37, 1]           [1, 200, 28, 1]           200,200
+│    └─BatchNorm2d: 2-15                 [1, 200, 28, 1]           [1, 200, 28, 1]           400
+│    └─ELU: 2-16                         [1, 200, 28, 1]           [1, 200, 28, 1]           --
+│    └─MaxPool2d: 2-17                   [1, 200, 28, 1]           [1, 200, 9, 1]            --
+│    └─Flatten: 2-18                     [1, 200, 9, 1]            [1, 1800]                 --
+│    └─Linear: 2-19                      [1, 1800]                 [1, 4]                    7,204
+===================================================================================================================
+Total params: 286,104
+Trainable params: 286,104
+Non-trainable params: 0
+Total mult-adds (M): 39.94
+===================================================================================================================
+Input size (MB): 0.11
+Forward/backward pass size (MB): 6.37
+Params size (MB): 1.14
+Estimated Total Size (MB): 7.62
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/deep/occipital_5e-05_(0.9, 0.95)_0.01_0.56736_19
+#############################################################
+# DeepConvNet - occipital                   
+# Test Acc.:  0.540625                      
+#############################################################
+Model: EEGNet
+Found 2240 trials
+Selecting 24 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGNet                                   [1, 1, 24, 1126]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 24, 1126]          [1, 125, 24, 1126]        --
+│    └─Conv2d: 2-1                       [1, 1, 24, 1126]          [1, 125, 24, 1126]        8,000
+│    └─BatchNorm2d: 2-2                  [1, 125, 24, 1126]        [1, 125, 24, 1126]        250
+├─Sequential: 1-2                        [1, 125, 24, 1126]        [1, 250, 1, 1126]         --
+│    └─Conv2d: 2-3                       [1, 125, 24, 1126]        [1, 250, 1, 1126]         6,000
+│    └─BatchNorm2d: 2-4                  [1, 250, 1, 1126]         [1, 250, 1, 1126]         500
+│    └─ELU: 2-5                          [1, 250, 1, 1126]         [1, 250, 1, 1126]         --
+├─AvgPool2d: 1-3                         [1, 250, 1, 1126]         [1, 250, 1, 225]          --
+├─Dropout: 1-4                           [1, 250, 1, 225]          [1, 250, 1, 225]          --
+├─Sequential: 1-5                        [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    └─SeparableConv2d: 2-6              [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    │    └─Conv2d: 3-1                  [1, 250, 1, 225]          [1, 250, 1, 225]          4,000
+│    │    └─Conv2d: 3-2                  [1, 250, 1, 225]          [1, 25, 1, 225]           6,250
+│    └─BatchNorm2d: 2-7                  [1, 25, 1, 225]           [1, 25, 1, 225]           50
+│    └─ELU: 2-8                          [1, 25, 1, 225]           [1, 25, 1, 225]           --
+├─AvgPool2d: 1-6                         [1, 25, 1, 225]           [1, 25, 1, 45]            --
+├─Dropout: 1-7                           [1, 25, 1, 45]            [1, 25, 1, 45]            --
+├─Flatten: 1-8                           [1, 25, 1, 45]            [1, 1125]                 --
+├─Linear: 1-9                            [1, 1125]                 [1, 4]                    4,504
+===================================================================================================================
+Total params: 29,554
+Trainable params: 29,554
+Non-trainable params: 0
+Total mult-adds (M): 225.26
+===================================================================================================================
+Input size (MB): 0.11
+Forward/backward pass size (MB): 59.09
+Params size (MB): 0.12
+Estimated Total Size (MB): 59.32
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/eegnet/occipital_3e-05_(0.9, 0.95)_0.01_0.58737_175
+#############################################################
+# EEGNet - occipital                   
+# Test Acc.:  0.5691964285714286                      
+#############################################################
+Model: EEGInception
+Found 2240 trials
+Selecting 24 of 128
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 24, 1, 1126]          [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 24, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 24, 1, 1126]          [1, 288, 1, 1126]         7,200
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 24, 1, 1126]          [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 24, 1, 1126]          [1, 48, 1, 1126]          1,200
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 24, 1, 1126]          [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 24, 1, 1126]          [1, 24, 1, 1126]          --
+│    │    └─Conv2d: 3-2                  [1, 24, 1, 1126]          [1, 48, 1, 1126]          1,200
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,174,756
+Trainable params: 10,174,756
+Non-trainable params: 0
+Total mult-adds (G): 9.99
+===================================================================================================================
+Input size (MB): 0.11
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.70
+Estimated Total Size (MB): 84.91
+===================================================================================================================
+Model found at /WAVE/users/unix/smadsen/Desktop/bci_final/models/to_test/inception/occipital_1e-06_(0.9, 0.95)_0.01_0.52646_35
+#############################################################
+# EEGInception - occipital                   
+# Test Acc.:  0.4825892857142857                      
+#############################################################

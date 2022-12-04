@@ -1,0 +1,1791 @@
+Running on device: cuda
+Training on Baseline
+Model: ShallowConvNet
+LR: 5e-05 Betas: (0.9, 0.99) Weight Decay (L2): 0.01
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 128]         [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 128]         [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 128]         [1, 60, 1102, 128]        1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 128]        [1, 60, 1102, 1]          460,860
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 479,104
+Trainable params: 479,104
+Non-trainable params: 0
+Total mult-adds (M): 727.93
+===================================================================================================================
+Input size (MB): 0.58
+Forward/backward pass size (MB): 68.76
+Params size (MB): 1.92
+Estimated Total Size (MB): 71.26
+===================================================================================================================
+EPOCH 1:
+train_loss: 0.0364657343220865 	 val_loss: 0.022996782939414116 	 val_acc: 0.62072
+EPOCH 2:
+train_loss: 0.02552005675773709 	 val_loss: 0.019826332388102517 	 val_acc: 0.70387
+EPOCH 3:
+train_loss: 0.021613248616977818 	 val_loss: 0.016375479016015108 	 val_acc: 0.76301
+EPOCH 4:
+train_loss: 0.01890403743276685 	 val_loss: 0.015225877627557626 	 val_acc: 0.77234
+EPOCH 5:
+train_loss: 0.017142360732849284 	 val_loss: 0.014783082756370745 	 val_acc: 0.79235
+EPOCH 6:
+train_loss: 0.015405290536111036 	 val_loss: 0.014277105611829587 	 val_acc: 0.81103
+EPOCH 7:
+train_loss: 0.014533955415401003 	 val_loss: 0.012641357383484571 	 val_acc: 0.81814
+EPOCH 8:
+train_loss: 0.013205568731790672 	 val_loss: 0.014213649023174025 	 val_acc: 0.78657
+EPOCH 9:
+train_loss: 0.01187806794618579 	 val_loss: 0.0117793734548759 	 val_acc: 0.82526
+EPOCH 10:
+train_loss: 0.010941068434531782 	 val_loss: 0.011881823701920428 	 val_acc: 0.83548
+EPOCH 11:
+train_loss: 0.011290424736020285 	 val_loss: 0.010924699138090797 	 val_acc: 0.83459
+EPOCH 12:
+train_loss: 0.009491008609320627 	 val_loss: 0.011385667436035475 	 val_acc: 0.84304
+EPOCH 13:
+train_loss: 0.009265201000397329 	 val_loss: 0.010301738757588622 	 val_acc: 0.84438
+EPOCH 14:
+train_loss: 0.009117521214084746 	 val_loss: 0.009820662490449932 	 val_acc: 0.85149
+EPOCH 15:
+train_loss: 0.008486105739728361 	 val_loss: 0.009927364067626782 	 val_acc: 0.86661
+EPOCH 16:
+train_loss: 0.007598172874694379 	 val_loss: 0.010327992786009616 	 val_acc: 0.86305
+EPOCH 17:
+train_loss: 0.007393301127714935 	 val_loss: 0.010440881869962986 	 val_acc: 0.85994
+EPOCH 18:
+train_loss: 0.0066531911029001555 	 val_loss: 0.009418450597430305 	 val_acc: 0.86794
+EPOCH 19:
+train_loss: 0.006172451117885011 	 val_loss: 0.013581185832072752 	 val_acc: 0.80213
+EPOCH 20:
+train_loss: 0.006760907488213411 	 val_loss: 0.009217203319212948 	 val_acc: 0.87683
+EPOCH 21:
+train_loss: 0.005767233565302439 	 val_loss: 0.009114445359380247 	 val_acc: 0.86883
+EPOCH 22:
+train_loss: 0.005309959494120659 	 val_loss: 0.00999002648768817 	 val_acc: 0.87372
+EPOCH 23:
+train_loss: 0.0060003974867860995 	 val_loss: 0.009129097817073752 	 val_acc: 0.87861
+EPOCH 24:
+train_loss: 0.004812221368192753 	 val_loss: 0.009545236270986466 	 val_acc: 0.87283
+EPOCH 25:
+train_loss: 0.004583465370896523 	 val_loss: 0.008797089853820793 	 val_acc: 0.87417
+EPOCH 26:
+train_loss: 0.004649721939513559 	 val_loss: 0.008210266029042249 	 val_acc: 0.88084
+EPOCH 27:
+train_loss: 0.0045294714319403856 	 val_loss: 0.00814604399219201 	 val_acc: 0.88306
+EPOCH 28:
+train_loss: 0.005146410441356625 	 val_loss: 0.008991514118844371 	 val_acc: 0.89017
+EPOCH 29:
+train_loss: 0.004288442683271189 	 val_loss: 0.008140981822092266 	 val_acc: 0.88173
+EPOCH 30:
+train_loss: 0.004228170014109232 	 val_loss: 0.00807864573521253 	 val_acc: 0.88662
+EPOCH 31:
+train_loss: 0.004166969571094374 	 val_loss: 0.009866104116275691 	 val_acc: 0.85994
+EPOCH 32:
+train_loss: 0.003292123194205923 	 val_loss: 0.008712255221951548 	 val_acc: 0.87683
+EPOCH 33:
+train_loss: 0.004410131051385454 	 val_loss: 0.008149593780010872 	 val_acc: 0.88662
+EPOCH 34:
+train_loss: 0.0036633340290133528 	 val_loss: 0.009334096372048439 	 val_acc: 0.86483
+EPOCH 35:
+train_loss: 0.004084107660485093 	 val_loss: 0.00846826007302117 	 val_acc: 0.89284
+EPOCH 36:
+train_loss: 0.003607382802968273 	 val_loss: 0.007607347990449888 	 val_acc: 0.89195
+EPOCH 37:
+train_loss: 0.0035248279157146464 	 val_loss: 0.009372048399733532 	 val_acc: 0.87995
+EPOCH 38:
+train_loss: 0.0031521393380168653 	 val_loss: 0.007812807021515654 	 val_acc: 0.89017
+EPOCH 39:
+train_loss: 0.0033415989773140035 	 val_loss: 0.008602953473220072 	 val_acc: 0.88839
+EPOCH 40:
+train_loss: 0.0032309637166017756 	 val_loss: 0.007813120639148307 	 val_acc: 0.8924
+EPOCH 41:
+train_loss: 0.0027513270736101 	 val_loss: 0.008984064665505536 	 val_acc: 0.88484
+EPOCH 42:
+train_loss: 0.0033504949764138602 	 val_loss: 0.008094254118283338 	 val_acc: 0.88528
+EPOCH 43:
+train_loss: 0.002614078284498033 	 val_loss: 0.007699761547343257 	 val_acc: 0.89462
+EPOCH 44:
+train_loss: 0.003635070369669857 	 val_loss: 0.0075031698616510704 	 val_acc: 0.89951
+EPOCH 45:
+train_loss: 0.0032462066706209487 	 val_loss: 0.00790997304571823 	 val_acc: 0.89862
+EPOCH 46:
+train_loss: 0.002887248339747099 	 val_loss: 0.008007618218249545 	 val_acc: 0.89106
+EPOCH 47:
+train_loss: 0.003324410193727608 	 val_loss: 0.007535412960145384 	 val_acc: 0.89506
+EPOCH 48:
+train_loss: 0.002897522040672346 	 val_loss: 0.007931901343399791 	 val_acc: 0.89106
+EPOCH 49:
+train_loss: 0.0026587321320533717 	 val_loss: 0.006877296999856491 	 val_acc: 0.90218
+EPOCH 50:
+train_loss: 0.002556004793944638 	 val_loss: 0.007822223976844827 	 val_acc: 0.8924
+EPOCH 51:
+train_loss: 0.002580206246943811 	 val_loss: 0.007547455830026237 	 val_acc: 0.88839
+EPOCH 52:
+train_loss: 0.0020566780405614146 	 val_loss: 0.007215575548148667 	 val_acc: 0.89551
+EPOCH 53:
+train_loss: 0.0026625481114958675 	 val_loss: 0.008251219245450381 	 val_acc: 0.88884
+EPOCH 54:
+train_loss: 0.001947149290455567 	 val_loss: 0.009542117208365663 	 val_acc: 0.87995
+EPOCH 55:
+train_loss: 0.0032955940738992767 	 val_loss: 0.008713299340773369 	 val_acc: 0.88795
+EPOCH 56:
+train_loss: 0.002291421864166982 	 val_loss: 0.00815760862851348 	 val_acc: 0.89017
+EPOCH 57:
+train_loss: 0.0025305435816359474 	 val_loss: 0.008811050373115518 	 val_acc: 0.87683
+EPOCH 58:
+train_loss: 0.001965756099768032 	 val_loss: 0.04922818335891015 	 val_acc: 0.55358
+EPOCH 59:
+train_loss: 0.0018046546341082563 	 val_loss: 0.007401825499553458 	 val_acc: 0.89418
+EPOCH 60:
+train_loss: 0.003575301015570945 	 val_loss: 0.006805886559394044 	 val_acc: 0.90485
+EPOCH 61:
+train_loss: 0.0018849796361583627 	 val_loss: 0.008396602915079867 	 val_acc: 0.89195
+EPOCH 62:
+train_loss: 0.002148798754647467 	 val_loss: 0.009087920651838383 	 val_acc: 0.88484
+EPOCH 63:
+train_loss: 0.0023647887128992766 	 val_loss: 0.016641200746731 	 val_acc: 0.78257
+EPOCH 64:
+train_loss: 0.001980152389430897 	 val_loss: 0.010604481774564377 	 val_acc: 0.84971
+EPOCH 65:
+train_loss: 0.002290349988155646 	 val_loss: 0.006887011857739845 	 val_acc: 0.90529
+EPOCH 66:
+train_loss: 0.0023222965156515737 	 val_loss: 0.009113190433913015 	 val_acc: 0.88261
+EPOCH 67:
+train_loss: 0.0020386002637447762 	 val_loss: 0.008782744360322316 	 val_acc: 0.8835
+EPOCH 68:
+train_loss: 0.0022206439998709634 	 val_loss: 0.007410749410056117 	 val_acc: 0.90129
+EPOCH 69:
+train_loss: 0.001889966110717095 	 val_loss: 0.007282995788802015 	 val_acc: 0.89996
+EPOCH 70:
+train_loss: 0.0024516683023369326 	 val_loss: 0.00822490850709473 	 val_acc: 0.89551
+EPOCH 71:
+train_loss: 0.0026703448249591 	 val_loss: 0.006992470749293151 	 val_acc: 0.9044
+EPOCH 72:
+train_loss: 0.0019850477906205 	 val_loss: 0.007471558058349108 	 val_acc: 0.89329
+EPOCH 73:
+train_loss: 0.0017304634576418535 	 val_loss: 0.007834220395276986 	 val_acc: 0.89729
+EPOCH 74:
+train_loss: 0.0025692198431572486 	 val_loss: 0.0070952360240757245 	 val_acc: 0.89595
+EPOCH 75:
+train_loss: 0.0018452690078388254 	 val_loss: 0.008096303629249105 	 val_acc: 0.89329
+EPOCH 76:
+train_loss: 0.0022256277022139055 	 val_loss: 0.008933029470112673 	 val_acc: 0.88261
+EPOCH 77:
+train_loss: 0.0013497716747521223 	 val_loss: 0.008205870806213055 	 val_acc: 0.88706
+EPOCH 78:
+train_loss: 0.0014856736726179887 	 val_loss: 0.007835452288862448 	 val_acc: 0.89818
+EPOCH 79:
+train_loss: 0.0024742065515278955 	 val_loss: 0.007041362179562398 	 val_acc: 0.91018
+EPOCH 80:
+train_loss: 0.001989396051972366 	 val_loss: 0.006690199907854115 	 val_acc: 0.90796
+EPOCH 81:
+train_loss: 0.0018280447125510971 	 val_loss: 0.006755680778601891 	 val_acc: 0.9084
+EPOCH 82:
+train_loss: 0.001974156165877451 	 val_loss: 0.01188309961427924 	 val_acc: 0.84126
+EPOCH 83:
+train_loss: 0.0019883365969735525 	 val_loss: 0.007055463740223112 	 val_acc: 0.90796
+EPOCH 84:
+train_loss: 0.0017622483647687847 	 val_loss: 0.008775706293360826 	 val_acc: 0.88039
+EPOCH 85:
+train_loss: 0.0016555465696744317 	 val_loss: 0.007536586475406426 	 val_acc: 0.90707
+EPOCH 86:
+train_loss: 0.0017704547436385853 	 val_loss: 0.007248302242052619 	 val_acc: 0.90307
+EPOCH 87:
+train_loss: 0.00182953885193898 	 val_loss: 0.006977534201429526 	 val_acc: 0.9004
+EPOCH 88:
+train_loss: 0.0017941975606003016 	 val_loss: 0.007753860072514535 	 val_acc: 0.89862
+EPOCH 89:
+train_loss: 0.0018704878362636552 	 val_loss: 0.006827535139094356 	 val_acc: 0.90751
+EPOCH 90:
+train_loss: 0.0023670800410963747 	 val_loss: 0.009581084612339754 	 val_acc: 0.86883
+EPOCH 91:
+train_loss: 0.0020721284833488747 	 val_loss: 0.007063839417227532 	 val_acc: 0.90084
+EPOCH 92:
+train_loss: 0.0018155222297926677 	 val_loss: 0.009095660925784427 	 val_acc: 0.88173
+EPOCH 93:
+train_loss: 0.002196121844286691 	 val_loss: 0.007931297471615625 	 val_acc: 0.89773
+EPOCH 94:
+train_loss: 0.001668871198379922 	 val_loss: 0.007432317758047422 	 val_acc: 0.89195
+EPOCH 95:
+train_loss: 0.0022040834323479217 	 val_loss: 0.007144542729597556 	 val_acc: 0.9044
+EPOCH 96:
+train_loss: 0.0022840327901830783 	 val_loss: 0.006780443125561905 	 val_acc: 0.90173
+EPOCH 97:
+train_loss: 0.0015025054994548183 	 val_loss: 0.009538315599817377 	 val_acc: 0.87372
+EPOCH 98:
+train_loss: 0.001718109499378999 	 val_loss: 0.007357869739992872 	 val_acc: 0.89996
+EPOCH 99:
+train_loss: 0.001938193362112282 	 val_loss: 0.007548561068298656 	 val_acc: 0.90796
+EPOCH 100:
+train_loss: 0.0013758355616283692 	 val_loss: 0.007456597723516629 	 val_acc: 0.90129
+EPOCH 101:
+train_loss: 0.0020368567001724657 	 val_loss: 0.04343003858113718 	 val_acc: 0.53624
+EPOCH 102:
+train_loss: 0.0020492229542167506 	 val_loss: 0.019190629522638034 	 val_acc: 0.77012
+EPOCH 103:
+train_loss: 0.001364936222385829 	 val_loss: 0.006603915512433566 	 val_acc: 0.90663
+EPOCH 104:
+train_loss: 0.0007898526997720608 	 val_loss: 0.009853940178601524 	 val_acc: 0.86216
+EPOCH 105:
+train_loss: 0.0005340668221877497 	 val_loss: 0.05657040368621421 	 val_acc: 0.50467
+EPOCH 106:
+train_loss: 0.0004330763829132412 	 val_loss: 0.00621778460782392 	 val_acc: 0.91107
+EPOCH 107:
+train_loss: 0.00041864127585758784 	 val_loss: 0.006166197277517464 	 val_acc: 0.91552
+EPOCH 108:
+train_loss: 0.0004209485150811316 	 val_loss: 0.006525152014474048 	 val_acc: 0.91152
+EPOCH 109:
+train_loss: 0.0003965352109687852 	 val_loss: 0.006618902540036279 	 val_acc: 0.91107
+EPOCH 110:
+train_loss: 0.00037783710614341324 	 val_loss: 0.006222169831034247 	 val_acc: 0.91552
+EPOCH 111:
+train_loss: 0.0003891945482418501 	 val_loss: 0.03567022490243027 	 val_acc: 0.59493
+EPOCH 112:
+train_loss: 0.00037618048601392035 	 val_loss: 0.0070540133963423145 	 val_acc: 0.91507
+EPOCH 113:
+train_loss: 0.0003918423769389612 	 val_loss: 0.006139392479701092 	 val_acc: 0.91285
+EPOCH 114:
+train_loss: 0.00037364582274138986 	 val_loss: 0.006337114895474463 	 val_acc: 0.90974
+EPOCH 115:
+train_loss: 0.0003630365250496251 	 val_loss: 0.006523938484447006 	 val_acc: 0.91107
+EPOCH 116:
+train_loss: 0.0003628961347759307 	 val_loss: 0.006447212459558022 	 val_acc: 0.91685
+EPOCH 117:
+train_loss: 0.0003669345745875597 	 val_loss: 0.006919463177539759 	 val_acc: 0.91285
+EPOCH 118:
+train_loss: 0.00035362570322758596 	 val_loss: 0.006005718547115669 	 val_acc: 0.91552
+EPOCH 119:
+train_loss: 0.0003563575437960216 	 val_loss: 0.006520964477441554 	 val_acc: 0.91107
+EPOCH 120:
+train_loss: 0.00035181450069172613 	 val_loss: 0.0062299497516497635 	 val_acc: 0.91418
+EPOCH 121:
+train_loss: 0.0003647562650199629 	 val_loss: 0.006036609723305257 	 val_acc: 0.91596
+EPOCH 122:
+train_loss: 0.0003426444971884209 	 val_loss: 0.0068018904175564015 	 val_acc: 0.90084
+EPOCH 123:
+train_loss: 0.0003325645662248699 	 val_loss: 0.006273174928634221 	 val_acc: 0.91774
+EPOCH 124:
+train_loss: 0.0003471713777611644 	 val_loss: 0.00613499167271228 	 val_acc: 0.91596
+EPOCH 125:
+train_loss: 0.0003462964002747877 	 val_loss: 0.006251274041693371 	 val_acc: 0.91552
+EPOCH 126:
+train_loss: 0.0003362737411766611 	 val_loss: 0.006214242926813028 	 val_acc: 0.9173
+EPOCH 127:
+train_loss: 0.00033671211809624234 	 val_loss: 0.007476625464372327 	 val_acc: 0.91552
+EPOCH 128:
+train_loss: 0.00034495968824839517 	 val_loss: 0.006057294335087348 	 val_acc: 0.91819
+EPOCH 129:
+train_loss: 0.00035408130334849147 	 val_loss: 0.006655251677540727 	 val_acc: 0.91596
+EPOCH 130:
+train_loss: 0.0003277742717338051 	 val_loss: 0.00664482463505197 	 val_acc: 0.91552
+EPOCH 131:
+train_loss: 0.00033165037053388733 	 val_loss: 0.006240438731523833 	 val_acc: 0.91285
+EPOCH 132:
+train_loss: 0.00033662101411479294 	 val_loss: 0.036232020885033946 	 val_acc: 0.56069
+EPOCH 133:
+train_loss: 0.0003314008581920781 	 val_loss: 0.006073539347862801 	 val_acc: 0.91196
+EPOCH 134:
+train_loss: 0.00036089400279489784 	 val_loss: 0.006450265999368743 	 val_acc: 0.91463
+EPOCH 135:
+train_loss: 0.00031959946970592455 	 val_loss: 0.006065426260894411 	 val_acc: 0.91374
+EPOCH 136:
+train_loss: 0.00032577762167663673 	 val_loss: 0.008254586468474476 	 val_acc: 0.91819
+EPOCH 137:
+train_loss: 0.0003360732500654787 	 val_loss: 0.00593586837553793 	 val_acc: 0.9173
+EPOCH 138:
+train_loss: 0.00032192092435141416 	 val_loss: 0.006272224032290292 	 val_acc: 0.91819
+EPOCH 139:
+train_loss: 0.00033887029411304464 	 val_loss: 0.008773333801879708 	 val_acc: 0.90751
+EPOCH 140:
+train_loss: 0.0003226693254225778 	 val_loss: 0.007632298482402219 	 val_acc: 0.91596
+EPOCH 141:
+train_loss: 0.00033194514713275687 	 val_loss: 0.005990910493715828 	 val_acc: 0.9173
+EPOCH 142:
+train_loss: 0.00031744363736861843 	 val_loss: 0.007293907829014471 	 val_acc: 0.91908
+EPOCH 143:
+train_loss: 0.0003071501856064839 	 val_loss: 0.006483148643792332 	 val_acc: 0.91418
+EPOCH 144:
+train_loss: 0.0003277076724216252 	 val_loss: 0.006050187439755429 	 val_acc: 0.91596
+EPOCH 145:
+train_loss: 0.0003208999907549135 	 val_loss: 0.006130449350493758 	 val_acc: 0.91685
+EPOCH 146:
+train_loss: 0.0003277370309307205 	 val_loss: 0.006092273631072574 	 val_acc: 0.91552
+EPOCH 147:
+train_loss: 0.00031632034756664737 	 val_loss: 0.006135411659807169 	 val_acc: 0.91596
+EPOCH 148:
+train_loss: 0.00030992490873663466 	 val_loss: 0.006083246734980515 	 val_acc: 0.91463
+EPOCH 149:
+train_loss: 0.00031926904784774417 	 val_loss: 0.006041928292602434 	 val_acc: 0.91507
+EPOCH 150:
+train_loss: 0.00032015861373648033 	 val_loss: 0.006263439748467386 	 val_acc: 0.91641
+EPOCH 151:
+train_loss: 0.0003313739250482776 	 val_loss: 0.027734271958830374 	 val_acc: 0.67096
+EPOCH 152:
+train_loss: 0.0003253671996955694 	 val_loss: 0.006129233808041746 	 val_acc: 0.91819
+EPOCH 153:
+train_loss: 0.00031816321622101597 	 val_loss: 0.03730480619417734 	 val_acc: 0.57181
+EPOCH 154:
+train_loss: 0.0003074063629457242 	 val_loss: 0.005911121631459218 	 val_acc: 0.91641
+EPOCH 155:
+train_loss: 0.00031092929527151345 	 val_loss: 0.00683964257746717 	 val_acc: 0.91685
+EPOCH 156:
+train_loss: 0.0003217504313432931 	 val_loss: 0.006051908669777942 	 val_acc: 0.91596
+EPOCH 157:
+train_loss: 0.0003187685134595608 	 val_loss: 0.006819075881649755 	 val_acc: 0.91463
+EPOCH 158:
+train_loss: 0.00031759410178615696 	 val_loss: 0.0058972767957062786 	 val_acc: 0.91507
+EPOCH 159:
+train_loss: 0.0003187381357859788 	 val_loss: 0.006244594536306986 	 val_acc: 0.91685
+EPOCH 160:
+train_loss: 0.0003114883394441693 	 val_loss: 0.005815677726907592 	 val_acc: 0.91641
+EPOCH 161:
+train_loss: 0.0003162586161918886 	 val_loss: 0.006106403059678358 	 val_acc: 0.91596
+EPOCH 162:
+train_loss: 0.0003085929117082198 	 val_loss: 0.0066243872824331106 	 val_acc: 0.91908
+EPOCH 163:
+train_loss: 0.0003063023744621571 	 val_loss: 0.006240864657581549 	 val_acc: 0.91685
+EPOCH 164:
+train_loss: 0.0003272272525267961 	 val_loss: 0.005860313077512219 	 val_acc: 0.91596
+EPOCH 165:
+train_loss: 0.0003168873572659482 	 val_loss: 0.0064050911924523 	 val_acc: 0.91685
+EPOCH 166:
+train_loss: 0.00031532820262120196 	 val_loss: 0.0060508741499282585 	 val_acc: 0.91863
+EPOCH 167:
+train_loss: 0.0003152475638595096 	 val_loss: 0.006201423191307969 	 val_acc: 0.91685
+EPOCH 168:
+train_loss: 0.0003430601145527281 	 val_loss: 0.06473989828944762 	 val_acc: 0.41574
+EPOCH 169:
+train_loss: 0.000306625668050342 	 val_loss: 0.005874730836261503 	 val_acc: 0.91552
+EPOCH 170:
+train_loss: 0.0003034016077064667 	 val_loss: 0.005814128286236237 	 val_acc: 0.91863
+EPOCH 171:
+train_loss: 0.0003049612650517065 	 val_loss: 0.005734731581881013 	 val_acc: 0.9173
+EPOCH 172:
+train_loss: 0.0002971571578167216 	 val_loss: 0.005780151202045331 	 val_acc: 0.91596
+EPOCH 173:
+/WAVE/users/unix/smadsen/Desktop/bci_final/code/metrics/plots.py:11: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show(block=False)
+train_loss: 0.0003076337687972226 	 val_loss: 0.0061725929034503295 	 val_acc: 0.91463
+Early stop at epoch: 173
+#############################################################
+# ShallowConvNet - Baseline                   
+# Val. Acc.:  0.91908                      
+# Epochs:     174                     
+# LR:         5e-05                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.99)                             
+#############################################################
+Model: DeepConvNet
+LR: 1e-05 Betas: (0.9, 0.99) Weight Decay (L2): 0.01
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+DeepConvNet                              [1, 1, 1126, 128]         [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 128]         [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 128]         [1, 25, 1117, 128]        275
+│    └─Conv2d: 2-2                       [1, 25, 1117, 128]        [1, 25, 1117, 1]          80,025
+│    └─BatchNorm2d: 2-3                  [1, 25, 1117, 1]          [1, 25, 1117, 1]          50
+│    └─ELU: 2-4                          [1, 25, 1117, 1]          [1, 25, 1117, 1]          --
+│    └─MaxPool2d: 2-5                    [1, 25, 1117, 1]          [1, 25, 372, 1]           --
+│    └─Conv2d: 2-6                       [1, 25, 372, 1]           [1, 50, 363, 1]           12,550
+│    └─BatchNorm2d: 2-7                  [1, 50, 363, 1]           [1, 50, 363, 1]           100
+│    └─ELU: 2-8                          [1, 50, 363, 1]           [1, 50, 363, 1]           --
+│    └─MaxPool2d: 2-9                    [1, 50, 363, 1]           [1, 50, 121, 1]           --
+│    └─Conv2d: 2-10                      [1, 50, 121, 1]           [1, 100, 112, 1]          50,100
+│    └─ELU: 2-11                         [1, 100, 112, 1]          [1, 100, 112, 1]          --
+│    └─BatchNorm2d: 2-12                 [1, 100, 112, 1]          [1, 100, 112, 1]          200
+│    └─MaxPool2d: 2-13                   [1, 100, 112, 1]          [1, 100, 37, 1]           --
+│    └─Conv2d: 2-14                      [1, 100, 37, 1]           [1, 200, 28, 1]           200,200
+│    └─BatchNorm2d: 2-15                 [1, 200, 28, 1]           [1, 200, 28, 1]           400
+│    └─ELU: 2-16                         [1, 200, 28, 1]           [1, 200, 28, 1]           --
+│    └─MaxPool2d: 2-17                   [1, 200, 28, 1]           [1, 200, 9, 1]            --
+│    └─Flatten: 2-18                     [1, 200, 9, 1]            [1, 1800]                 --
+│    └─Linear: 2-19                      [1, 1800]                 [1, 4]                    7,204
+===================================================================================================================
+Total params: 351,104
+Trainable params: 351,104
+Non-trainable params: 0
+Total mult-adds (M): 144.49
+===================================================================================================================
+Input size (MB): 0.58
+Forward/backward pass size (MB): 29.60
+Params size (MB): 1.40
+Estimated Total Size (MB): 31.58
+===================================================================================================================
+EPOCH 1:
+train_loss: 0.04552458877591073 	 val_loss: 0.03397258945530775 	 val_acc: 0.40062
+EPOCH 2:
+train_loss: 0.038650024126810074 	 val_loss: 0.03010648450122705 	 val_acc: 0.51
+EPOCH 3:
+train_loss: 0.0330945615891538 	 val_loss: 0.026503608166211917 	 val_acc: 0.57892
+EPOCH 4:
+train_loss: 0.028588532318539375 	 val_loss: 0.023582770867914264 	 val_acc: 0.62472
+EPOCH 5:
+train_loss: 0.02533749284282582 	 val_loss: 0.021912289239458982 	 val_acc: 0.65185
+EPOCH 6:
+train_loss: 0.022883747142504834 	 val_loss: 0.02037622769230156 	 val_acc: 0.68608
+EPOCH 7:
+train_loss: 0.02081823415997969 	 val_loss: 0.018920139495546558 	 val_acc: 0.71143
+EPOCH 8:
+train_loss: 0.019041563455316924 	 val_loss: 0.017632338308099512 	 val_acc: 0.7221
+EPOCH 9:
+train_loss: 0.017733921598510748 	 val_loss: 0.01799882239625689 	 val_acc: 0.73722
+EPOCH 10:
+train_loss: 0.016410279618322605 	 val_loss: 0.01603655311990489 	 val_acc: 0.75589
+EPOCH 11:
+train_loss: 0.015279497993023586 	 val_loss: 0.0155660720098038 	 val_acc: 0.76212
+EPOCH 12:
+train_loss: 0.01424487653462239 	 val_loss: 0.016072837278573567 	 val_acc: 0.76256
+EPOCH 13:
+train_loss: 0.013287394710454151 	 val_loss: 0.015489406228851503 	 val_acc: 0.78035
+EPOCH 14:
+train_loss: 0.012417255010496295 	 val_loss: 0.014958967653489674 	 val_acc: 0.79102
+EPOCH 15:
+train_loss: 0.011472328308376306 	 val_loss: 0.013997841070217145 	 val_acc: 0.79102
+EPOCH 16:
+train_loss: 0.010838457768444372 	 val_loss: 0.013664728469899353 	 val_acc: 0.80347
+EPOCH 17:
+train_loss: 0.010130432346797884 	 val_loss: 0.01381220751450662 	 val_acc: 0.80347
+EPOCH 18:
+train_loss: 0.009559640206089253 	 val_loss: 0.01420361356567985 	 val_acc: 0.80658
+EPOCH 19:
+train_loss: 0.00893750624067164 	 val_loss: 0.013314122016018184 	 val_acc: 0.81414
+EPOCH 20:
+train_loss: 0.00830392906672035 	 val_loss: 0.012702547701979768 	 val_acc: 0.81859
+EPOCH 21:
+train_loss: 0.0077220953689413185 	 val_loss: 0.011972941980339437 	 val_acc: 0.81814
+EPOCH 22:
+train_loss: 0.007342727607371615 	 val_loss: 0.012976816815853843 	 val_acc: 0.81503
+EPOCH 23:
+train_loss: 0.006738087835232258 	 val_loss: 0.013040726777994711 	 val_acc: 0.82659
+EPOCH 24:
+train_loss: 0.006357184370816601 	 val_loss: 0.012088409324662635 	 val_acc: 0.82659
+EPOCH 25:
+train_loss: 0.005915402980607574 	 val_loss: 0.011557625491846916 	 val_acc: 0.82837
+EPOCH 26:
+train_loss: 0.005501281701888696 	 val_loss: 0.012417752307114492 	 val_acc: 0.82081
+EPOCH 27:
+train_loss: 0.005133075516968001 	 val_loss: 0.011977342989373738 	 val_acc: 0.83193
+EPOCH 28:
+train_loss: 0.0047414952994527275 	 val_loss: 0.011494636213530784 	 val_acc: 0.8337
+EPOCH 29:
+train_loss: 0.00447876164224962 	 val_loss: 0.011172396063204167 	 val_acc: 0.83904
+EPOCH 30:
+train_loss: 0.004158228871201557 	 val_loss: 0.01162516923938577 	 val_acc: 0.82703
+EPOCH 31:
+train_loss: 0.0038221532276293767 	 val_loss: 0.011632982439122464 	 val_acc: 0.83459
+EPOCH 32:
+train_loss: 0.003534309628006822 	 val_loss: 0.013372329911225021 	 val_acc: 0.83682
+EPOCH 33:
+train_loss: 0.0032868858205884564 	 val_loss: 0.011972330026141982 	 val_acc: 0.83415
+EPOCH 34:
+train_loss: 0.0030531199408569006 	 val_loss: 0.012168498602053948 	 val_acc: 0.83281
+EPOCH 35:
+train_loss: 0.002791859761274668 	 val_loss: 0.011157775620117698 	 val_acc: 0.83637
+EPOCH 36:
+train_loss: 0.0026106160117055884 	 val_loss: 0.012197465878686076 	 val_acc: 0.83593
+EPOCH 37:
+train_loss: 0.0024384124529857843 	 val_loss: 0.012024593425091256 	 val_acc: 0.83859
+EPOCH 38:
+train_loss: 0.0022281759489445455 	 val_loss: 0.011562897541579588 	 val_acc: 0.83726
+EPOCH 39:
+train_loss: 0.002032186862281596 	 val_loss: 0.011248369069130577 	 val_acc: 0.83682
+EPOCH 40:
+train_loss: 0.0018895964639778285 	 val_loss: 0.013329226535378987 	 val_acc: 0.83993
+EPOCH 41:
+train_loss: 0.0017335874854175796 	 val_loss: 0.011772069064583973 	 val_acc: 0.84171
+EPOCH 42:
+train_loss: 0.0016145549266626806 	 val_loss: 0.019312082615525306 	 val_acc: 0.84349
+EPOCH 43:
+train_loss: 0.0014920302780761629 	 val_loss: 0.011397850928633295 	 val_acc: 0.83815
+EPOCH 44:
+train_loss: 0.0013333127232315518 	 val_loss: 0.011900945207739351 	 val_acc: 0.84126
+EPOCH 45:
+train_loss: 0.0012600933831481398 	 val_loss: 0.012663890406313622 	 val_acc: 0.8337
+EPOCH 46:
+train_loss: 0.00117253145409718 	 val_loss: 0.011640225264924538 	 val_acc: 0.84304
+EPOCH 47:
+train_loss: 0.0010700306547794418 	 val_loss: 0.012453919986977898 	 val_acc: 0.84171
+EPOCH 48:
+train_loss: 0.0010228664796011918 	 val_loss: 0.012213081056720348 	 val_acc: 0.8426
+EPOCH 49:
+train_loss: 0.0009294901415097253 	 val_loss: 0.011217791455225674 	 val_acc: 0.84082
+EPOCH 50:
+train_loss: 0.0008380043748693985 	 val_loss: 0.012377383565527693 	 val_acc: 0.83859
+EPOCH 51:
+train_loss: 0.0007811176775706613 	 val_loss: 0.01089198293791349 	 val_acc: 0.84526
+EPOCH 52:
+train_loss: 0.0007759666837413477 	 val_loss: 0.011571095163553896 	 val_acc: 0.84571
+EPOCH 53:
+train_loss: 0.0007186158926931204 	 val_loss: 0.011498124258825489 	 val_acc: 0.84393
+EPOCH 54:
+train_loss: 0.0006399446887683369 	 val_loss: 0.012194794577063222 	 val_acc: 0.84393
+EPOCH 55:
+train_loss: 0.0006076326915758801 	 val_loss: 0.01250705821504287 	 val_acc: 0.84793
+EPOCH 56:
+train_loss: 0.0005584526859180836 	 val_loss: 0.012203354306258057 	 val_acc: 0.84349
+EPOCH 57:
+train_loss: 0.0005610106308867005 	 val_loss: 0.012151742768717236 	 val_acc: 0.84704
+EPOCH 58:
+train_loss: 0.0005225100677032443 	 val_loss: 0.011247310347275942 	 val_acc: 0.85238
+EPOCH 59:
+train_loss: 0.0004742175970401315 	 val_loss: 0.012329854566047424 	 val_acc: 0.84349
+EPOCH 60:
+train_loss: 0.00043523813152691675 	 val_loss: 0.011979233616303174 	 val_acc: 0.84838
+EPOCH 61:
+train_loss: 0.0004115349015643691 	 val_loss: 0.013214141372045218 	 val_acc: 0.85104
+EPOCH 62:
+train_loss: 0.0004066313210951914 	 val_loss: 0.011271822430307327 	 val_acc: 0.84749
+EPOCH 63:
+train_loss: 0.00037883294837355987 	 val_loss: 0.01182462045050755 	 val_acc: 0.84838
+EPOCH 64:
+train_loss: 0.0003415369355241203 	 val_loss: 0.011512520511869092 	 val_acc: 0.84615
+EPOCH 65:
+train_loss: 0.00034319968618373183 	 val_loss: 0.013180094885670244 	 val_acc: 0.83682
+EPOCH 66:
+train_loss: 0.00030856099981885053 	 val_loss: 0.011320473084845298 	 val_acc: 0.85193
+EPOCH 67:
+train_loss: 0.0003175864670006363 	 val_loss: 0.011840166227697011 	 val_acc: 0.8506
+EPOCH 68:
+train_loss: 0.0003198217079814208 	 val_loss: 0.012568755036184135 	 val_acc: 0.85282
+EPOCH 69:
+train_loss: 0.00027468693383366714 	 val_loss: 0.011707064526526995 	 val_acc: 0.85416
+EPOCH 70:
+train_loss: 0.00028209721583257 	 val_loss: 0.011374625915426963 	 val_acc: 0.84615
+EPOCH 71:
+train_loss: 0.0002707229365603038 	 val_loss: 0.012137940966497264 	 val_acc: 0.84126
+EPOCH 72:
+train_loss: 0.0002479063392200854 	 val_loss: 0.012054996444661624 	 val_acc: 0.84749
+EPOCH 73:
+train_loss: 0.00022749699041444581 	 val_loss: 0.011349217331261974 	 val_acc: 0.85505
+EPOCH 74:
+train_loss: 0.00021077329702222106 	 val_loss: 0.012176669440481147 	 val_acc: 0.85371
+EPOCH 75:
+train_loss: 0.0002028020478909991 	 val_loss: 0.012030296894153157 	 val_acc: 0.84927
+EPOCH 76:
+train_loss: 0.00019791931399445114 	 val_loss: 0.011418639284813369 	 val_acc: 0.85416
+EPOCH 77:
+train_loss: 0.0001917139985053164 	 val_loss: 0.014338201049343312 	 val_acc: 0.85193
+EPOCH 78:
+train_loss: 0.00019326434180754295 	 val_loss: 0.012087811062168208 	 val_acc: 0.85327
+EPOCH 79:
+train_loss: 0.00019550058724697 	 val_loss: 0.012694812379328175 	 val_acc: 0.85238
+EPOCH 80:
+train_loss: 0.00018273451384707152 	 val_loss: 0.012378091392125326 	 val_acc: 0.85193
+EPOCH 81:
+train_loss: 0.00019217889572802456 	 val_loss: 0.013171274808523911 	 val_acc: 0.85238
+EPOCH 82:
+train_loss: 0.00019393399451297195 	 val_loss: 0.012439754931850318 	 val_acc: 0.85327
+EPOCH 83:
+train_loss: 0.0001928645640570916 	 val_loss: 0.011241938090820938 	 val_acc: 0.8506
+EPOCH 84:
+train_loss: 0.0001822588205807894 	 val_loss: 0.011848263421499729 	 val_acc: 0.85104
+EPOCH 85:
+train_loss: 0.00018999189550531365 	 val_loss: 0.011619774415506951 	 val_acc: 0.85149
+EPOCH 86:
+train_loss: 0.00017676223535118823 	 val_loss: 0.011704273879086562 	 val_acc: 0.84927
+EPOCH 87:
+train_loss: 0.00018361862335397887 	 val_loss: 0.011994703018850899 	 val_acc: 0.85016
+EPOCH 88:
+train_loss: 0.00017777812621035127 	 val_loss: 0.01200122446581423 	 val_acc: 0.85505
+EPOCH 89:
+train_loss: 0.00018826992316409895 	 val_loss: 0.012019829948137252 	 val_acc: 0.85282
+EPOCH 90:
+train_loss: 0.00017891911490994268 	 val_loss: 0.012740503559300441 	 val_acc: 0.85371
+EPOCH 91:
+train_loss: 0.00017064673456836742 	 val_loss: 0.01218062422247583 	 val_acc: 0.84793
+EPOCH 92:
+train_loss: 0.00017858309219086427 	 val_loss: 0.011388387113530357 	 val_acc: 0.85416
+EPOCH 93:
+train_loss: 0.00016834290120563392 	 val_loss: 0.011504254993770318 	 val_acc: 0.85016
+EPOCH 94:
+train_loss: 0.00017375315563223094 	 val_loss: 0.011655106318383795 	 val_acc: 0.85149
+EPOCH 95:
+train_loss: 0.00016563813665843063 	 val_loss: 0.011405697993098207 	 val_acc: 0.8506
+EPOCH 96:
+train_loss: 0.00016693516826653425 	 val_loss: 0.01286903501945194 	 val_acc: 0.85371
+EPOCH 97:
+train_loss: 0.00017081271350662003 	 val_loss: 0.012291130228614411 	 val_acc: 0.85416
+EPOCH 98:
+train_loss: 0.00016943985951518124 	 val_loss: 0.012225903826869658 	 val_acc: 0.85149
+EPOCH 99:
+train_loss: 0.0001669663328236186 	 val_loss: 0.011378155827921328 	 val_acc: 0.85327
+EPOCH 100:
+train_loss: 0.00017086060720885972 	 val_loss: 0.011324724628322026 	 val_acc: 0.8506
+EPOCH 101:
+train_loss: 0.0001629997733354314 	 val_loss: 0.01123463576010378 	 val_acc: 0.85104
+EPOCH 102:
+train_loss: 0.00016649958635041656 	 val_loss: 0.011583596912944834 	 val_acc: 0.85282
+EPOCH 103:
+train_loss: 0.00017680014700571732 	 val_loss: 0.011199064905782674 	 val_acc: 0.85104
+EPOCH 104:
+/WAVE/apps/conda/envs/PyTorch/1.12.1-20220825-GPU/lib/python3.9/site-packages/torch/nn/modules/conv.py:453: UserWarning: Using padding='same' with even kernel lengths and odd dilation may require a zero-padded copy of the input be created (Triggered internally at  /opt/conda/conda-bld/pytorch_1659484806139/work/aten/src/ATen/native/Convolution.cpp:882.)
+  return F.conv2d(input, weight, bias, self.stride,
+train_loss: 0.00017133071750446554 	 val_loss: 0.011562460111388685 	 val_acc: 0.85282
+Early stop at epoch: 104
+#############################################################
+# DeepConvNet - Baseline                   
+# Val. Acc.:  0.85505                      
+# Epochs:     105                     
+# LR:         1e-05                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.99)                             
+#############################################################
+Model: EEGNet
+LR: 1e-05 Betas: (0.9, 0.99) Weight Decay (L2): 0.01
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGNet                                   [1, 1, 128, 1126]         [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 128, 1126]         [1, 125, 128, 1126]       --
+│    └─Conv2d: 2-1                       [1, 1, 128, 1126]         [1, 125, 128, 1126]       8,000
+│    └─BatchNorm2d: 2-2                  [1, 125, 128, 1126]       [1, 125, 128, 1126]       250
+├─Sequential: 1-2                        [1, 125, 128, 1126]       [1, 250, 1, 1126]         --
+│    └─Conv2d: 2-3                       [1, 125, 128, 1126]       [1, 250, 1, 1126]         32,000
+│    └─BatchNorm2d: 2-4                  [1, 250, 1, 1126]         [1, 250, 1, 1126]         500
+│    └─ELU: 2-5                          [1, 250, 1, 1126]         [1, 250, 1, 1126]         --
+├─AvgPool2d: 1-3                         [1, 250, 1, 1126]         [1, 250, 1, 225]          --
+├─Dropout: 1-4                           [1, 250, 1, 225]          [1, 250, 1, 225]          --
+├─Sequential: 1-5                        [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    └─SeparableConv2d: 2-6              [1, 250, 1, 225]          [1, 25, 1, 225]           --
+│    │    └─Conv2d: 3-1                  [1, 250, 1, 225]          [1, 250, 1, 225]          4,000
+│    │    └─Conv2d: 3-2                  [1, 250, 1, 225]          [1, 25, 1, 225]           6,250
+│    └─BatchNorm2d: 2-7                  [1, 25, 1, 225]           [1, 25, 1, 225]           50
+│    └─ELU: 2-8                          [1, 25, 1, 225]           [1, 25, 1, 225]           --
+├─AvgPool2d: 1-6                         [1, 25, 1, 225]           [1, 25, 1, 45]            --
+├─Dropout: 1-7                           [1, 25, 1, 45]            [1, 25, 1, 45]            --
+├─Flatten: 1-8                           [1, 25, 1, 45]            [1, 1125]                 --
+├─Linear: 1-9                            [1, 1125]                 [1, 4]                    4,504
+===================================================================================================================
+Total params: 55,554
+Trainable params: 55,554
+Non-trainable params: 0
+Total mult-adds (G): 1.19
+===================================================================================================================
+Input size (MB): 0.58
+Forward/backward pass size (MB): 293.30
+Params size (MB): 0.22
+Estimated Total Size (MB): 294.10
+===================================================================================================================
+EPOCH 1:
+train_loss: 0.04837401330569938 	 val_loss: 0.03741252579201919 	 val_acc: 0.23477
+EPOCH 2:
+train_loss: 0.047767845623537294 	 val_loss: 0.03704613039984119 	 val_acc: 0.26901
+EPOCH 3:
+train_loss: 0.04715216836335482 	 val_loss: 0.03683380776429491 	 val_acc: 0.29169
+EPOCH 4:
+train_loss: 0.04670194166625319 	 val_loss: 0.03617375595932425 	 val_acc: 0.31036
+EPOCH 5:
+train_loss: 0.04649929166173936 	 val_loss: 0.03622022115979453 	 val_acc: 0.32904
+EPOCH 6:
+train_loss: 0.046001865710426276 	 val_loss: 0.035873293995297276 	 val_acc: 0.34771
+EPOCH 7:
+train_loss: 0.04566713394746349 	 val_loss: 0.03575283895919004 	 val_acc: 0.35527
+EPOCH 8:
+train_loss: 0.04524120575771122 	 val_loss: 0.03530581487125266 	 val_acc: 0.36905
+EPOCH 9:
+train_loss: 0.045022077646761034 	 val_loss: 0.03533275013912583 	 val_acc: 0.38328
+EPOCH 10:
+train_loss: 0.04472785879773042 	 val_loss: 0.034647878593026316 	 val_acc: 0.39618
+EPOCH 11:
+train_loss: 0.04416534060173122 	 val_loss: 0.03480153311415942 	 val_acc: 0.41263
+EPOCH 12:
+train_loss: 0.04386906965533897 	 val_loss: 0.034304400848413165 	 val_acc: 0.42108
+EPOCH 13:
+train_loss: 0.043602226821440195 	 val_loss: 0.03369704883809482 	 val_acc: 0.42819
+EPOCH 14:
+train_loss: 0.043159990141427074 	 val_loss: 0.03346424725325849 	 val_acc: 0.44108
+EPOCH 15:
+train_loss: 0.04266139631087252 	 val_loss: 0.03338335441334266 	 val_acc: 0.45042
+EPOCH 16:
+train_loss: 0.042361404797804585 	 val_loss: 0.033164059621819904 	 val_acc: 0.45843
+EPOCH 17:
+train_loss: 0.04200131141587316 	 val_loss: 0.032877308215469116 	 val_acc: 0.46999
+EPOCH 18:
+train_loss: 0.04146540580508115 	 val_loss: 0.03252254362560394 	 val_acc: 0.47666
+EPOCH 19:
+train_loss: 0.041056211429718485 	 val_loss: 0.03190210628900164 	 val_acc: 0.48422
+EPOCH 20:
+train_loss: 0.040658471297679126 	 val_loss: 0.03202395145061213 	 val_acc: 0.49844
+EPOCH 21:
+train_loss: 0.04031788389478456 	 val_loss: 0.030977535909802227 	 val_acc: 0.50867
+EPOCH 22:
+train_loss: 0.03960508651535931 	 val_loss: 0.03097364721334833 	 val_acc: 0.51801
+EPOCH 23:
+train_loss: 0.03929710513402244 	 val_loss: 0.03058855848176797 	 val_acc: 0.52468
+EPOCH 24:
+train_loss: 0.038768510204584536 	 val_loss: 0.03007029414386927 	 val_acc: 0.53535
+EPOCH 25:
+train_loss: 0.038363258463695676 	 val_loss: 0.02970163387886576 	 val_acc: 0.55002
+EPOCH 26:
+train_loss: 0.03799870911080528 	 val_loss: 0.029344678277212124 	 val_acc: 0.56025
+EPOCH 27:
+train_loss: 0.037024566863942905 	 val_loss: 0.028706387090897127 	 val_acc: 0.56558
+EPOCH 28:
+train_loss: 0.0366767199059827 	 val_loss: 0.02906581210759899 	 val_acc: 0.56914
+EPOCH 29:
+train_loss: 0.036217877388137365 	 val_loss: 0.02777293239476392 	 val_acc: 0.58026
+EPOCH 30:
+train_loss: 0.03567666048932543 	 val_loss: 0.026863731972009662 	 val_acc: 0.59226
+EPOCH 31:
+train_loss: 0.03517703895697867 	 val_loss: 0.02697926203143213 	 val_acc: 0.60249
+EPOCH 32:
+train_loss: 0.03451288524282503 	 val_loss: 0.026934651563699775 	 val_acc: 0.61183
+EPOCH 33:
+train_loss: 0.033982221164412664 	 val_loss: 0.026351807741445767 	 val_acc: 0.61983
+EPOCH 34:
+train_loss: 0.03332765385907386 	 val_loss: 0.02570519587166449 	 val_acc: 0.6305
+EPOCH 35:
+train_loss: 0.033128897047595855 	 val_loss: 0.025198446900187133 	 val_acc: 0.63317
+EPOCH 36:
+train_loss: 0.03234743115704043 	 val_loss: 0.024723462031060697 	 val_acc: 0.63762
+EPOCH 37:
+train_loss: 0.031881610179349075 	 val_loss: 0.025587992773628127 	 val_acc: 0.63762
+EPOCH 38:
+train_loss: 0.03163097948768708 	 val_loss: 0.02362044815245857 	 val_acc: 0.6474
+EPOCH 39:
+train_loss: 0.030966993661619046 	 val_loss: 0.02342984168188765 	 val_acc: 0.65451
+EPOCH 40:
+train_loss: 0.030579304962428142 	 val_loss: 0.023186742052402495 	 val_acc: 0.65718
+EPOCH 41:
+train_loss: 0.03011295614219347 	 val_loss: 0.02264008557409854 	 val_acc: 0.66474
+EPOCH 42:
+train_loss: 0.02977931755574692 	 val_loss: 0.022349866996794872 	 val_acc: 0.66919
+EPOCH 43:
+train_loss: 0.02930924000043629 	 val_loss: 0.02296388214877961 	 val_acc: 0.67185
+EPOCH 44:
+train_loss: 0.028937855656928906 	 val_loss: 0.022103654954440933 	 val_acc: 0.67096
+EPOCH 45:
+train_loss: 0.028585173089923803 	 val_loss: 0.021465537253173985 	 val_acc: 0.67497
+EPOCH 46:
+train_loss: 0.028108438722005757 	 val_loss: 0.021494818664056583 	 val_acc: 0.68608
+EPOCH 47:
+train_loss: 0.02783965404501864 	 val_loss: 0.02077803588112748 	 val_acc: 0.69053
+EPOCH 48:
+train_loss: 0.027682006179077043 	 val_loss: 0.020200549277926246 	 val_acc: 0.69275
+EPOCH 49:
+train_loss: 0.02728394569431801 	 val_loss: 0.020995434060369557 	 val_acc: 0.69898
+EPOCH 50:
+train_loss: 0.027133245426069496 	 val_loss: 0.02083299906675576 	 val_acc: 0.69942
+EPOCH 51:
+train_loss: 0.026987563936593618 	 val_loss: 0.020090207174430795 	 val_acc: 0.7052
+EPOCH 52:
+train_loss: 0.026381295045722047 	 val_loss: 0.019852539838044178 	 val_acc: 0.70253
+EPOCH 53:
+train_loss: 0.026126618877906075 	 val_loss: 0.019508804235048346 	 val_acc: 0.71098
+EPOCH 54:
+train_loss: 0.026096268077120337 	 val_loss: 0.019476093869019696 	 val_acc: 0.71321
+EPOCH 55:
+train_loss: 0.025819841159721277 	 val_loss: 0.019651260029861926 	 val_acc: 0.71765
+EPOCH 56:
+train_loss: 0.0256380559609013 	 val_loss: 0.01945160934711414 	 val_acc: 0.72254
+EPOCH 57:
+train_loss: 0.02536888881707199 	 val_loss: 0.020288619519436286 	 val_acc: 0.71988
+EPOCH 58:
+train_loss: 0.025193982780763437 	 val_loss: 0.01876125993490893 	 val_acc: 0.72832
+EPOCH 59:
+train_loss: 0.024934513855774387 	 val_loss: 0.01846298242745882 	 val_acc: 0.73055
+EPOCH 60:
+train_loss: 0.024788318724291318 	 val_loss: 0.019363386217497936 	 val_acc: 0.72788
+EPOCH 61:
+train_loss: 0.024580663650958134 	 val_loss: 0.018746873562720142 	 val_acc: 0.7341
+EPOCH 62:
+train_loss: 0.024303018740530126 	 val_loss: 0.01843089576170406 	 val_acc: 0.72699
+EPOCH 63:
+train_loss: 0.02416274651562848 	 val_loss: 0.0178486078775213 	 val_acc: 0.73277
+EPOCH 64:
+train_loss: 0.023799908767890576 	 val_loss: 0.01882867015993243 	 val_acc: 0.73766
+EPOCH 65:
+train_loss: 0.023974435028113906 	 val_loss: 0.01765421941336232 	 val_acc: 0.73321
+EPOCH 66:
+train_loss: 0.023596389707610767 	 val_loss: 0.01831467926175026 	 val_acc: 0.73766
+EPOCH 67:
+train_loss: 0.02342739742566308 	 val_loss: 0.01695331546275435 	 val_acc: 0.74433
+EPOCH 68:
+train_loss: 0.02327572725328508 	 val_loss: 0.01732990190148035 	 val_acc: 0.74389
+EPOCH 69:
+train_loss: 0.023220418487241802 	 val_loss: 0.017920769419624706 	 val_acc: 0.74655
+EPOCH 70:
+train_loss: 0.022940109759523823 	 val_loss: 0.017551280864802326 	 val_acc: 0.74433
+EPOCH 71:
+train_loss: 0.022844002595577586 	 val_loss: 0.01768718022755348 	 val_acc: 0.75011
+EPOCH 72:
+train_loss: 0.022540687699966526 	 val_loss: 0.016915643390457473 	 val_acc: 0.747
+EPOCH 73:
+train_loss: 0.022607768310513875 	 val_loss: 0.01701506226244559 	 val_acc: 0.75233
+EPOCH 74:
+train_loss: 0.022327409367688036 	 val_loss: 0.017150129850664258 	 val_acc: 0.75011
+EPOCH 75:
+train_loss: 0.02223678117957688 	 val_loss: 0.01705687537091327 	 val_acc: 0.74744
+EPOCH 76:
+train_loss: 0.02210549786039731 	 val_loss: 0.01643807478881545 	 val_acc: 0.75411
+EPOCH 77:
+train_loss: 0.022157519605232528 	 val_loss: 0.01717129826780752 	 val_acc: 0.75233
+EPOCH 78:
+train_loss: 0.021777956313977997 	 val_loss: 0.017081714025515175 	 val_acc: 0.76123
+EPOCH 79:
+train_loss: 0.021603697633831832 	 val_loss: 0.016496624901641933 	 val_acc: 0.75723
+EPOCH 80:
+train_loss: 0.021640178437516488 	 val_loss: 0.01716054740610393 	 val_acc: 0.755
+EPOCH 81:
+train_loss: 0.021441327124366093 	 val_loss: 0.0160341170581414 	 val_acc: 0.76034
+EPOCH 82:
+train_loss: 0.021405670192080666 	 val_loss: 0.016911168287793828 	 val_acc: 0.75678
+EPOCH 83:
+train_loss: 0.021136552160846037 	 val_loss: 0.016447639041141684 	 val_acc: 0.76034
+EPOCH 84:
+train_loss: 0.02091674930690718 	 val_loss: 0.015468095805928906 	 val_acc: 0.75945
+EPOCH 85:
+train_loss: 0.0209950114158923 	 val_loss: 0.015505529932990793 	 val_acc: 0.75989
+EPOCH 86:
+train_loss: 0.020970454881821143 	 val_loss: 0.015982184212382528 	 val_acc: 0.76301
+EPOCH 87:
+train_loss: 0.02075966562857098 	 val_loss: 0.01591161168819738 	 val_acc: 0.76212
+EPOCH 88:
+train_loss: 0.020714983811179755 	 val_loss: 0.016162464376778943 	 val_acc: 0.76345
+EPOCH 89:
+train_loss: 0.020307581763480277 	 val_loss: 0.01563268785568005 	 val_acc: 0.76567
+EPOCH 90:
+train_loss: 0.02039630696503952 	 val_loss: 0.015602302526883704 	 val_acc: 0.76567
+EPOCH 91:
+train_loss: 0.020422958439704424 	 val_loss: 0.015730234779469485 	 val_acc: 0.76701
+EPOCH 92:
+train_loss: 0.020409599815100512 	 val_loss: 0.015321965145136607 	 val_acc: 0.77012
+EPOCH 93:
+train_loss: 0.020080917944099566 	 val_loss: 0.015504948425211293 	 val_acc: 0.77812
+EPOCH 94:
+train_loss: 0.020106759744322404 	 val_loss: 0.016702767485148966 	 val_acc: 0.77368
+EPOCH 95:
+train_loss: 0.019959358679960695 	 val_loss: 0.015167797821197813 	 val_acc: 0.77323
+EPOCH 96:
+train_loss: 0.02009171073065239 	 val_loss: 0.015086102761288089 	 val_acc: 0.77234
+EPOCH 97:
+train_loss: 0.019834249367713847 	 val_loss: 0.014835906438999335 	 val_acc: 0.77857
+EPOCH 98:
+train_loss: 0.019686526000234555 	 val_loss: 0.014981954771206328 	 val_acc: 0.78079
+EPOCH 99:
+train_loss: 0.019674802372140286 	 val_loss: 0.015758864564439833 	 val_acc: 0.78479
+EPOCH 100:
+train_loss: 0.019624594808362775 	 val_loss: 0.015502870914952742 	 val_acc: 0.78079
+EPOCH 101:
+train_loss: 0.019526891471736196 	 val_loss: 0.014509301736141707 	 val_acc: 0.77857
+EPOCH 102:
+train_loss: 0.01953990191930452 	 val_loss: 0.014608291950835392 	 val_acc: 0.7759
+EPOCH 103:
+train_loss: 0.019256312634383595 	 val_loss: 0.014800707359492 	 val_acc: 0.78124
+EPOCH 104:
+train_loss: 0.019168597869905192 	 val_loss: 0.014578783989937822 	 val_acc: 0.77812
+EPOCH 105:
+train_loss: 0.019307993905197014 	 val_loss: 0.014442436946688677 	 val_acc: 0.78346
+EPOCH 106:
+train_loss: 0.01897899505302526 	 val_loss: 0.014328727135049915 	 val_acc: 0.78435
+EPOCH 107:
+train_loss: 0.018952804233484655 	 val_loss: 0.015036028560878474 	 val_acc: 0.79102
+EPOCH 108:
+train_loss: 0.018952926023874647 	 val_loss: 0.014705356105556754 	 val_acc: 0.78791
+EPOCH 109:
+train_loss: 0.01884443984284119 	 val_loss: 0.014721979127729367 	 val_acc: 0.78746
+EPOCH 110:
+train_loss: 0.01869616370336405 	 val_loss: 0.014394725524352748 	 val_acc: 0.7839
+EPOCH 111:
+train_loss: 0.018723642554483676 	 val_loss: 0.014313695035967779 	 val_acc: 0.7888
+EPOCH 112:
+train_loss: 0.018393841739256348 	 val_loss: 0.014192893725367514 	 val_acc: 0.79057
+EPOCH 113:
+train_loss: 0.01870345313944108 	 val_loss: 0.014107367072249443 	 val_acc: 0.79324
+EPOCH 114:
+train_loss: 0.018254903558536727 	 val_loss: 0.014016711076179444 	 val_acc: 0.78791
+EPOCH 115:
+train_loss: 0.018537321198691115 	 val_loss: 0.014309236526667869 	 val_acc: 0.79413
+EPOCH 116:
+train_loss: 0.018490055624140533 	 val_loss: 0.01360760627910752 	 val_acc: 0.7928
+EPOCH 117:
+train_loss: 0.018347765867035258 	 val_loss: 0.01422857208844932 	 val_acc: 0.79458
+EPOCH 118:
+train_loss: 0.018177426678001766 	 val_loss: 0.01385878058102937 	 val_acc: 0.7928
+EPOCH 119:
+train_loss: 0.018009182388348567 	 val_loss: 0.014071564361798256 	 val_acc: 0.79546
+EPOCH 120:
+train_loss: 0.017800183815270335 	 val_loss: 0.014241660676072259 	 val_acc: 0.80302
+EPOCH 121:
+train_loss: 0.01802534312867056 	 val_loss: 0.014058230162568158 	 val_acc: 0.79458
+EPOCH 122:
+train_loss: 0.017952814199845374 	 val_loss: 0.013895694242940532 	 val_acc: 0.79947
+EPOCH 123:
+train_loss: 0.017967618426801963 	 val_loss: 0.013985086310166346 	 val_acc: 0.79769
+EPOCH 124:
+train_loss: 0.017840880883553328 	 val_loss: 0.013659810222469962 	 val_acc: 0.79902
+EPOCH 125:
+train_loss: 0.017885429022988363 	 val_loss: 0.01375614957869044 	 val_acc: 0.7968
+EPOCH 126:
+train_loss: 0.017649370078582804 	 val_loss: 0.013476188210064466 	 val_acc: 0.80036
+EPOCH 127:
+train_loss: 0.017681378937528934 	 val_loss: 0.013304555669599998 	 val_acc: 0.8008
+EPOCH 128:
+train_loss: 0.017590913917946586 	 val_loss: 0.013855099532654985 	 val_acc: 0.80391
+EPOCH 129:
+train_loss: 0.01747650781903692 	 val_loss: 0.013615484236392184 	 val_acc: 0.80169
+EPOCH 130:
+train_loss: 0.017421853917776342 	 val_loss: 0.014295602027688039 	 val_acc: 0.80036
+EPOCH 131:
+train_loss: 0.017238293627922296 	 val_loss: 0.013427926592252637 	 val_acc: 0.80124
+EPOCH 132:
+train_loss: 0.01729620245096836 	 val_loss: 0.013252010075798952 	 val_acc: 0.80391
+EPOCH 133:
+train_loss: 0.017135160106295205 	 val_loss: 0.013395265476336482 	 val_acc: 0.80169
+EPOCH 134:
+train_loss: 0.01732272057618463 	 val_loss: 0.013580096023243208 	 val_acc: 0.80347
+EPOCH 135:
+train_loss: 0.01721184563719125 	 val_loss: 0.012906713548873024 	 val_acc: 0.80703
+EPOCH 136:
+train_loss: 0.017144728158835443 	 val_loss: 0.014408637472159525 	 val_acc: 0.80791
+EPOCH 137:
+train_loss: 0.017175561636842217 	 val_loss: 0.013246886373708137 	 val_acc: 0.80703
+EPOCH 138:
+train_loss: 0.016991153178556498 	 val_loss: 0.013683032249551695 	 val_acc: 0.80569
+EPOCH 139:
+train_loss: 0.016734238533384814 	 val_loss: 0.01359387017543678 	 val_acc: 0.81992
+EPOCH 140:
+train_loss: 0.01692670516250389 	 val_loss: 0.013089506552338565 	 val_acc: 0.80703
+EPOCH 141:
+train_loss: 0.017064623907471422 	 val_loss: 0.013026775265247875 	 val_acc: 0.81103
+EPOCH 142:
+train_loss: 0.016946086572455523 	 val_loss: 0.01299654949326135 	 val_acc: 0.81058
+EPOCH 143:
+train_loss: 0.016767160310494442 	 val_loss: 0.013446038051273443 	 val_acc: 0.81058
+EPOCH 144:
+train_loss: 0.016841333620551426 	 val_loss: 0.013566774868086379 	 val_acc: 0.81414
+EPOCH 145:
+train_loss: 0.016782953694399586 	 val_loss: 0.013182078261187554 	 val_acc: 0.81058
+EPOCH 146:
+train_loss: 0.016524363309698083 	 val_loss: 0.013164546829001589 	 val_acc: 0.81103
+EPOCH 147:
+train_loss: 0.01638622351016007 	 val_loss: 0.013261483566456653 	 val_acc: 0.81014
+EPOCH 148:
+train_loss: 0.016671316801124516 	 val_loss: 0.012803724965858623 	 val_acc: 0.81147
+EPOCH 149:
+train_loss: 0.01656110187183277 	 val_loss: 0.013138441832214102 	 val_acc: 0.81592
+EPOCH 150:
+train_loss: 0.016278810110800103 	 val_loss: 0.012782157032176104 	 val_acc: 0.81325
+EPOCH 151:
+train_loss: 0.016389429354467664 	 val_loss: 0.012843633142633905 	 val_acc: 0.81058
+EPOCH 152:
+train_loss: 0.01632387043048172 	 val_loss: 0.012526086920683797 	 val_acc: 0.81325
+EPOCH 153:
+train_loss: 0.016316353504652263 	 val_loss: 0.012912621388264746 	 val_acc: 0.81547
+EPOCH 154:
+train_loss: 0.01592925928759828 	 val_loss: 0.01282056167223089 	 val_acc: 0.81458
+EPOCH 155:
+train_loss: 0.0162055404337036 	 val_loss: 0.01297351652458519 	 val_acc: 0.81681
+EPOCH 156:
+train_loss: 0.016289201126091973 	 val_loss: 0.012919916770247798 	 val_acc: 0.81503
+EPOCH 157:
+train_loss: 0.016059630004346577 	 val_loss: 0.012747015190245278 	 val_acc: 0.81681
+EPOCH 158:
+train_loss: 0.016121031963153863 	 val_loss: 0.012875539105124331 	 val_acc: 0.81547
+EPOCH 159:
+train_loss: 0.015841232165122395 	 val_loss: 0.012495024281865694 	 val_acc: 0.81369
+EPOCH 160:
+train_loss: 0.015974468011211575 	 val_loss: 0.012323070270901373 	 val_acc: 0.82303
+EPOCH 161:
+train_loss: 0.016086994644028005 	 val_loss: 0.012720191823161567 	 val_acc: 0.82614
+EPOCH 162:
+train_loss: 0.01598143794546654 	 val_loss: 0.012907240194196042 	 val_acc: 0.81636
+EPOCH 163:
+train_loss: 0.01589479406076409 	 val_loss: 0.01197112463513678 	 val_acc: 0.8177
+EPOCH 164:
+train_loss: 0.015835518215579835 	 val_loss: 0.012839194559367927 	 val_acc: 0.81992
+EPOCH 165:
+train_loss: 0.01582283241295765 	 val_loss: 0.01294506018743442 	 val_acc: 0.82081
+EPOCH 166:
+train_loss: 0.015840829366707998 	 val_loss: 0.012877694257550448 	 val_acc: 0.8217
+EPOCH 167:
+train_loss: 0.016037431654898567 	 val_loss: 0.012483000817075625 	 val_acc: 0.82125
+EPOCH 168:
+train_loss: 0.01579862302437141 	 val_loss: 0.012325211152429481 	 val_acc: 0.81681
+EPOCH 169:
+train_loss: 0.01543811581274418 	 val_loss: 0.01215775134562881 	 val_acc: 0.8217
+EPOCH 170:
+train_loss: 0.015536900924114685 	 val_loss: 0.01265545502483451 	 val_acc: 0.81948
+EPOCH 171:
+train_loss: 0.015951485748145363 	 val_loss: 0.012602773908631449 	 val_acc: 0.82081
+EPOCH 172:
+train_loss: 0.015516485187506328 	 val_loss: 0.013096778409560129 	 val_acc: 0.83637
+EPOCH 173:
+train_loss: 0.015330226642201501 	 val_loss: 0.012149993654922813 	 val_acc: 0.82526
+EPOCH 174:
+train_loss: 0.01565132949585241 	 val_loss: 0.012245591653700065 	 val_acc: 0.81681
+EPOCH 175:
+train_loss: 0.015498287986179665 	 val_loss: 0.01311464389367501 	 val_acc: 0.82792
+EPOCH 176:
+train_loss: 0.015280811423701713 	 val_loss: 0.011926505483436083 	 val_acc: 0.82303
+EPOCH 177:
+train_loss: 0.015204689290887894 	 val_loss: 0.011625929346131712 	 val_acc: 0.8217
+EPOCH 178:
+train_loss: 0.015091497345726443 	 val_loss: 0.012415124139820403 	 val_acc: 0.82214
+EPOCH 179:
+train_loss: 0.01539905872665341 	 val_loss: 0.012074246670028366 	 val_acc: 0.82614
+EPOCH 180:
+train_loss: 0.015381705185795985 	 val_loss: 0.011767751587125732 	 val_acc: 0.82259
+EPOCH 181:
+train_loss: 0.015229780051023514 	 val_loss: 0.011808547524452956 	 val_acc: 0.82259
+EPOCH 182:
+train_loss: 0.015118101680413778 	 val_loss: 0.012522855467310955 	 val_acc: 0.82214
+EPOCH 183:
+train_loss: 0.015269961389843779 	 val_loss: 0.012888076627492313 	 val_acc: 0.83281
+EPOCH 184:
+train_loss: 0.015195261125272934 	 val_loss: 0.011617796316509181 	 val_acc: 0.8297
+EPOCH 185:
+train_loss: 0.015268866656227793 	 val_loss: 0.011629526203435488 	 val_acc: 0.82348
+EPOCH 186:
+train_loss: 0.015098176122441982 	 val_loss: 0.012524197432839628 	 val_acc: 0.8257
+EPOCH 187:
+train_loss: 0.015071533043754103 	 val_loss: 0.011408375234168208 	 val_acc: 0.82481
+EPOCH 188:
+train_loss: 0.01507701017956353 	 val_loss: 0.011541536452598847 	 val_acc: 0.82703
+EPOCH 189:
+train_loss: 0.014885300960923699 	 val_loss: 0.011762266433652245 	 val_acc: 0.82881
+EPOCH 190:
+train_loss: 0.015065697678751192 	 val_loss: 0.011466546743311599 	 val_acc: 0.82526
+EPOCH 191:
+train_loss: 0.015018157425607631 	 val_loss: 0.011756018299356257 	 val_acc: 0.82792
+EPOCH 192:
+train_loss: 0.015032803398878478 	 val_loss: 0.011713745420149073 	 val_acc: 0.82792
+EPOCH 193:
+train_loss: 0.01490917085855733 	 val_loss: 0.01189259396965141 	 val_acc: 0.82926
+EPOCH 194:
+train_loss: 0.01482894028644228 	 val_loss: 0.01200519054372604 	 val_acc: 0.83237
+EPOCH 195:
+train_loss: 0.014818076239146117 	 val_loss: 0.011533602516470143 	 val_acc: 0.8337
+EPOCH 196:
+train_loss: 0.014876038868795623 	 val_loss: 0.012536047641041489 	 val_acc: 0.84037
+EPOCH 197:
+train_loss: 0.01463795925078746 	 val_loss: 0.011416400820638883 	 val_acc: 0.83059
+EPOCH 198:
+train_loss: 0.014419666793681613 	 val_loss: 0.011682397035633792 	 val_acc: 0.83059
+EPOCH 199:
+train_loss: 0.01478896953144214 	 val_loss: 0.011569057958603222 	 val_acc: 0.83237
+EPOCH 200:
+train_loss: 0.014523211340891707 	 val_loss: 0.011439997184551683 	 val_acc: 0.83015
+EPOCH 201:
+train_loss: 0.014534291467603338 	 val_loss: 0.011287675527211253 	 val_acc: 0.83193
+EPOCH 202:
+train_loss: 0.014562173887834113 	 val_loss: 0.013357798920110674 	 val_acc: 0.83015
+EPOCH 203:
+train_loss: 0.014605855337000859 	 val_loss: 0.011386053727840849 	 val_acc: 0.83193
+EPOCH 204:
+train_loss: 0.01455348019902115 	 val_loss: 0.011524365897944531 	 val_acc: 0.83193
+EPOCH 205:
+train_loss: 0.01448675147677798 	 val_loss: 0.011511038368098997 	 val_acc: 0.83015
+EPOCH 206:
+train_loss: 0.014733559106507208 	 val_loss: 0.012257961623007576 	 val_acc: 0.83326
+EPOCH 207:
+train_loss: 0.014651553647031645 	 val_loss: 0.011035634399628076 	 val_acc: 0.83548
+EPOCH 208:
+train_loss: 0.014497344659126466 	 val_loss: 0.011180516074879784 	 val_acc: 0.83593
+EPOCH 209:
+train_loss: 0.01416557929101724 	 val_loss: 0.011391392521257449 	 val_acc: 0.83593
+EPOCH 210:
+train_loss: 0.014360721985423333 	 val_loss: 0.011733318961330372 	 val_acc: 0.83237
+EPOCH 211:
+train_loss: 0.014361173951710961 	 val_loss: 0.011635150092288282 	 val_acc: 0.83859
+EPOCH 212:
+train_loss: 0.01421610526506281 	 val_loss: 0.011921246762847133 	 val_acc: 0.83193
+EPOCH 213:
+train_loss: 0.014343837826390432 	 val_loss: 0.010972454473638413 	 val_acc: 0.83904
+EPOCH 214:
+train_loss: 0.014315757770089196 	 val_loss: 0.011060255005943861 	 val_acc: 0.83459
+EPOCH 215:
+train_loss: 0.014564491816259573 	 val_loss: 0.011302443828309408 	 val_acc: 0.8337
+EPOCH 216:
+train_loss: 0.014325822242179648 	 val_loss: 0.011128828410368444 	 val_acc: 0.83148
+EPOCH 217:
+train_loss: 0.014442701745185716 	 val_loss: 0.011873511345262168 	 val_acc: 0.83281
+EPOCH 218:
+train_loss: 0.01427014754010829 	 val_loss: 0.010948466348476795 	 val_acc: 0.8337
+EPOCH 219:
+train_loss: 0.014078575288268032 	 val_loss: 0.011062400326298074 	 val_acc: 0.83504
+EPOCH 220:
+train_loss: 0.014101583667212555 	 val_loss: 0.011990820006251313 	 val_acc: 0.83326
+EPOCH 221:
+train_loss: 0.014133648954407597 	 val_loss: 0.011335603958754253 	 val_acc: 0.83504
+EPOCH 222:
+train_loss: 0.014051052074148182 	 val_loss: 0.011318844518254106 	 val_acc: 0.83637
+EPOCH 223:
+train_loss: 0.014277558975280514 	 val_loss: 0.011545224269159693 	 val_acc: 0.83015
+EPOCH 224:
+train_loss: 0.014021428141361775 	 val_loss: 0.011769936648430452 	 val_acc: 0.8337
+EPOCH 225:
+train_loss: 0.014035763580975781 	 val_loss: 0.011427300391442958 	 val_acc: 0.84215
+EPOCH 226:
+train_loss: 0.013685701677437117 	 val_loss: 0.010881480121219013 	 val_acc: 0.84615
+EPOCH 227:
+train_loss: 0.01390323099159213 	 val_loss: 0.0112015316957683 	 val_acc: 0.83904
+EPOCH 228:
+train_loss: 0.013973197990677949 	 val_loss: 0.01184265840564872 	 val_acc: 0.8426
+EPOCH 229:
+train_loss: 0.01398104625298051 	 val_loss: 0.011507415596519526 	 val_acc: 0.83993
+EPOCH 230:
+train_loss: 0.013916224476329508 	 val_loss: 0.011321618586801797 	 val_acc: 0.8426
+EPOCH 231:
+train_loss: 0.014138448693565087 	 val_loss: 0.011043112144865842 	 val_acc: 0.84393
+EPOCH 232:
+train_loss: 0.013743934909534815 	 val_loss: 0.011205711749318885 	 val_acc: 0.83904
+EPOCH 233:
+train_loss: 0.013798605371576183 	 val_loss: 0.011151789353019616 	 val_acc: 0.83859
+EPOCH 234:
+train_loss: 0.013775741530441692 	 val_loss: 0.0107130713156924 	 val_acc: 0.84037
+EPOCH 235:
+train_loss: 0.013927561649416154 	 val_loss: 0.011660507760347098 	 val_acc: 0.84526
+EPOCH 236:
+train_loss: 0.01372738279363729 	 val_loss: 0.011236814822029099 	 val_acc: 0.83948
+EPOCH 237:
+train_loss: 0.013869894180098624 	 val_loss: 0.010986879517999416 	 val_acc: 0.84482
+EPOCH 238:
+train_loss: 0.01374021104681406 	 val_loss: 0.010595981068523726 	 val_acc: 0.83682
+EPOCH 239:
+train_loss: 0.013613630437098435 	 val_loss: 0.010834180215047666 	 val_acc: 0.84704
+EPOCH 240:
+train_loss: 0.013545057087824068 	 val_loss: 0.010925980096364881 	 val_acc: 0.84304
+EPOCH 241:
+train_loss: 0.013708349891011103 	 val_loss: 0.01089176463024387 	 val_acc: 0.84438
+EPOCH 242:
+train_loss: 0.01351962611768447 	 val_loss: 0.010700033137453142 	 val_acc: 0.83993
+EPOCH 243:
+train_loss: 0.013310519993578837 	 val_loss: 0.010557966675204838 	 val_acc: 0.84349
+EPOCH 244:
+train_loss: 0.01367831014910087 	 val_loss: 0.010495281165224832 	 val_acc: 0.84882
+EPOCH 245:
+train_loss: 0.013215127551244975 	 val_loss: 0.010595544042581265 	 val_acc: 0.84304
+EPOCH 246:
+train_loss: 0.013708618265188889 	 val_loss: 0.011099035157658756 	 val_acc: 0.84037
+EPOCH 247:
+train_loss: 0.013436098310428015 	 val_loss: 0.010560080230318718 	 val_acc: 0.84349
+EPOCH 248:
+train_loss: 0.013300526344644945 	 val_loss: 0.011214449286907253 	 val_acc: 0.84571
+EPOCH 249:
+train_loss: 0.013356805408887297 	 val_loss: 0.01075192592373763 	 val_acc: 0.84526
+EPOCH 250:
+train_loss: 0.013394110987512127 	 val_loss: 0.01122222596988893 	 val_acc: 0.84393
+EPOCH 251:
+train_loss: 0.013463853939875557 	 val_loss: 0.010619954718042897 	 val_acc: 0.84482
+EPOCH 252:
+train_loss: 0.013137877480918282 	 val_loss: 0.01109416855456408 	 val_acc: 0.84304
+EPOCH 253:
+train_loss: 0.013248294108130382 	 val_loss: 0.010589180750726977 	 val_acc: 0.84482
+EPOCH 254:
+train_loss: 0.013421178239931712 	 val_loss: 0.010503505212874008 	 val_acc: 0.84526
+EPOCH 255:
+train_loss: 0.013448544837889867 	 val_loss: 0.010555384782596865 	 val_acc: 0.84749
+EPOCH 256:
+train_loss: 0.013164064586804646 	 val_loss: 0.010821817028766336 	 val_acc: 0.84482
+EPOCH 257:
+train_loss: 0.01334688678244002 	 val_loss: 0.010898724100180657 	 val_acc: 0.84749
+EPOCH 258:
+train_loss: 0.013198164729421431 	 val_loss: 0.010619558399352661 	 val_acc: 0.84615
+EPOCH 259:
+train_loss: 0.01320401552488723 	 val_loss: 0.01167718009920908 	 val_acc: 0.85282
+EPOCH 260:
+train_loss: 0.013110568480193804 	 val_loss: 0.010535276470129844 	 val_acc: 0.84615
+EPOCH 261:
+train_loss: 0.013333679436308605 	 val_loss: 0.010595150497517032 	 val_acc: 0.84349
+EPOCH 262:
+train_loss: 0.013219135342816888 	 val_loss: 0.010935226748177363 	 val_acc: 0.84882
+EPOCH 263:
+train_loss: 0.013272675480575381 	 val_loss: 0.01014662374067442 	 val_acc: 0.85149
+EPOCH 264:
+train_loss: 0.013340935051956002 	 val_loss: 0.01058009041592676 	 val_acc: 0.84482
+EPOCH 265:
+train_loss: 0.013148605053693195 	 val_loss: 0.010670712915426622 	 val_acc: 0.84571
+EPOCH 266:
+train_loss: 0.01325893437813781 	 val_loss: 0.010651746827589709 	 val_acc: 0.84126
+EPOCH 267:
+train_loss: 0.013068750685921329 	 val_loss: 0.010927210370679773 	 val_acc: 0.8506
+EPOCH 268:
+train_loss: 0.013304019493963863 	 val_loss: 0.010498583341232359 	 val_acc: 0.8506
+EPOCH 269:
+train_loss: 0.013179715898908203 	 val_loss: 0.010366418864350612 	 val_acc: 0.84882
+EPOCH 270:
+train_loss: 0.013287989573523389 	 val_loss: 0.01118244055190128 	 val_acc: 0.86349
+EPOCH 271:
+train_loss: 0.012827260461467564 	 val_loss: 0.010476300682972532 	 val_acc: 0.85104
+EPOCH 272:
+train_loss: 0.01287112276427731 	 val_loss: 0.010150420615043076 	 val_acc: 0.85104
+EPOCH 273:
+train_loss: 0.013077989784927468 	 val_loss: 0.010550555753551502 	 val_acc: 0.85282
+EPOCH 274:
+train_loss: 0.012902718597474822 	 val_loss: 0.010180095487242281 	 val_acc: 0.85594
+EPOCH 275:
+train_loss: 0.012928276582846171 	 val_loss: 0.011085763982417304 	 val_acc: 0.85549
+EPOCH 276:
+train_loss: 0.013220087618309319 	 val_loss: 0.010445703266137784 	 val_acc: 0.85238
+EPOCH 277:
+train_loss: 0.013009878666093018 	 val_loss: 0.010450061301790218 	 val_acc: 0.85371
+EPOCH 278:
+train_loss: 0.012601946538223522 	 val_loss: 0.010285932678992174 	 val_acc: 0.8466
+EPOCH 279:
+train_loss: 0.012818702735223038 	 val_loss: 0.010423913620551273 	 val_acc: 0.8586
+EPOCH 280:
+train_loss: 0.012744356826700793 	 val_loss: 0.01005970415240642 	 val_acc: 0.85238
+EPOCH 281:
+train_loss: 0.012958741959313857 	 val_loss: 0.011119834138209822 	 val_acc: 0.85416
+EPOCH 282:
+train_loss: 0.01266163467563558 	 val_loss: 0.01035599589521153 	 val_acc: 0.85327
+EPOCH 283:
+train_loss: 0.012748272862693725 	 val_loss: 0.010404783858271599 	 val_acc: 0.85505
+EPOCH 284:
+train_loss: 0.012895474477098717 	 val_loss: 0.010758558686828307 	 val_acc: 0.85282
+EPOCH 285:
+train_loss: 0.012793122536444186 	 val_loss: 0.01020734050275677 	 val_acc: 0.84704
+EPOCH 286:
+train_loss: 0.012875225118288309 	 val_loss: 0.011113361037366643 	 val_acc: 0.85416
+EPOCH 287:
+train_loss: 0.01244161367141151 	 val_loss: 0.010572735938904143 	 val_acc: 0.85771
+EPOCH 288:
+train_loss: 0.01273497062715326 	 val_loss: 0.010540051911473943 	 val_acc: 0.85416
+EPOCH 289:
+train_loss: 0.012557444256928837 	 val_loss: 0.009944971945758737 	 val_acc: 0.85549
+EPOCH 290:
+train_loss: 0.012817176535300056 	 val_loss: 0.010462853507016031 	 val_acc: 0.85594
+EPOCH 291:
+train_loss: 0.01266679221690482 	 val_loss: 0.010318472473998069 	 val_acc: 0.85505
+EPOCH 292:
+train_loss: 0.012496276824658785 	 val_loss: 0.010854444715648824 	 val_acc: 0.85905
+EPOCH 293:
+train_loss: 0.012716314108879306 	 val_loss: 0.010167454933231403 	 val_acc: 0.85238
+EPOCH 294:
+train_loss: 0.012610771006586429 	 val_loss: 0.01002753017696032 	 val_acc: 0.85638
+EPOCH 295:
+train_loss: 0.012556392001564219 	 val_loss: 0.010171466624615738 	 val_acc: 0.8546
+EPOCH 296:
+train_loss: 0.012493073958369367 	 val_loss: 0.01040290889598815 	 val_acc: 0.8506
+EPOCH 297:
+train_loss: 0.012551317870891558 	 val_loss: 0.010727850747302797 	 val_acc: 0.85371
+EPOCH 298:
+train_loss: 0.012520676821072208 	 val_loss: 0.009943708069759338 	 val_acc: 0.85193
+EPOCH 299:
+train_loss: 0.012502141017574584 	 val_loss: 0.01028734807482025 	 val_acc: 0.86216
+EPOCH 300:
+train_loss: 0.012511018106069971 	 val_loss: 0.010548472319361365 	 val_acc: 0.85282
+EPOCH 301:
+train_loss: 0.012463260456353221 	 val_loss: 0.010440439838544108 	 val_acc: 0.84971
+Early stop at epoch: 301
+#############################################################
+# EEGNet - Baseline                   
+# Val. Acc.:  0.86349                      
+# Epochs:     302                     
+# LR:         1e-05                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.99)                             
+#############################################################
+Model: EEGInception
+LR: 1e-06 Betas: (0.9, 0.99) Weight Decay (L2): 0.01
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+EEGInception                             [1, 128, 1, 1126]         [1, 4]                    --
+├─Residual_Mod: 1-1                      [1, 128, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-1                       [1, 128, 1, 1126]         [1, 288, 1, 1126]         37,152
+│    └─BatchNorm2d: 2-2                  [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-3                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Initial_IncepBlk: 1-2                  [1, 128, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-4                       [1, 128, 1, 1126]         [1, 48, 1, 1126]          6,192
+│    └─Conv2d: 2-5                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-6                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-7                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-8                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-9                       [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-10                  [1, 128, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-1               [1, 128, 1, 1126]         [1, 128, 1, 1126]         --
+│    │    └─Conv2d: 3-2                  [1, 128, 1, 1126]         [1, 48, 1, 1126]          6,192
+│    └─BatchNorm2d: 2-11                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-12                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-3             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-13                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-14                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-15                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-16                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-17                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-18                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-19                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-3               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-4                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-20                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-21                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-4             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-22                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-23                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-24                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-25                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-26                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-27                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-28                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-5               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-6                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-29                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-30                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Residual_Mod: 1-5                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-31                      [1, 288, 1, 1126]         [1, 288, 1, 1126]         83,232
+│    └─BatchNorm2d: 2-32                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-33                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-6             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-34                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-35                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-36                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-37                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-38                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-39                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-40                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-7               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-8                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-41                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-42                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-7             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-43                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-44                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-45                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-46                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-47                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-48                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-49                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-9               [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-10                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-50                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-51                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Intermediate_IncepBlk: 1-8             [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    └─Conv2d: 2-52                      [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─Conv2d: 2-53                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          57,648
+│    └─Conv2d: 2-54                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          172,848
+│    └─Conv2d: 2-55                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          288,048
+│    └─Conv2d: 2-56                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          403,248
+│    └─Conv2d: 2-57                      [1, 48, 1, 1126]          [1, 48, 1, 1126]          518,448
+│    └─Sequential: 2-58                  [1, 288, 1, 1126]         [1, 48, 1, 1126]          --
+│    │    └─MaxPool2d: 3-11              [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+│    │    └─Conv2d: 3-12                 [1, 288, 1, 1126]         [1, 48, 1, 1126]          13,872
+│    └─BatchNorm2d: 2-59                 [1, 288, 1, 1126]         [1, 288, 1, 1126]         576
+│    └─ReLU: 2-60                        [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─AvgPool2d: 1-9                         [1, 288, 1, 1126]         [1, 288, 1, 1126]         --
+├─Flatten: 1-10                          [1, 288, 1, 1126]         [1, 324288]               --
+├─Linear: 1-11                           [1, 324288]               [1, 4]                    1,297,156
+===================================================================================================================
+Total params: 10,214,692
+Trainable params: 10,214,692
+Non-trainable params: 0
+Total mult-adds (G): 10.04
+===================================================================================================================
+Input size (MB): 0.58
+Forward/backward pass size (MB): 44.10
+Params size (MB): 40.86
+Estimated Total Size (MB): 85.54
+===================================================================================================================
+EPOCH 1:
+train_loss: 0.0471019794539055 	 val_loss: 0.036173825856548956 	 val_acc: 0.34149
+EPOCH 2:
+train_loss: 0.03983921182624084 	 val_loss: 0.03328983634094373 	 val_acc: 0.41752
+EPOCH 3:
+train_loss: 0.0330870341751821 	 val_loss: 0.030359381208920858 	 val_acc: 0.46287
+EPOCH 4:
+train_loss: 0.027641098475426507 	 val_loss: 0.02899647422346678 	 val_acc: 0.52157
+EPOCH 5:
+train_loss: 0.02346544066955975 	 val_loss: 0.026623238549402958 	 val_acc: 0.55225
+EPOCH 6:
+train_loss: 0.02006205239093308 	 val_loss: 0.02710898159935739 	 val_acc: 0.56514
+EPOCH 7:
+train_loss: 0.017254866490271078 	 val_loss: 0.022974723786466027 	 val_acc: 0.62339
+EPOCH 8:
+train_loss: 0.014551804460271945 	 val_loss: 0.023418834148509936 	 val_acc: 0.62872
+EPOCH 9:
+train_loss: 0.01240596423530326 	 val_loss: 0.022423610007327406 	 val_acc: 0.64473
+EPOCH 10:
+train_loss: 0.010585137928332372 	 val_loss: 0.022824233103972386 	 val_acc: 0.64873
+EPOCH 11:
+train_loss: 0.008909945939618004 	 val_loss: 0.020835236384150736 	 val_acc: 0.66652
+EPOCH 12:
+train_loss: 0.007464372432299293 	 val_loss: 0.020011958975135462 	 val_acc: 0.6683
+EPOCH 13:
+train_loss: 0.006256127718743259 	 val_loss: 0.021151637410880858 	 val_acc: 0.68119
+EPOCH 14:
+train_loss: 0.0052386636273791705 	 val_loss: 0.021338411042086 	 val_acc: 0.68875
+EPOCH 15:
+train_loss: 0.004304633584848277 	 val_loss: 0.019359151581523754 	 val_acc: 0.69053
+EPOCH 16:
+train_loss: 0.003479163924683883 	 val_loss: 0.020359281822486575 	 val_acc: 0.68519
+EPOCH 17:
+train_loss: 0.0028727032111755583 	 val_loss: 0.020695159569651102 	 val_acc: 0.69764
+EPOCH 18:
+train_loss: 0.0023279283131661596 	 val_loss: 0.01973654739157015 	 val_acc: 0.70387
+EPOCH 19:
+train_loss: 0.0019037343528663815 	 val_loss: 0.019119887119256027 	 val_acc: 0.71543
+EPOCH 20:
+train_loss: 0.0015834334552728999 	 val_loss: 0.020433090994666975 	 val_acc: 0.70698
+EPOCH 21:
+train_loss: 0.0012580463104181314 	 val_loss: 0.019379696326961834 	 val_acc: 0.72032
+EPOCH 22:
+train_loss: 0.0009737942378792761 	 val_loss: 0.01962043014470243 	 val_acc: 0.72299
+EPOCH 23:
+train_loss: 0.0008283209994451129 	 val_loss: 0.02019515856674269 	 val_acc: 0.72121
+EPOCH 24:
+train_loss: 0.0006809414232150913 	 val_loss: 0.019546503570856022 	 val_acc: 0.72254
+EPOCH 25:
+train_loss: 0.0005255237320320026 	 val_loss: 0.021271317149920418 	 val_acc: 0.71676
+EPOCH 26:
+train_loss: 0.00042543949739204406 	 val_loss: 0.02145091310500939 	 val_acc: 0.72521
+EPOCH 27:
+train_loss: 0.0003653279526152413 	 val_loss: 0.024220030334051117 	 val_acc: 0.7261
+EPOCH 28:
+train_loss: 0.0002969170781959557 	 val_loss: 0.02228363056760266 	 val_acc: 0.7261
+EPOCH 29:
+train_loss: 0.0002633171281715735 	 val_loss: 0.021790941341326503 	 val_acc: 0.73144
+EPOCH 30:
+train_loss: 0.00022904041635042074 	 val_loss: 0.023478900802149743 	 val_acc: 0.72165
+EPOCH 31:
+train_loss: 0.00020477093899524786 	 val_loss: 0.024125913756856927 	 val_acc: 0.7092
+EPOCH 32:
+train_loss: 0.00016460197294492523 	 val_loss: 0.024861762121010916 	 val_acc: 0.73544
+EPOCH 33:
+train_loss: 0.00014278990014622721 	 val_loss: 0.024926741957430828 	 val_acc: 0.73455
+EPOCH 34:
+train_loss: 0.00011841191665559678 	 val_loss: 0.024897301873835632 	 val_acc: 0.73633
+EPOCH 35:
+train_loss: 0.00010122383348225274 	 val_loss: 0.025103502391937246 	 val_acc: 0.72921
+EPOCH 36:
+train_loss: 0.00011051402128301327 	 val_loss: 0.02668130645628129 	 val_acc: 0.73588
+EPOCH 37:
+train_loss: 0.0001112154548924897 	 val_loss: 0.0256457844084434 	 val_acc: 0.72254
+EPOCH 38:
+train_loss: 7.330702150236866e-05 	 val_loss: 0.02346768316236801 	 val_acc: 0.73722
+EPOCH 39:
+train_loss: 7.446605394371064e-05 	 val_loss: 0.02656301726073454 	 val_acc: 0.74077
+EPOCH 40:
+train_loss: 0.00010625665763692748 	 val_loss: 0.025973150732702312 	 val_acc: 0.73677
+EPOCH 41:
+train_loss: 6.224774502869775e-05 	 val_loss: 0.024282838116437253 	 val_acc: 0.73722
+EPOCH 42:
+train_loss: 5.148788424925756e-05 	 val_loss: 0.025887793610156754 	 val_acc: 0.739
+EPOCH 43:
+train_loss: 4.6478432491510024e-05 	 val_loss: 0.024135728774211152 	 val_acc: 0.74344
+EPOCH 44:
+train_loss: 4.6750318118418324e-05 	 val_loss: 0.024605308659234076 	 val_acc: 0.74033
+EPOCH 45:
+train_loss: 6.212729721620438e-05 	 val_loss: 0.02555842976792436 	 val_acc: 0.73988
+EPOCH 46:
+train_loss: 4.7677904219419735e-05 	 val_loss: 0.028706142795839933 	 val_acc: 0.74344
+EPOCH 47:
+train_loss: 5.3428156959236275e-05 	 val_loss: 0.025884666178368036 	 val_acc: 0.73722
+EPOCH 48:
+train_loss: 5.3638627630328674e-05 	 val_loss: 0.024509799101102826 	 val_acc: 0.74344
+EPOCH 49:
+train_loss: 4.783830356483314e-05 	 val_loss: 0.028350770968109482 	 val_acc: 0.743
+EPOCH 50:
+train_loss: 5.17651441339202e-05 	 val_loss: 0.026815296249111137 	 val_acc: 0.73633
+EPOCH 51:
+train_loss: 3.7580046485230544e-05 	 val_loss: 0.025936389998655628 	 val_acc: 0.74255
+EPOCH 52:
+train_loss: 3.757719308134274e-05 	 val_loss: 0.02825868576170037 	 val_acc: 0.72432
+EPOCH 53:
+train_loss: 5.1720793237050846e-05 	 val_loss: 0.024252190790651947 	 val_acc: 0.74211
+EPOCH 54:
+train_loss: 3.680849048983783e-05 	 val_loss: 0.025400463868258717 	 val_acc: 0.73455
+EPOCH 55:
+train_loss: 3.584405045296192e-05 	 val_loss: 0.026994929223274518 	 val_acc: 0.74166
+EPOCH 56:
+train_loss: 4.3232940388352335e-05 	 val_loss: 0.029105265895973294 	 val_acc: 0.743
+EPOCH 57:
+train_loss: 3.374412532748555e-05 	 val_loss: 0.027104009021487185 	 val_acc: 0.74122
+EPOCH 58:
+train_loss: 3.663474095181035e-05 	 val_loss: 0.025104744788540325 	 val_acc: 0.74389
+EPOCH 59:
+train_loss: 4.761317863829749e-05 	 val_loss: 0.023920447637722456 	 val_acc: 0.74211
+EPOCH 60:
+train_loss: 4.234738265278206e-05 	 val_loss: 0.02642991036946613 	 val_acc: 0.74166
+EPOCH 61:
+train_loss: 3.390349552150619e-05 	 val_loss: 0.024692913459458402 	 val_acc: 0.7341
+EPOCH 62:
+train_loss: 4.927890780866946e-05 	 val_loss: 0.025987836581016457 	 val_acc: 0.74166
+EPOCH 63:
+train_loss: 3.50667398361367e-05 	 val_loss: 0.026529562853741452 	 val_acc: 0.73455
+EPOCH 64:
+train_loss: 4.955296133191574e-05 	 val_loss: 0.02599366100662648 	 val_acc: 0.74478
+EPOCH 65:
+train_loss: 3.249752968004038e-05 	 val_loss: 0.028279814903187497 	 val_acc: 0.74211
+EPOCH 66:
+train_loss: 3.6346415134529495e-05 	 val_loss: 0.025207781948970113 	 val_acc: 0.74478
+EPOCH 67:
+train_loss: 3.145274651534565e-05 	 val_loss: 0.02456070502003028 	 val_acc: 0.74077
+EPOCH 68:
+train_loss: 3.826539063515583e-05 	 val_loss: 0.02577629234713535 	 val_acc: 0.74478
+EPOCH 69:
+train_loss: 4.140262946053914e-05 	 val_loss: 0.025777804825132453 	 val_acc: 0.74389
+EPOCH 70:
+train_loss: 3.31435231211934e-05 	 val_loss: 0.024573152071762427 	 val_acc: 0.73677
+EPOCH 71:
+train_loss: 3.996765397013977e-05 	 val_loss: 0.025560581856063858 	 val_acc: 0.74211
+EPOCH 72:
+train_loss: 4.07711673855514e-05 	 val_loss: 0.028552119456543932 	 val_acc: 0.74255
+EPOCH 73:
+train_loss: 3.6954264312611e-05 	 val_loss: 0.026993863090486788 	 val_acc: 0.739
+EPOCH 74:
+train_loss: 3.104842526533161e-05 	 val_loss: 0.025875290302191514 	 val_acc: 0.73988
+EPOCH 75:
+train_loss: 4.230478852951584e-05 	 val_loss: 0.027645011484491097 	 val_acc: 0.743
+EPOCH 76:
+train_loss: 3.408204495434934e-05 	 val_loss: 0.024377908143805138 	 val_acc: 0.74478
+EPOCH 77:
+train_loss: 3.774742847259662e-05 	 val_loss: 0.025364263903917498 	 val_acc: 0.74077
+EPOCH 78:
+train_loss: 2.9910313864440792e-05 	 val_loss: 0.02631193411215522 	 val_acc: 0.743
+EPOCH 79:
+train_loss: 3.87183908957826e-05 	 val_loss: 0.026388583306920507 	 val_acc: 0.74211
+EPOCH 80:
+train_loss: 3.296073218382769e-05 	 val_loss: 0.02424367604460167 	 val_acc: 0.74433
+EPOCH 81:
+train_loss: 3.3661947483244106e-05 	 val_loss: 0.025100185115031422 	 val_acc: 0.74077
+EPOCH 82:
+train_loss: 4.1305736716393435e-05 	 val_loss: 0.024714950831063284 	 val_acc: 0.74211
+EPOCH 83:
+train_loss: 4.0819957229633323e-05 	 val_loss: 0.027247933594262502 	 val_acc: 0.74433
+EPOCH 84:
+train_loss: 2.987692400124477e-05 	 val_loss: 0.02480185067138065 	 val_acc: 0.74211
+EPOCH 85:
+train_loss: 3.3858994776054215e-05 	 val_loss: 0.026880379086037583 	 val_acc: 0.74166
+EPOCH 86:
+train_loss: 4.4759900539026104e-05 	 val_loss: 0.02538082003860135 	 val_acc: 0.74433
+EPOCH 87:
+train_loss: 4.222553788964255e-05 	 val_loss: 0.029316850964380428 	 val_acc: 0.73099
+EPOCH 88:
+train_loss: 4.891960625621351e-05 	 val_loss: 0.025090182962197078 	 val_acc: 0.74211
+EPOCH 89:
+train_loss: 4.7931291049049715e-05 	 val_loss: 0.025678743654174323 	 val_acc: 0.74033
+EPOCH 90:
+train_loss: 3.706891515761632e-05 	 val_loss: 0.02513687680108357 	 val_acc: 0.74344
+EPOCH 91:
+train_loss: 4.182556786847099e-05 	 val_loss: 0.025015362796209972 	 val_acc: 0.74389
+EPOCH 92:
+train_loss: 3.836187758520477e-05 	 val_loss: 0.026404386821506674 	 val_acc: 0.74077
+EPOCH 93:
+train_loss: 3.493592837451481e-05 	 val_loss: 0.0268688821282281 	 val_acc: 0.73988
+EPOCH 94:
+train_loss: 3.487261083554625e-05 	 val_loss: 0.026121639810480952 	 val_acc: 0.74522
+EPOCH 95:
+train_loss: 2.9293252595326646e-05 	 val_loss: 0.025436073363534224 	 val_acc: 0.74122
+EPOCH 96:
+train_loss: 3.133420972518291e-05 	 val_loss: 0.028412579863580714 	 val_acc: 0.743
+EPOCH 97:
+train_loss: 4.6125920117878614e-05 	 val_loss: 0.02831135445068521 	 val_acc: 0.74255
+EPOCH 98:
+train_loss: 4.186583603555193e-05 	 val_loss: 0.0250779030136507 	 val_acc: 0.74211
+EPOCH 99:
+train_loss: 5.75418964543721e-05 	 val_loss: 0.026144143417049737 	 val_acc: 0.74344
+EPOCH 100:
+train_loss: 3.898948191263908e-05 	 val_loss: 0.024743229123163638 	 val_acc: 0.74566
+EPOCH 101:
+train_loss: 2.6960866918824324e-05 	 val_loss: 0.025215159063252873 	 val_acc: 0.74077
+EPOCH 102:
+train_loss: 4.005856700360067e-05 	 val_loss: 0.024371499360443707 	 val_acc: 0.74033
+EPOCH 103:
+train_loss: 2.885779101986352e-05 	 val_loss: 0.026063056131766713 	 val_acc: 0.73811
+EPOCH 104:
+train_loss: 3.8188085460672983e-05 	 val_loss: 0.0255867141590841 	 val_acc: 0.74522
+EPOCH 105:
+train_loss: 3.198553629854321e-05 	 val_loss: 0.02627217596939145 	 val_acc: 0.74077
+EPOCH 106:
+train_loss: 3.305036702038437e-05 	 val_loss: 0.025902419698533505 	 val_acc: 0.74122
+EPOCH 107:
+train_loss: 3.252247564100092e-05 	 val_loss: 0.02528289152025979 	 val_acc: 0.74211
+EPOCH 108:
+train_loss: 3.540547413176467e-05 	 val_loss: 0.024853064382178013 	 val_acc: 0.74166
+EPOCH 109:
+train_loss: 3.2658614903660824e-05 	 val_loss: 0.0283907892988967 	 val_acc: 0.74389
+EPOCH 110:
+train_loss: 2.786081700020229e-05 	 val_loss: 0.027545356563450696 	 val_acc: 0.74522
+EPOCH 111:
+train_loss: 3.7209754824443695e-05 	 val_loss: 0.026833241468344315 	 val_acc: 0.74344
+EPOCH 112:
+train_loss: 2.6771234675135026e-05 	 val_loss: 0.024816285581593784 	 val_acc: 0.739
+EPOCH 113:
+train_loss: 4.094421118298536e-05 	 val_loss: 0.02504719804105082 	 val_acc: 0.73944
+EPOCH 114:
+train_loss: 3.928625115812336e-05 	 val_loss: 0.026696593834237618 	 val_acc: 0.72032
+EPOCH 115:
+train_loss: 3.82228386897125e-05 	 val_loss: 0.025764787160116976 	 val_acc: 0.74122
+EPOCH 116:
+train_loss: 3.175723260110523e-05 	 val_loss: 0.028206124166181092 	 val_acc: 0.74478
+EPOCH 117:
+train_loss: 3.18723881349768e-05 	 val_loss: 0.028463814160763556 	 val_acc: 0.74255
+EPOCH 118:
+train_loss: 2.714157397732185e-05 	 val_loss: 0.027366983708460847 	 val_acc: 0.74077
+EPOCH 119:
+train_loss: 5.5196657702925106e-05 	 val_loss: 0.02394717661127197 	 val_acc: 0.74166
+EPOCH 120:
+train_loss: 2.743335796054631e-05 	 val_loss: 0.025220278997956085 	 val_acc: 0.74122
+EPOCH 121:
+train_loss: 3.426365920619435e-05 	 val_loss: 0.025862708742859005 	 val_acc: 0.74166
+EPOCH 122:
+train_loss: 4.573804600819036e-05 	 val_loss: 0.026228121335130115 	 val_acc: 0.74611
+EPOCH 123:
+train_loss: 3.243238356345298e-05 	 val_loss: 0.02735718784416431 	 val_acc: 0.74389
+EPOCH 124:
+train_loss: 5.0082519880232586e-05 	 val_loss: 0.025764029575397925 	 val_acc: 0.743
+EPOCH 125:
+train_loss: 3.491587288244807e-05 	 val_loss: 0.025002938861482388 	 val_acc: 0.73366
+EPOCH 126:
+train_loss: 3.110713959877966e-05 	 val_loss: 0.026768647403172897 	 val_acc: 0.74389
+EPOCH 127:
+train_loss: 4.860647437171328e-05 	 val_loss: 0.026868854524874173 	 val_acc: 0.74211
+EPOCH 128:
+train_loss: 2.9851726724335602e-05 	 val_loss: 0.025460025678119693 	 val_acc: 0.73366
+EPOCH 129:
+train_loss: 2.765845742846672e-05 	 val_loss: 0.02825810721447859 	 val_acc: 0.74344
+EPOCH 130:
+train_loss: 3.164834848296517e-05 	 val_loss: 0.0261957803091433 	 val_acc: 0.74433
+EPOCH 131:
+train_loss: 3.7432143181281464e-05 	 val_loss: 0.02532805339794907 	 val_acc: 0.74211
+EPOCH 132:
+train_loss: 3.2263265986796905e-05 	 val_loss: 0.024461216200122086 	 val_acc: 0.74344
+EPOCH 133:
+train_loss: 3.702383938401878e-05 	 val_loss: 0.025927670785207826 	 val_acc: 0.74122
+EPOCH 134:
+train_loss: 4.611015348345188e-05 	 val_loss: 0.028262648966988487 	 val_acc: 0.74655
+EPOCH 135:
+train_loss: 2.937798029301697e-05 	 val_loss: 0.02463116444592645 	 val_acc: 0.74255
+EPOCH 136:
+train_loss: 3.599203284812634e-05 	 val_loss: 0.02680234755478861 	 val_acc: 0.74166
+EPOCH 137:
+train_loss: 3.055617056939603e-05 	 val_loss: 0.026915775661122042 	 val_acc: 0.74389
+EPOCH 138:
+train_loss: 2.901086787900106e-05 	 val_loss: 0.02557173819209804 	 val_acc: 0.74255
+EPOCH 139:
+train_loss: 3.508457112865563e-05 	 val_loss: 0.027830838429172867 	 val_acc: 0.74478
+EPOCH 140:
+train_loss: 4.1919712917099266e-05 	 val_loss: 0.027431883597321634 	 val_acc: 0.73366
+EPOCH 141:
+train_loss: 3.636815175551873e-05 	 val_loss: 0.025831678601521454 	 val_acc: 0.74166
+EPOCH 142:
+train_loss: 2.694420175819293e-05 	 val_loss: 0.025846210760628992 	 val_acc: 0.74522
+EPOCH 143:
+train_loss: 3.2527666155778775e-05 	 val_loss: 0.02590415339398954 	 val_acc: 0.74566
+EPOCH 144:
+train_loss: 2.8669081323344383e-05 	 val_loss: 0.024689557127788975 	 val_acc: 0.74566
+EPOCH 145:
+train_loss: 3.512780282548881e-05 	 val_loss: 0.02454767935214103 	 val_acc: 0.74522
+EPOCH 146:
+train_loss: 3.1021404628017635e-05 	 val_loss: 0.024728862544812897 	 val_acc: 0.74389
+EPOCH 147:
+train_loss: 2.7614702216374367e-05 	 val_loss: 0.025897501547158176 	 val_acc: 0.73766
+EPOCH 148:
+train_loss: 4.601637835060806e-05 	 val_loss: 0.027176428059347117 	 val_acc: 0.74122
+EPOCH 149:
+train_loss: 3.7266804727778966e-05 	 val_loss: 0.025475657119871067 	 val_acc: 0.74344
+EPOCH 150:
+train_loss: 3.042628081428476e-05 	 val_loss: 0.025576127159522958 	 val_acc: 0.74389
+EPOCH 151:
+train_loss: 2.5715908470519945e-05 	 val_loss: 0.025923124272518618 	 val_acc: 0.74122
+EPOCH 152:
+train_loss: 2.996024860342206e-05 	 val_loss: 0.02809529533448881 	 val_acc: 0.74122
+EPOCH 153:
+train_loss: 4.458558218120064e-05 	 val_loss: 0.02581258755679413 	 val_acc: 0.74255
+EPOCH 154:
+train_loss: 2.9744882645191475e-05 	 val_loss: 0.02609577120963424 	 val_acc: 0.74166
+EPOCH 155:
+train_loss: 2.4977975343587045e-05 	 val_loss: 0.039519321087096035 	 val_acc: 0.72966
+EPOCH 156:
+train_loss: 2.9259634736616273e-05 	 val_loss: 0.027765973481275418 	 val_acc: 0.74522
+EPOCH 157:
+train_loss: 3.5041867656153975e-05 	 val_loss: 0.02974161612945862 	 val_acc: 0.74389
+EPOCH 158:
+train_loss: 3.565772559435068e-05 	 val_loss: 0.02773566459840672 	 val_acc: 0.74389
+EPOCH 159:
+train_loss: 2.7030762129910478e-05 	 val_loss: 0.02521244976383997 	 val_acc: 0.74255
+EPOCH 160:
+train_loss: 3.9821830584490275e-05 	 val_loss: 0.02801785222525995 	 val_acc: 0.74255
+EPOCH 161:
+train_loss: 3.216294901589599e-05 	 val_loss: 0.028664417969399694 	 val_acc: 0.74344
+EPOCH 162:
+train_loss: 3.0869161346202e-05 	 val_loss: 0.024210954123612634 	 val_acc: 0.747
+EPOCH 163:
+train_loss: 4.839165784569202e-05 	 val_loss: 0.025515279106850634 	 val_acc: 0.74522
+EPOCH 164:
+train_loss: 3.410553146895949e-05 	 val_loss: 0.027096733872461105 	 val_acc: 0.74211
+EPOCH 165:
+train_loss: 2.6690955617387156e-05 	 val_loss: 0.02795690671961302 	 val_acc: 0.74344
+EPOCH 166:
+train_loss: 3.119249874968589e-05 	 val_loss: 0.02632691588566147 	 val_acc: 0.74566
+EPOCH 167:
+train_loss: 3.5984649154230925e-05 	 val_loss: 0.027254510503488462 	 val_acc: 0.74077
+EPOCH 168:
+train_loss: 3.121772901213976e-05 	 val_loss: 0.0254817052600112 	 val_acc: 0.74122
+EPOCH 169:
+train_loss: 6.836269352611358e-05 	 val_loss: 0.027570869221760528 	 val_acc: 0.74433
+EPOCH 170:
+train_loss: 3.61004631019392e-05 	 val_loss: 0.027776592543599925 	 val_acc: 0.74611
+EPOCH 171:
+train_loss: 3.820154709919759e-05 	 val_loss: 0.02795445272073666 	 val_acc: 0.743
+EPOCH 172:
+train_loss: 2.9771726219351558e-05 	 val_loss: 0.024531734683513825 	 val_acc: 0.74433
+EPOCH 173:
+train_loss: 3.5230174802439396e-05 	 val_loss: 0.027367297159710386 	 val_acc: 0.74344
+EPOCH 174:
+train_loss: 4.590801806866644e-05 	 val_loss: 0.026094338484910103 	 val_acc: 0.74389
+EPOCH 175:
+train_loss: 2.944796992136419e-05 	 val_loss: 0.025480034552615848 	 val_acc: 0.74344
+EPOCH 176:
+train_loss: 3.298513538708677e-05 	 val_loss: 0.026336145336750844 	 val_acc: 0.74211
+EPOCH 177:
+train_loss: 2.8958278621066644e-05 	 val_loss: 0.02726955707812935 	 val_acc: 0.74433
+EPOCH 178:
+train_loss: 2.571663766760924e-05 	 val_loss: 0.025176183082283768 	 val_acc: 0.74166
+EPOCH 179:
+train_loss: 3.208715924801402e-05 	 val_loss: 0.026230562990332856 	 val_acc: 0.74389
+EPOCH 180:
+train_loss: 3.0314272651320244e-05 	 val_loss: 0.02462812897242332 	 val_acc: 0.74566
+EPOCH 181:
+train_loss: 3.4109175463726205e-05 	 val_loss: 0.026422248240416796 	 val_acc: 0.74478
+EPOCH 182:
+train_loss: 2.874796418637357e-05 	 val_loss: 0.026046643938532572 	 val_acc: 0.74255
+EPOCH 183:
+train_loss: 2.4750840689559588e-05 	 val_loss: 0.027658439821747163 	 val_acc: 0.739
+EPOCH 184:
+train_loss: 3.090464498421632e-05 	 val_loss: 0.02602361966013064 	 val_acc: 0.74478
+EPOCH 185:
+train_loss: 3.519623126853138e-05 	 val_loss: 0.026270899730654173 	 val_acc: 0.74211
+EPOCH 186:
+train_loss: 2.8871196226854042e-05 	 val_loss: 0.028259187859961597 	 val_acc: 0.73544
+EPOCH 187:
+train_loss: 3.4771190882029106e-05 	 val_loss: 0.025304039083248454 	 val_acc: 0.74255
+EPOCH 188:
+train_loss: 3.457937238926399e-05 	 val_loss: 0.027455126646120317 	 val_acc: 0.74211
+EPOCH 189:
+train_loss: 2.465589060286647e-05 	 val_loss: 0.024656711399390414 	 val_acc: 0.74655
+EPOCH 190:
+train_loss: 3.380018213747957e-05 	 val_loss: 0.027398327765992075 	 val_acc: 0.747
+EPOCH 191:
+train_loss: 4.912615636260336e-05 	 val_loss: 0.029476829548809383 	 val_acc: 0.74211
+EPOCH 192:
+train_loss: 5.016343701533193e-05 	 val_loss: 0.02674767838211522 	 val_acc: 0.74389
+EPOCH 193:
+train_loss: 3.048201904048007e-05 	 val_loss: 0.025907546405008322 	 val_acc: 0.74389
+Early stop at epoch: 193
+#############################################################
+# EEGInception - Baseline                   
+# Val. Acc.:  0.747                      
+# Epochs:     194                     
+# LR:         1e-06                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.99)                             
+#############################################################

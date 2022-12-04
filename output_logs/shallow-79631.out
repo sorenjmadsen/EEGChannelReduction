@@ -1,0 +1,1052 @@
+Running on device: cuda
+LR: 0.0001 Betas: (0.9, 0.95) Weight Decay (L2): 0.01
+Training on PCA
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/3.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/pca/train/3.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.2802784296704661 	 val_loss: 1.1497638239059873 	 val_acc: 0.48555
+EPOCH 2:
+train_loss: 1.047457643425494 	 val_loss: 0.9965287834228556 	 val_acc: 0.54958
+EPOCH 3:
+train_loss: 0.8939016619007546 	 val_loss: 0.8970512720195565 	 val_acc: 0.60605
+EPOCH 4:
+train_loss: 0.7916953192817998 	 val_loss: 0.8516438455881422 	 val_acc: 0.61983
+EPOCH 5:
+train_loss: 0.7140073557117185 	 val_loss: 0.7889084612993184 	 val_acc: 0.65718
+EPOCH 6:
+train_loss: 0.6592081075384513 	 val_loss: 0.7561338424117017 	 val_acc: 0.66696
+EPOCH 7:
+train_loss: 0.5979371996604645 	 val_loss: 0.7533603315199983 	 val_acc: 0.66696
+EPOCH 8:
+train_loss: 0.5591314230413432 	 val_loss: 0.714559326533108 	 val_acc: 0.6892
+EPOCH 9:
+train_loss: 0.5249589073689566 	 val_loss: 0.685794449191634 	 val_acc: 0.71054
+EPOCH 10:
+train_loss: 0.483406366769415 	 val_loss: 0.6756447594009245 	 val_acc: 0.72254
+EPOCH 11:
+train_loss: 0.45054507987181575 	 val_loss: 0.663210338305591 	 val_acc: 0.72388
+EPOCH 12:
+train_loss: 0.4221758503479382 	 val_loss: 0.679654148747 	 val_acc: 0.70654
+EPOCH 13:
+train_loss: 0.40105865164991433 	 val_loss: 0.6753330532143828 	 val_acc: 0.70431
+EPOCH 14:
+train_loss: 0.3765689252497008 	 val_loss: 0.6592792919199779 	 val_acc: 0.72655
+EPOCH 15:
+train_loss: 0.37579943976314334 	 val_loss: 0.6165747652336946 	 val_acc: 0.74566
+EPOCH 16:
+train_loss: 0.3349001931960245 	 val_loss: 0.6161048077900361 	 val_acc: 0.74611
+EPOCH 17:
+train_loss: 0.3399991669205867 	 val_loss: 0.6149110644896014 	 val_acc: 0.739
+EPOCH 18:
+train_loss: 0.3053985715847217 	 val_loss: 0.6016101664554421 	 val_acc: 0.74833
+EPOCH 19:
+train_loss: 0.3011333930130972 	 val_loss: 0.5938303884999458 	 val_acc: 0.75145
+EPOCH 20:
+train_loss: 0.2769498132961655 	 val_loss: 0.5968346156933935 	 val_acc: 0.75634
+EPOCH 21:
+train_loss: 0.2963430054008471 	 val_loss: 0.5958995189722214 	 val_acc: 0.75589
+EPOCH 22:
+train_loss: 0.2524079667625715 	 val_loss: 0.6295475250348835 	 val_acc: 0.74122
+EPOCH 23:
+train_loss: 0.2491102502012607 	 val_loss: 0.5982366658207003 	 val_acc: 0.74922
+EPOCH 24:
+train_loss: 0.23695614909236937 	 val_loss: 0.5893446204251123 	 val_acc: 0.7639
+EPOCH 25:
+train_loss: 0.22713287341566524 	 val_loss: 0.6028741020674255 	 val_acc: 0.75011
+EPOCH 26:
+train_loss: 0.21347219389099562 	 val_loss: 0.6061640919787438 	 val_acc: 0.75634
+EPOCH 27:
+train_loss: 0.2193392647021068 	 val_loss: 0.5952180597876273 	 val_acc: 0.75678
+EPOCH 28:
+train_loss: 0.20212424277357105 	 val_loss: 0.5839434577066269 	 val_acc: 0.76167
+EPOCH 29:
+train_loss: 0.19526841149615745 	 val_loss: 0.5864390742044842 	 val_acc: 0.76523
+EPOCH 30:
+train_loss: 0.1886168347503958 	 val_loss: 0.579400669061671 	 val_acc: 0.76923
+EPOCH 31:
+train_loss: 0.17783205112821382 	 val_loss: 0.5944431641492639 	 val_acc: 0.76345
+EPOCH 32:
+train_loss: 0.18486622213028742 	 val_loss: 0.5842286714178447 	 val_acc: 0.76834
+EPOCH 33:
+train_loss: 0.1679520480634007 	 val_loss: 0.5898342521960774 	 val_acc: 0.76612
+EPOCH 34:
+train_loss: 0.16117227319481892 	 val_loss: 0.5747118909769144 	 val_acc: 0.77501
+EPOCH 35:
+train_loss: 0.15454658325295484 	 val_loss: 0.5786769969052356 	 val_acc: 0.7679
+EPOCH 36:
+train_loss: 0.164806203609077 	 val_loss: 0.5645349206800983 	 val_acc: 0.7799
+EPOCH 37:
+train_loss: 0.14569355921239124 	 val_loss: 0.5828253052831365 	 val_acc: 0.76834
+EPOCH 38:
+train_loss: 0.15660811492792803 	 val_loss: 0.5775373983305637 	 val_acc: 0.77812
+EPOCH 39:
+train_loss: 0.13389720092085766 	 val_loss: 0.615712566398167 	 val_acc: 0.75545
+EPOCH 40:
+train_loss: 0.1670269237034703 	 val_loss: 0.5882798958315725 	 val_acc: 0.76834
+EPOCH 41:
+train_loss: 0.1381388015700016 	 val_loss: 0.5862785877249355 	 val_acc: 0.76034
+EPOCH 42:
+train_loss: 0.14324174142397783 	 val_loss: 0.5753268194416563 	 val_acc: 0.77012
+EPOCH 43:
+train_loss: 0.13097700549320235 	 val_loss: 0.5746928502265947 	 val_acc: 0.77279
+EPOCH 44:
+train_loss: 0.13868067592403846 	 val_loss: 0.5706947814527699 	 val_acc: 0.7759
+EPOCH 45:
+train_loss: 0.1192451077515295 	 val_loss: 0.593123745818111 	 val_acc: 0.76701
+EPOCH 46:
+train_loss: 0.11853943107037881 	 val_loss: 0.5782068954939715 	 val_acc: 0.78124
+EPOCH 47:
+train_loss: 0.10669290599184027 	 val_loss: 0.6090913815664116 	 val_acc: 0.76078
+EPOCH 48:
+train_loss: 0.16139513087452864 	 val_loss: 0.5788296327088984 	 val_acc: 0.77101
+EPOCH 49:
+train_loss: 0.11512862131010249 	 val_loss: 0.5851895918436396 	 val_acc: 0.78035
+EPOCH 50:
+train_loss: 0.11006239196723079 	 val_loss: 0.589844523501014 	 val_acc: 0.76923
+EPOCH 51:
+train_loss: 0.11164657992336906 	 val_loss: 0.5748261075301286 	 val_acc: 0.78168
+EPOCH 52:
+train_loss: 0.13533025812704375 	 val_loss: 0.5760008134951503 	 val_acc: 0.7839
+EPOCH 53:
+train_loss: 0.10074800538187009 	 val_loss: 0.5765468351125543 	 val_acc: 0.77812
+EPOCH 54:
+train_loss: 0.09582906707859928 	 val_loss: 0.6820377097983424 	 val_acc: 0.74166
+EPOCH 55:
+train_loss: 0.14289565708432658 	 val_loss: 0.5743145579383472 	 val_acc: 0.77679
+EPOCH 56:
+train_loss: 0.09485560313001556 	 val_loss: 0.5912471999198616 	 val_acc: 0.77768
+EPOCH 57:
+train_loss: 0.09935155739476371 	 val_loss: 0.5904262482958608 	 val_acc: 0.77501
+EPOCH 58:
+train_loss: 0.09512840991418098 	 val_loss: 0.5762805480143921 	 val_acc: 0.78257
+EPOCH 59:
+train_loss: 0.07982464788789817 	 val_loss: 0.5665629754216998 	 val_acc: 0.78124
+EPOCH 60:
+train_loss: 0.07167718603507885 	 val_loss: 0.5621854694310617 	 val_acc: 0.78657
+EPOCH 61:
+train_loss: 0.06414384556298629 	 val_loss: 0.5716870644330028 	 val_acc: 0.78124
+EPOCH 62:
+train_loss: 0.06136903152001439 	 val_loss: 0.5589162351845226 	 val_acc: 0.78435
+EPOCH 63:
+train_loss: 0.05957896510930115 	 val_loss: 0.5561114411714736 	 val_acc: 0.79013
+EPOCH 64:
+train_loss: 0.05909343932696629 	 val_loss: 0.5610222418035067 	 val_acc: 0.78613
+EPOCH 65:
+train_loss: 0.05852914330576636 	 val_loss: 0.5561867047732842 	 val_acc: 0.78746
+EPOCH 66:
+train_loss: 0.05855348670165794 	 val_loss: 0.5582811658973421 	 val_acc: 0.78568
+EPOCH 67:
+train_loss: 0.05780168072067734 	 val_loss: 0.5591310933040692 	 val_acc: 0.79235
+EPOCH 68:
+train_loss: 0.057284996851881986 	 val_loss: 0.5566340575154709 	 val_acc: 0.79013
+EPOCH 69:
+train_loss: 0.05717159436723783 	 val_loss: 0.5570809573875664 	 val_acc: 0.78702
+EPOCH 70:
+train_loss: 0.05656727140518491 	 val_loss: 0.5580633991104653 	 val_acc: 0.78791
+EPOCH 71:
+train_loss: 0.05542843967799126 	 val_loss: 0.5576304638273768 	 val_acc: 0.7888
+EPOCH 72:
+train_loss: 0.05699718851792499 	 val_loss: 0.5610640042225237 	 val_acc: 0.78791
+EPOCH 73:
+train_loss: 0.055646187949914855 	 val_loss: 0.5580186602267669 	 val_acc: 0.78924
+EPOCH 74:
+train_loss: 0.05528117762225078 	 val_loss: 0.5610669574721074 	 val_acc: 0.78613
+EPOCH 75:
+train_loss: 0.05505005282755062 	 val_loss: 0.5750429704869751 	 val_acc: 0.78213
+EPOCH 76:
+train_loss: 0.05461911916879033 	 val_loss: 0.5622049324100741 	 val_acc: 0.79102
+EPOCH 77:
+train_loss: 0.05506492393135472 	 val_loss: 0.5566943725521458 	 val_acc: 0.79413
+EPOCH 78:
+train_loss: 0.05484146099477095 	 val_loss: 0.5587773686116511 	 val_acc: 0.79102
+EPOCH 79:
+train_loss: 0.05362834866256877 	 val_loss: 0.5596083829838872 	 val_acc: 0.79057
+EPOCH 80:
+train_loss: 0.05291738115749402 	 val_loss: 0.5600959221531896 	 val_acc: 0.78924
+EPOCH 81:
+train_loss: 0.0533354552442032 	 val_loss: 0.5633403153742055 	 val_acc: 0.7888
+EPOCH 82:
+train_loss: 0.05217791270522906 	 val_loss: 0.5590198217661179 	 val_acc: 0.79235
+EPOCH 83:
+train_loss: 0.05279396369304095 	 val_loss: 0.5599942814842397 	 val_acc: 0.78835
+EPOCH 84:
+train_loss: 0.05337610727054044 	 val_loss: 0.556257944642363 	 val_acc: 0.78968
+EPOCH 85:
+train_loss: 0.050587236343301034 	 val_loss: 0.5612463789981073 	 val_acc: 0.78346
+EPOCH 86:
+train_loss: 0.050924276555041816 	 val_loss: 0.5652707061865059 	 val_acc: 0.78479
+EPOCH 87:
+train_loss: 0.05054810045071267 	 val_loss: 0.555692696159746 	 val_acc: 0.79324
+EPOCH 88:
+train_loss: 0.050589559459141994 	 val_loss: 0.5729223094460685 	 val_acc: 0.77946
+EPOCH 89:
+train_loss: 0.051055866142562994 	 val_loss: 0.5577678519709035 	 val_acc: 0.79369
+EPOCH 90:
+train_loss: 0.051710664107011015 	 val_loss: 0.558601976856632 	 val_acc: 0.79057
+EPOCH 91:
+train_loss: 0.04974191996480798 	 val_loss: 0.5559630803335004 	 val_acc: 0.79324
+EPOCH 92:
+train_loss: 0.05077383801939187 	 val_loss: 0.557126646644476 	 val_acc: 0.79413
+EPOCH 93:
+train_loss: 0.05029815652440865 	 val_loss: 0.557224315741933 	 val_acc: 0.79369
+EPOCH 94:
+train_loss: 0.05067264919919677 	 val_loss: 0.556844092469689 	 val_acc: 0.7928
+EPOCH 95:
+train_loss: 0.05034287437351507 	 val_loss: 0.557120004393713 	 val_acc: 0.79413
+EPOCH 96:
+train_loss: 0.050745489994729366 	 val_loss: 0.5577294673266036 	 val_acc: 0.79191
+EPOCH 97:
+train_loss: 0.0492705145878857 	 val_loss: 0.5545326510338093 	 val_acc: 0.79458
+EPOCH 98:
+train_loss: 0.05025481016215696 	 val_loss: 0.5581281156872093 	 val_acc: 0.79013
+EPOCH 99:
+train_loss: 0.05006495553535215 	 val_loss: 0.5653784127714688 	 val_acc: 0.78124
+EPOCH 100:
+train_loss: 0.050299630410506814 	 val_loss: 0.559407837551679 	 val_acc: 0.78968
+EPOCH 101:
+train_loss: 0.05089506460026102 	 val_loss: 0.5581853737846201 	 val_acc: 0.79458
+EPOCH 102:
+train_loss: 0.050307240366895635 	 val_loss: 0.561856934827938 	 val_acc: 0.79057
+EPOCH 103:
+train_loss: 0.04992796369833966 	 val_loss: 0.5575772760963229 	 val_acc: 0.79191
+EPOCH 104:
+train_loss: 0.04995378274883672 	 val_loss: 0.5583280009403578 	 val_acc: 0.79591
+EPOCH 105:
+train_loss: 0.049767663853791645 	 val_loss: 0.555793335794729 	 val_acc: 0.7928
+EPOCH 106:
+train_loss: 0.05015575025705628 	 val_loss: 0.5544648897851467 	 val_acc: 0.79546
+EPOCH 107:
+train_loss: 0.04997110467844699 	 val_loss: 0.5575707561980203 	 val_acc: 0.79502
+EPOCH 108:
+train_loss: 0.049992271134441685 	 val_loss: 0.5833935896204349 	 val_acc: 0.77723
+EPOCH 109:
+train_loss: 0.049080330390949174 	 val_loss: 0.5540204354073088 	 val_acc: 0.79413
+EPOCH 110:
+train_loss: 0.05005617881962669 	 val_loss: 0.5572964820285733 	 val_acc: 0.7928
+EPOCH 111:
+train_loss: 0.04955206787855551 	 val_loss: 0.558513107422361 	 val_acc: 0.79502
+EPOCH 112:
+train_loss: 0.05029775741692055 	 val_loss: 0.5570781777664898 	 val_acc: 0.79235
+EPOCH 113:
+train_loss: 0.0502195336651274 	 val_loss: 0.5577026583876936 	 val_acc: 0.79146
+EPOCH 114:
+train_loss: 0.04911777415937582 	 val_loss: 0.5564702615883201 	 val_acc: 0.79191
+EPOCH 115:
+train_loss: 0.04952536882711264 	 val_loss: 0.5601644800245161 	 val_acc: 0.79013
+EPOCH 116:
+train_loss: 0.04925113884732961 	 val_loss: 0.557198793946629 	 val_acc: 0.79635
+EPOCH 117:
+train_loss: 0.05086494641273295 	 val_loss: 0.5601868486320485 	 val_acc: 0.78968
+EPOCH 118:
+train_loss: 0.050092527313940156 	 val_loss: 0.5605279901014874 	 val_acc: 0.78968
+EPOCH 119:
+train_loss: 0.049698984887338794 	 val_loss: 0.5742337261660068 	 val_acc: 0.78035
+EPOCH 120:
+train_loss: 0.05002384903427583 	 val_loss: 0.5589946984479809 	 val_acc: 0.79546
+EPOCH 121:
+train_loss: 0.0499667112627019 	 val_loss: 0.5564126043010004 	 val_acc: 0.79369
+EPOCH 122:
+train_loss: 0.050140815684058496 	 val_loss: 0.5582075928025813 	 val_acc: 0.79369
+EPOCH 123:
+train_loss: 0.049338211512211606 	 val_loss: 0.5592183841770761 	 val_acc: 0.79458
+EPOCH 124:
+train_loss: 0.04913387077504269 	 val_loss: 0.5588697740544991 	 val_acc: 0.79191
+EPOCH 125:
+train_loss: 0.05081644884096589 	 val_loss: 0.5587117564711547 	 val_acc: 0.79324
+EPOCH 126:
+train_loss: 0.04956196710445968 	 val_loss: 0.5606288924246756 	 val_acc: 0.7928
+EPOCH 127:
+train_loss: 0.05021699591809118 	 val_loss: 0.5588424475203427 	 val_acc: 0.78968
+EPOCH 128:
+train_loss: 0.04963418774563892 	 val_loss: 0.5601910464812067 	 val_acc: 0.79235
+EPOCH 129:
+train_loss: 0.05064549956526076 	 val_loss: 0.563891500116188 	 val_acc: 0.78524
+EPOCH 130:
+train_loss: 0.049817159483796086 	 val_loss: 0.5586942577018282 	 val_acc: 0.7928
+EPOCH 131:
+train_loss: 0.04970262942169451 	 val_loss: 0.5573786375929544 	 val_acc: 0.79324
+EPOCH 132:
+train_loss: 0.049584867864959345 	 val_loss: 0.5550974254785078 	 val_acc: 0.79458
+EPOCH 133:
+train_loss: 0.05004268085467526 	 val_loss: 0.5567187408010623 	 val_acc: 0.79235
+EPOCH 134:
+train_loss: 0.04946284480693615 	 val_loss: 0.5566957644198581 	 val_acc: 0.79502
+EPOCH 135:
+train_loss: 0.048635967101194624 	 val_loss: 0.5558570377563142 	 val_acc: 0.79502
+EPOCH 136:
+train_loss: 0.05021750318750562 	 val_loss: 0.5563780797677588 	 val_acc: 0.79369
+EPOCH 137:
+train_loss: 0.04953907231851317 	 val_loss: 0.5772807372447921 	 val_acc: 0.77546
+EPOCH 138:
+train_loss: 0.050232108042168315 	 val_loss: 0.556540096405162 	 val_acc: 0.79146
+EPOCH 139:
+train_loss: 0.04918420743650651 	 val_loss: 0.5545077504766552 	 val_acc: 0.7928
+EPOCH 140:
+train_loss: 0.04957642257643287 	 val_loss: 0.5567420381487146 	 val_acc: 0.79458
+EPOCH 141:
+train_loss: 0.048955500424703764 	 val_loss: 0.5606267251648632 	 val_acc: 0.79413
+EPOCH 142:
+train_loss: 0.0497702024678836 	 val_loss: 0.5580697846099948 	 val_acc: 0.79413
+EPOCH 143:
+train_loss: 0.049116037190258456 	 val_loss: 0.5643115865671073 	 val_acc: 0.78746
+EPOCH 144:
+train_loss: 0.04926490221110989 	 val_loss: 0.5544142748572707 	 val_acc: 0.79413
+EPOCH 145:
+train_loss: 0.048997309381199325 	 val_loss: 0.558382090243172 	 val_acc: 0.79191
+EPOCH 146:
+train_loss: 0.048922908454041576 	 val_loss: 0.5601479395377644 	 val_acc: 0.79502
+EPOCH 147:
+/WAVE/users/unix/smadsen/Desktop/bci_final/code/metrics/plots.py:11: UserWarning: Matplotlib is currently using agg, which is a non-GUI backend, so cannot show the figure.
+  plt.show(block=False)
+train_loss: 0.050378344474432596 	 val_loss: 0.5570741805487572 	 val_acc: 0.79413
+Early stop at epoch: 147
+#############################################################
+# ShallowConvNet - PCA                   
+# Val. Acc.:  0.79635                      
+# Epochs:     148                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
+Training on KPCA-linear
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/10.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/linear/train/10.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.3615030675849888 	 val_loss: 1.332059312164607 	 val_acc: 0.34104
+EPOCH 2:
+train_loss: 1.2597775922531593 	 val_loss: 1.2983867667959081 	 val_acc: 0.36372
+EPOCH 3:
+train_loss: 1.193194141424511 	 val_loss: 1.2729783383554052 	 val_acc: 0.37528
+EPOCH 4:
+train_loss: 1.1389972270942763 	 val_loss: 1.2636548669156582 	 val_acc: 0.3815
+EPOCH 5:
+train_loss: 1.0894676997618253 	 val_loss: 1.2603073700173455 	 val_acc: 0.38862
+EPOCH 6:
+train_loss: 1.0480453119958972 	 val_loss: 1.258605762191701 	 val_acc: 0.38817
+EPOCH 7:
+train_loss: 1.008244669169443 	 val_loss: 1.2632489303564596 	 val_acc: 0.39084
+EPOCH 8:
+train_loss: 0.9709001952328907 	 val_loss: 1.2611277602374316 	 val_acc: 0.38684
+EPOCH 9:
+train_loss: 0.9372780125934841 	 val_loss: 1.265983602915766 	 val_acc: 0.3904
+EPOCH 10:
+train_loss: 0.9015629670603631 	 val_loss: 1.280817339349947 	 val_acc: 0.38595
+EPOCH 11:
+train_loss: 0.8679516431074467 	 val_loss: 1.2828407197077984 	 val_acc: 0.38951
+EPOCH 12:
+train_loss: 0.8376986855839081 	 val_loss: 1.291888531811481 	 val_acc: 0.39351
+EPOCH 13:
+train_loss: 0.8080953408007813 	 val_loss: 1.2909675386612405 	 val_acc: 0.3944
+EPOCH 14:
+train_loss: 0.7808022230540886 	 val_loss: 1.3020085707154303 	 val_acc: 0.39084
+EPOCH 15:
+train_loss: 0.7561607159057212 	 val_loss: 1.319723799768501 	 val_acc: 0.38595
+EPOCH 16:
+train_loss: 0.7276087991702765 	 val_loss: 1.32438091956209 	 val_acc: 0.38728
+EPOCH 17:
+train_loss: 0.7016737398410497 	 val_loss: 1.3408521278687342 	 val_acc: 0.39084
+EPOCH 18:
+train_loss: 0.6787092617710632 	 val_loss: 1.3528064229892613 	 val_acc: 0.39217
+EPOCH 19:
+train_loss: 0.6570909351451245 	 val_loss: 1.3709708294292076 	 val_acc: 0.38595
+EPOCH 20:
+train_loss: 0.6332547915828847 	 val_loss: 1.387632318473932 	 val_acc: 0.3815
+EPOCH 21:
+train_loss: 0.6153455219798619 	 val_loss: 1.38582770609671 	 val_acc: 0.38951
+EPOCH 22:
+train_loss: 0.596134688231155 	 val_loss: 1.3948370132383487 	 val_acc: 0.38017
+EPOCH 23:
+train_loss: 0.57459434556729 	 val_loss: 1.4103637316065116 	 val_acc: 0.38951
+EPOCH 24:
+train_loss: 0.5575464655330794 	 val_loss: 1.4310675561873578 	 val_acc: 0.3815
+EPOCH 25:
+train_loss: 0.5375661067890625 	 val_loss: 1.44657458809987 	 val_acc: 0.37305
+EPOCH 26:
+train_loss: 0.5216945779069685 	 val_loss: 1.4661755457817935 	 val_acc: 0.37972
+EPOCH 27:
+train_loss: 0.5032431749473629 	 val_loss: 1.4789590884722097 	 val_acc: 0.37172
+EPOCH 28:
+train_loss: 0.4464810325752818 	 val_loss: 1.4621891482148062 	 val_acc: 0.38684
+EPOCH 29:
+train_loss: 0.43915106266566395 	 val_loss: 1.4580859797817483 	 val_acc: 0.38328
+EPOCH 30:
+train_loss: 0.4358134281858687 	 val_loss: 1.46362690029588 	 val_acc: 0.38195
+EPOCH 31:
+train_loss: 0.4322703931962112 	 val_loss: 1.4643963835750318 	 val_acc: 0.38284
+EPOCH 32:
+train_loss: 0.42987312748523143 	 val_loss: 1.4630324282034282 	 val_acc: 0.38373
+EPOCH 33:
+train_loss: 0.42866093350522055 	 val_loss: 1.4671855556796647 	 val_acc: 0.38328
+EPOCH 34:
+train_loss: 0.4259790633326266 	 val_loss: 1.465413560391307 	 val_acc: 0.38284
+EPOCH 35:
+train_loss: 0.4240543988349102 	 val_loss: 1.4689403722720376 	 val_acc: 0.38506
+EPOCH 36:
+train_loss: 0.42194181429660543 	 val_loss: 1.470909824103398 	 val_acc: 0.38417
+EPOCH 37:
+train_loss: 0.4193875741155755 	 val_loss: 1.475564650599093 	 val_acc: 0.38106
+EPOCH 38:
+train_loss: 0.41864799925965335 	 val_loss: 1.4713146238995858 	 val_acc: 0.38195
+EPOCH 39:
+train_loss: 0.41572576993267774 	 val_loss: 1.4763283962868483 	 val_acc: 0.38462
+EPOCH 40:
+train_loss: 0.4141969702360094 	 val_loss: 1.4770262755003758 	 val_acc: 0.38195
+EPOCH 41:
+train_loss: 0.41300613123143615 	 val_loss: 1.4754598529659935 	 val_acc: 0.38284
+EPOCH 42:
+train_loss: 0.40997568333214135 	 val_loss: 1.480031976839822 	 val_acc: 0.38284
+EPOCH 43:
+train_loss: 0.40819431654310423 	 val_loss: 1.4841706856400276 	 val_acc: 0.38417
+EPOCH 44:
+train_loss: 0.40727513616451966 	 val_loss: 1.484537103979531 	 val_acc: 0.38239
+Early stop at epoch: 44
+#############################################################
+# ShallowConvNet - KPCA-linear                   
+# Val. Acc.:  0.3944                      
+# Epochs:     45                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
+Training on KPCA-poly
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/14.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/poly/train/14.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.4144698602246992 	 val_loss: 2.156713390020331 	 val_acc: 0.28502
+EPOCH 2:
+train_loss: 1.3557091099054008 	 val_loss: 1.3762549535424051 	 val_acc: 0.30858
+EPOCH 3:
+train_loss: 1.2905849369833478 	 val_loss: 1.3723595682704168 	 val_acc: 0.30458
+EPOCH 4:
+train_loss: 1.2698209647507057 	 val_loss: 1.3712520632873022 	 val_acc: 0.3237
+EPOCH 5:
+train_loss: 1.2125223996243837 	 val_loss: 1.3563221331687985 	 val_acc: 0.34682
+EPOCH 6:
+train_loss: 1.201206094801426 	 val_loss: 1.3626321391406468 	 val_acc: 0.3237
+EPOCH 7:
+train_loss: 1.1521727997266684 	 val_loss: 1.3485106993395384 	 val_acc: 0.3357
+EPOCH 8:
+train_loss: 1.1282630100556057 	 val_loss: 1.348413835581786 	 val_acc: 0.3317
+EPOCH 9:
+train_loss: 1.0977809790258897 	 val_loss: 1.343806133611965 	 val_acc: 0.35082
+EPOCH 10:
+train_loss: 1.075367120645064 	 val_loss: 1.345616713103598 	 val_acc: 0.34771
+EPOCH 11:
+train_loss: 1.0509047586259015 	 val_loss: 1.3675184285109938 	 val_acc: 0.33793
+EPOCH 12:
+train_loss: 1.0217609734512816 	 val_loss: 1.3535168836117795 	 val_acc: 0.34549
+EPOCH 13:
+train_loss: 1.0136688098571587 	 val_loss: 1.355685152500387 	 val_acc: 0.34549
+EPOCH 14:
+train_loss: 1.0129844424019938 	 val_loss: 1.6691794068061099 	 val_acc: 0.30858
+EPOCH 15:
+train_loss: 0.9570195927889226 	 val_loss: 1.35650768936989 	 val_acc: 0.35438
+EPOCH 16:
+train_loss: 0.9571256994042373 	 val_loss: 1.4256333589106986 	 val_acc: 0.33526
+EPOCH 17:
+train_loss: 0.938205609385338 	 val_loss: 1.3625666881978464 	 val_acc: 0.35127
+EPOCH 18:
+train_loss: 0.9182100953629815 	 val_loss: 1.3796289207219332 	 val_acc: 0.3486
+EPOCH 19:
+train_loss: 0.9029129326941654 	 val_loss: 1.3739415493177676 	 val_acc: 0.35438
+EPOCH 20:
+train_loss: 0.8740445538817667 	 val_loss: 2.078971594599788 	 val_acc: 0.33304
+EPOCH 21:
+train_loss: 0.8626978567619775 	 val_loss: 1.3903007600790966 	 val_acc: 0.34193
+EPOCH 22:
+train_loss: 0.8450722152619727 	 val_loss: 2.2017201457240008 	 val_acc: 0.33437
+EPOCH 23:
+train_loss: 0.8364947527523394 	 val_loss: 1.394790810966301 	 val_acc: 0.3566
+EPOCH 24:
+train_loss: 0.8171651059646722 	 val_loss: 2.1388175824616886 	 val_acc: 0.31214
+EPOCH 25:
+train_loss: 0.8140146136815761 	 val_loss: 1.4024572606193166 	 val_acc: 0.34771
+EPOCH 26:
+train_loss: 0.7940775173491146 	 val_loss: 1.409307640344683 	 val_acc: 0.35171
+EPOCH 27:
+train_loss: 0.7746865198454193 	 val_loss: 2.354313095234029 	 val_acc: 0.26856
+EPOCH 28:
+train_loss: 0.75338827448345 	 val_loss: 1.9666322171465576 	 val_acc: 0.26234
+EPOCH 29:
+train_loss: 0.7946020311889483 	 val_loss: 1.4342423668356672 	 val_acc: 0.34682
+EPOCH 30:
+train_loss: 0.7485482301053658 	 val_loss: 1.4322337258500486 	 val_acc: 0.34549
+EPOCH 31:
+train_loss: 0.6834041780345081 	 val_loss: 1.4318275239932143 	 val_acc: 0.34815
+EPOCH 32:
+train_loss: 0.671142039693892 	 val_loss: 1.4415579935952525 	 val_acc: 0.35216
+EPOCH 33:
+train_loss: 0.6671609577422877 	 val_loss: 1.4352071229774719 	 val_acc: 0.34727
+EPOCH 34:
+train_loss: 0.6666136568898176 	 val_loss: 1.444549374704567 	 val_acc: 0.34993
+EPOCH 35:
+train_loss: 0.6614372976830878 	 val_loss: 1.4354245724884227 	 val_acc: 0.34993
+EPOCH 36:
+train_loss: 0.6600453206406529 	 val_loss: 1.4817331939283225 	 val_acc: 0.34504
+EPOCH 37:
+train_loss: 0.6567583860114121 	 val_loss: 1.437792792355026 	 val_acc: 0.34904
+EPOCH 38:
+train_loss: 0.6553145058885509 	 val_loss: 1.4512677621548906 	 val_acc: 0.3446
+EPOCH 39:
+train_loss: 0.6523541325548409 	 val_loss: 1.4357475091556737 	 val_acc: 0.34949
+EPOCH 40:
+train_loss: 0.6508249232013729 	 val_loss: 1.440255800292972 	 val_acc: 0.34949
+EPOCH 41:
+train_loss: 0.6488934522582451 	 val_loss: 1.4541652419844304 	 val_acc: 0.34771
+EPOCH 42:
+train_loss: 0.6466101132633493 	 val_loss: 1.5145079097045795 	 val_acc: 0.33659
+EPOCH 43:
+train_loss: 0.6436982684478383 	 val_loss: 1.4447825624675612 	 val_acc: 0.34415
+EPOCH 44:
+train_loss: 0.6433051900138312 	 val_loss: 1.4442896280178117 	 val_acc: 0.34193
+EPOCH 45:
+train_loss: 0.6411094478549184 	 val_loss: 1.51387442109571 	 val_acc: 0.3357
+EPOCH 46:
+train_loss: 0.6393235462457063 	 val_loss: 1.4478505609217582 	 val_acc: 0.35127
+EPOCH 47:
+train_loss: 0.6363699867114716 	 val_loss: 1.4892262905304994 	 val_acc: 0.33704
+EPOCH 48:
+train_loss: 0.6351998623327831 	 val_loss: 1.446563231530615 	 val_acc: 0.34682
+EPOCH 49:
+train_loss: 0.6334247347595893 	 val_loss: 1.4489583946923084 	 val_acc: 0.34815
+EPOCH 50:
+train_loss: 0.6309704339501321 	 val_loss: 1.447811695003121 	 val_acc: 0.34815
+EPOCH 51:
+train_loss: 0.6295498608133565 	 val_loss: 1.4870621549222771 	 val_acc: 0.33882
+EPOCH 52:
+train_loss: 0.6225680614349985 	 val_loss: 1.4506727975951066 	 val_acc: 0.34682
+EPOCH 53:
+train_loss: 0.6223873948909565 	 val_loss: 1.4668232269342254 	 val_acc: 0.34549
+EPOCH 54:
+train_loss: 0.620813769959644 	 val_loss: 1.4525677797549787 	 val_acc: 0.34593
+Early stop at epoch: 54
+#############################################################
+# ShallowConvNet - KPCA-poly                   
+# Val. Acc.:  0.3566                      
+# Epochs:     55                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
+Training on KPCA-rbf
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/12.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/rbf/train/12.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.3803301590166839 	 val_loss: 1.3594351985454913 	 val_acc: 0.32059
+EPOCH 2:
+train_loss: 1.2860017492440015 	 val_loss: 1.335123565978971 	 val_acc: 0.34638
+EPOCH 3:
+train_loss: 1.2099072576488543 	 val_loss: 1.3292989380635643 	 val_acc: 0.34727
+EPOCH 4:
+train_loss: 1.1450868524147404 	 val_loss: 1.3245985058808751 	 val_acc: 0.35482
+EPOCH 5:
+train_loss: 1.085099304025664 	 val_loss: 1.3278143701706615 	 val_acc: 0.35616
+EPOCH 6:
+train_loss: 1.0316845503223737 	 val_loss: 1.3377964414241628 	 val_acc: 0.35527
+EPOCH 7:
+train_loss: 0.9818415949952309 	 val_loss: 1.3482780418626958 	 val_acc: 0.35349
+EPOCH 8:
+train_loss: 0.9352797227300502 	 val_loss: 1.3582784110046857 	 val_acc: 0.35616
+EPOCH 9:
+train_loss: 0.8927864896816273 	 val_loss: 1.3711892365006717 	 val_acc: 0.35883
+EPOCH 10:
+train_loss: 0.852863625056506 	 val_loss: 1.3888153912150003 	 val_acc: 0.34593
+EPOCH 11:
+train_loss: 0.8171038981263158 	 val_loss: 1.4022267450582 	 val_acc: 0.35394
+EPOCH 12:
+train_loss: 0.781173603542563 	 val_loss: 1.4148841806216337 	 val_acc: 0.35394
+EPOCH 13:
+train_loss: 0.7483485421197965 	 val_loss: 1.43509288470149 	 val_acc: 0.35038
+EPOCH 14:
+train_loss: 0.7185277829961788 	 val_loss: 1.4567301721693964 	 val_acc: 0.35616
+EPOCH 15:
+train_loss: 0.6891270350473843 	 val_loss: 1.4682417332521343 	 val_acc: 0.34727
+EPOCH 16:
+train_loss: 0.6619717598013334 	 val_loss: 1.4848535701575223 	 val_acc: 0.35394
+EPOCH 17:
+train_loss: 0.6352436896560143 	 val_loss: 1.5081939263079753 	 val_acc: 0.35127
+EPOCH 18:
+train_loss: 0.6100915320768489 	 val_loss: 1.5204053676607692 	 val_acc: 0.35571
+EPOCH 19:
+train_loss: 0.5856602765259764 	 val_loss: 1.529399384400493 	 val_acc: 0.34593
+EPOCH 20:
+train_loss: 0.5618791288638767 	 val_loss: 1.548679228204613 	 val_acc: 0.34504
+EPOCH 21:
+train_loss: 0.5401229290084949 	 val_loss: 1.572293850389802 	 val_acc: 0.34415
+EPOCH 22:
+train_loss: 0.5200474110950831 	 val_loss: 1.5844689792030555 	 val_acc: 0.34504
+EPOCH 23:
+train_loss: 0.498097647785739 	 val_loss: 1.6014907217817562 	 val_acc: 0.34371
+EPOCH 24:
+train_loss: 0.47996962217752226 	 val_loss: 1.6186248350569195 	 val_acc: 0.33793
+EPOCH 25:
+train_loss: 0.46023689927584327 	 val_loss: 1.6371425710128555 	 val_acc: 0.33748
+EPOCH 26:
+train_loss: 0.39975558529161154 	 val_loss: 1.638712919614854 	 val_acc: 0.34015
+EPOCH 27:
+train_loss: 0.396227346987908 	 val_loss: 1.6396706822405924 	 val_acc: 0.33926
+EPOCH 28:
+train_loss: 0.3937722294777448 	 val_loss: 1.6432574319974487 	 val_acc: 0.33926
+EPOCH 29:
+train_loss: 0.3908504803531129 	 val_loss: 1.6453991011539724 	 val_acc: 0.34015
+EPOCH 30:
+train_loss: 0.38883557115659556 	 val_loss: 1.646029270434419 	 val_acc: 0.33926
+EPOCH 31:
+train_loss: 0.38665102596789774 	 val_loss: 1.6488895590576438 	 val_acc: 0.33882
+EPOCH 32:
+train_loss: 0.38402272404799115 	 val_loss: 1.6534796974304524 	 val_acc: 0.33837
+EPOCH 33:
+train_loss: 0.38216713465771535 	 val_loss: 1.6540881852273064 	 val_acc: 0.33971
+EPOCH 34:
+train_loss: 0.3813092036861591 	 val_loss: 1.657372116139119 	 val_acc: 0.33882
+EPOCH 35:
+train_loss: 0.37865399897604385 	 val_loss: 1.6603912382881294 	 val_acc: 0.33748
+EPOCH 36:
+train_loss: 0.37658556697409273 	 val_loss: 1.6627840408075745 	 val_acc: 0.3357
+EPOCH 37:
+train_loss: 0.37466289575029404 	 val_loss: 1.660059398414797 	 val_acc: 0.33971
+EPOCH 38:
+train_loss: 0.3723553456350844 	 val_loss: 1.6639655520999244 	 val_acc: 0.33659
+EPOCH 39:
+train_loss: 0.37099576324599426 	 val_loss: 1.6675788397987092 	 val_acc: 0.33971
+EPOCH 40:
+train_loss: 0.3685198707608415 	 val_loss: 1.665944166479347 	 val_acc: 0.34015
+Early stop at epoch: 40
+#############################################################
+# ShallowConvNet - KPCA-rbf                   
+# Val. Acc.:  0.35883                      
+# Epochs:     41                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
+Training on KPCA-sigmoid
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/6.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/5.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/6.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/sigmoid/train/5.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.3651395594598423 	 val_loss: 1.3443340254868605 	 val_acc: 0.33793
+EPOCH 2:
+train_loss: 1.269446061267378 	 val_loss: 1.3133958372867025 	 val_acc: 0.36683
+EPOCH 3:
+train_loss: 1.2079533078084184 	 val_loss: 1.2909691102384184 	 val_acc: 0.37439
+EPOCH 4:
+train_loss: 1.1539517455356672 	 val_loss: 1.2743593265258237 	 val_acc: 0.39217
+EPOCH 5:
+train_loss: 1.1055082418350808 	 val_loss: 1.2662045375885147 	 val_acc: 0.40551
+EPOCH 6:
+train_loss: 1.0633585779562198 	 val_loss: 1.258001264247866 	 val_acc: 0.40596
+EPOCH 7:
+train_loss: 1.0229950197959452 	 val_loss: 1.2638672628064163 	 val_acc: 0.40462
+EPOCH 8:
+train_loss: 0.9842167296828639 	 val_loss: 1.2617666397557301 	 val_acc: 0.4064
+EPOCH 9:
+train_loss: 0.9503678921208126 	 val_loss: 1.267857942876395 	 val_acc: 0.40151
+EPOCH 10:
+train_loss: 0.9162337414947114 	 val_loss: 1.267822643674755 	 val_acc: 0.40018
+EPOCH 11:
+train_loss: 0.8830314037565482 	 val_loss: 1.2736839393468815 	 val_acc: 0.39618
+EPOCH 12:
+train_loss: 0.8516831587586873 	 val_loss: 1.2856379859569862 	 val_acc: 0.39707
+EPOCH 13:
+train_loss: 0.8219512764315905 	 val_loss: 1.3008667420072302 	 val_acc: 0.3984
+EPOCH 14:
+train_loss: 0.792930277392463 	 val_loss: 1.3043467642677178 	 val_acc: 0.39662
+EPOCH 15:
+train_loss: 0.7662267070813046 	 val_loss: 1.3112495617703464 	 val_acc: 0.39173
+EPOCH 16:
+train_loss: 0.7401166847053661 	 val_loss: 1.3216727427662769 	 val_acc: 0.3904
+EPOCH 17:
+train_loss: 0.7151961303747081 	 val_loss: 1.3476694604291966 	 val_acc: 0.38817
+EPOCH 18:
+train_loss: 0.6913744920687628 	 val_loss: 1.3531902006778829 	 val_acc: 0.38195
+EPOCH 19:
+train_loss: 0.6667096379928998 	 val_loss: 1.3550870512281254 	 val_acc: 0.39529
+EPOCH 20:
+train_loss: 0.6466982982889837 	 val_loss: 1.36410139106789 	 val_acc: 0.39573
+EPOCH 21:
+train_loss: 0.6220235790292538 	 val_loss: 1.3899822536213575 	 val_acc: 0.38595
+EPOCH 22:
+train_loss: 0.6018292269231175 	 val_loss: 1.3939824566819652 	 val_acc: 0.38862
+EPOCH 23:
+train_loss: 0.5841354610019067 	 val_loss: 1.3953864778839595 	 val_acc: 0.39484
+EPOCH 24:
+train_loss: 0.5627129178402757 	 val_loss: 1.4070560922083037 	 val_acc: 0.38951
+EPOCH 25:
+train_loss: 0.5452510966302743 	 val_loss: 1.4248198321269612 	 val_acc: 0.38506
+EPOCH 26:
+train_loss: 0.5269987974848199 	 val_loss: 1.4379723922229217 	 val_acc: 0.38995
+EPOCH 27:
+train_loss: 0.5104234645325366 	 val_loss: 1.445100090933051 	 val_acc: 0.39351
+EPOCH 28:
+train_loss: 0.4508394083630057 	 val_loss: 1.4422658643044273 	 val_acc: 0.38817
+EPOCH 29:
+train_loss: 0.44611869039802243 	 val_loss: 1.447239955752287 	 val_acc: 0.39173
+EPOCH 30:
+train_loss: 0.4426645168178819 	 val_loss: 1.447024457240028 	 val_acc: 0.39217
+EPOCH 31:
+train_loss: 0.44051458561313317 	 val_loss: 1.4494145686362991 	 val_acc: 0.39173
+EPOCH 32:
+train_loss: 0.43781995506132676 	 val_loss: 1.450324766416978 	 val_acc: 0.38995
+EPOCH 33:
+train_loss: 0.4359855391880425 	 val_loss: 1.4526085934486 	 val_acc: 0.39173
+EPOCH 34:
+train_loss: 0.4338437178481759 	 val_loss: 1.4531782938990827 	 val_acc: 0.38773
+EPOCH 35:
+train_loss: 0.43063590921918726 	 val_loss: 1.4560310520784356 	 val_acc: 0.39084
+EPOCH 36:
+train_loss: 0.4301736508910971 	 val_loss: 1.4567976274862904 	 val_acc: 0.38995
+EPOCH 37:
+train_loss: 0.4271629976779283 	 val_loss: 1.457249930344203 	 val_acc: 0.39129
+EPOCH 38:
+train_loss: 0.42591378717843675 	 val_loss: 1.4612165533038202 	 val_acc: 0.3904
+EPOCH 39:
+train_loss: 0.4240710463922445 	 val_loss: 1.4606577084348447 	 val_acc: 0.39084
+Early stop at epoch: 39
+#############################################################
+# ShallowConvNet - KPCA-sigmoid                   
+# Val. Acc.:  0.4064                      
+# Epochs:     40                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
+Training on KPCA-cosine
+['/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/10.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/2.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/14.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/4.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/3.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/1.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/9.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/8.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/5.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/11.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/13.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/7.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/12.edf.data', '/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/6.edf.data']
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/10.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/2.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/14.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/4.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/3.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/1.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/9.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/8.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/5.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/11.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/13.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/7.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/12.edf.data
+/WAVE/users/unix/smadsen/Desktop/bci_final/datasets/kpca/cosine/train/6.edf.data
+Found 8995 trials
+Found 2249 trials
+===================================================================================================================
+Layer (type:depth-idx)                   Input Shape               Output Shape              Param #
+===================================================================================================================
+ShallowConvNet                           [1, 1, 1126, 30]          [1, 4]                    --
+├─Sequential: 1-1                        [1, 1, 1126, 30]          [1, 4]                    --
+│    └─Conv2d: 2-1                       [1, 1, 1126, 30]          [1, 60, 1102, 30]         1,560
+│    └─Conv2d: 2-2                       [1, 60, 1102, 30]         [1, 60, 1102, 1]          108,060
+│    └─BatchNorm2d: 2-3                  [1, 60, 1102, 1]          [1, 60, 1102, 1]          120
+│    └─Square: 2-4                       [1, 60, 1102, 1]          [1, 60, 1102, 1]          --
+│    └─AvgPool2d: 2-5                    [1, 60, 1102, 1]          [1, 60, 69, 1]            --
+│    └─Log: 2-6                          [1, 60, 69, 1]            [1, 60, 69, 1]            --
+│    └─Flatten: 2-7                      [1, 60, 69, 1]            [1, 4140]                 --
+│    └─Linear: 2-8                       [1, 4140]                 [1, 4]                    16,564
+===================================================================================================================
+Total params: 126,304
+Trainable params: 126,304
+Non-trainable params: 0
+Total mult-adds (M): 170.67
+===================================================================================================================
+Input size (MB): 0.14
+Forward/backward pass size (MB): 16.93
+Params size (MB): 0.51
+Estimated Total Size (MB): 17.57
+===================================================================================================================
+EPOCH 1:
+train_loss: 1.3760897898907758 	 val_loss: 1.3604969425785243 	 val_acc: 0.30236
+EPOCH 2:
+train_loss: 1.2808000287923944 	 val_loss: 1.3243611996043554 	 val_acc: 0.35127
+EPOCH 3:
+train_loss: 1.2088571854874837 	 val_loss: 1.3052649043953508 	 val_acc: 0.35927
+EPOCH 4:
+train_loss: 1.150655100187445 	 val_loss: 1.295860724531374 	 val_acc: 0.37305
+EPOCH 5:
+train_loss: 1.100793268775628 	 val_loss: 1.301087415461786 	 val_acc: 0.36727
+EPOCH 6:
+train_loss: 1.0546895292057028 	 val_loss: 1.3038885543812062 	 val_acc: 0.36416
+EPOCH 7:
+train_loss: 1.010277488964835 	 val_loss: 1.3027806405940752 	 val_acc: 0.36683
+EPOCH 8:
+train_loss: 0.9705735930692573 	 val_loss: 1.3187523547785418 	 val_acc: 0.3566
+EPOCH 9:
+train_loss: 0.9331161476027926 	 val_loss: 1.3224749006279195 	 val_acc: 0.36194
+EPOCH 10:
+train_loss: 0.8994458709514754 	 val_loss: 1.3314822238765505 	 val_acc: 0.36461
+EPOCH 11:
+train_loss: 0.8655032274341995 	 val_loss: 1.3419420434507154 	 val_acc: 0.3695
+EPOCH 12:
+train_loss: 0.8352819084482012 	 val_loss: 1.3580625676829385 	 val_acc: 0.36372
+EPOCH 13:
+train_loss: 0.804124004142578 	 val_loss: 1.3667136544040712 	 val_acc: 0.36105
+EPOCH 14:
+train_loss: 0.7753650392370508 	 val_loss: 1.3732242657482001 	 val_acc: 0.36816
+EPOCH 15:
+train_loss: 0.7493057386366702 	 val_loss: 1.3919805346014318 	 val_acc: 0.36238
+EPOCH 16:
+train_loss: 0.7229173626586358 	 val_loss: 1.4052780345842688 	 val_acc: 0.37439
+EPOCH 17:
+train_loss: 0.6977604637711182 	 val_loss: 1.4207504741156776 	 val_acc: 0.35972
+EPOCH 18:
+train_loss: 0.6733589023470401 	 val_loss: 1.4274312104799376 	 val_acc: 0.36238
+EPOCH 19:
+train_loss: 0.6496208699871968 	 val_loss: 1.4394216841554357 	 val_acc: 0.35705
+EPOCH 20:
+train_loss: 0.6292649290321648 	 val_loss: 1.4460801594198474 	 val_acc: 0.35927
+EPOCH 21:
+train_loss: 0.6050013524083073 	 val_loss: 1.46578447591701 	 val_acc: 0.35705
+EPOCH 22:
+train_loss: 0.5862563265663894 	 val_loss: 1.4730238889239164 	 val_acc: 0.35749
+EPOCH 23:
+train_loss: 0.5663107241222702 	 val_loss: 1.4964037312662248 	 val_acc: 0.34949
+EPOCH 24:
+train_loss: 0.5466652637128033 	 val_loss: 1.5070846005830496 	 val_acc: 0.36149
+EPOCH 25:
+train_loss: 0.527442947202983 	 val_loss: 1.512240983704023 	 val_acc: 0.35616
+EPOCH 26:
+train_loss: 0.4668261349243036 	 val_loss: 1.5149365791515224 	 val_acc: 0.35571
+EPOCH 27:
+train_loss: 0.4607532421789689 	 val_loss: 1.5115403088051955 	 val_acc: 0.35527
+EPOCH 28:
+train_loss: 0.45740073185911084 	 val_loss: 1.5117250004572758 	 val_acc: 0.35527
+EPOCH 29:
+train_loss: 0.455279524909267 	 val_loss: 1.515188082905178 	 val_acc: 0.35394
+EPOCH 30:
+train_loss: 0.45189500216965184 	 val_loss: 1.5144967205849154 	 val_acc: 0.35527
+EPOCH 31:
+train_loss: 0.45023922365759456 	 val_loss: 1.5178924370805504 	 val_acc: 0.35482
+EPOCH 32:
+train_loss: 0.44761731481269534 	 val_loss: 1.5192626503437878 	 val_acc: 0.35349
+EPOCH 33:
+train_loss: 0.4448388054910026 	 val_loss: 1.5163927156383596 	 val_acc: 0.35705
+EPOCH 34:
+train_loss: 0.44336349727764807 	 val_loss: 1.5203025174541562 	 val_acc: 0.35705
+EPOCH 35:
+train_loss: 0.44067798109664835 	 val_loss: 1.5231076795906668 	 val_acc: 0.35705
+EPOCH 36:
+train_loss: 0.43857764594761717 	 val_loss: 1.5266913697704032 	 val_acc: 0.35616
+EPOCH 37:
+train_loss: 0.4375043786499343 	 val_loss: 1.5251655523568743 	 val_acc: 0.35616
+EPOCH 38:
+train_loss: 0.4350128655255251 	 val_loss: 1.526661791501569 	 val_acc: 0.3566
+EPOCH 39:
+train_loss: 0.4336918720703577 	 val_loss: 1.5282966786669139 	 val_acc: 0.35883
+EPOCH 40:
+train_loss: 0.4317513458657792 	 val_loss: 1.5298043005518704 	 val_acc: 0.35527
+EPOCH 41:
+train_loss: 0.4293468388482852 	 val_loss: 1.531941862705647 	 val_acc: 0.3566
+EPOCH 42:
+train_loss: 0.4273970323133846 	 val_loss: 1.537005529627104 	 val_acc: 0.35705
+EPOCH 43:
+train_loss: 0.42507509593852794 	 val_loss: 1.5332718793657782 	 val_acc: 0.35571
+EPOCH 44:
+train_loss: 0.4228397045082616 	 val_loss: 1.5379147618969247 	 val_acc: 0.35482
+EPOCH 45:
+train_loss: 0.4217016588315075 	 val_loss: 1.5412439084683054 	 val_acc: 0.35705
+EPOCH 46:
+train_loss: 0.41896259078866466 	 val_loss: 1.542359722170435 	 val_acc: 0.35394
+EPOCH 47:
+train_loss: 0.41153320789199443 	 val_loss: 1.5413185587816574 	 val_acc: 0.35482
+Early stop at epoch: 47
+#############################################################
+# ShallowConvNet - KPCA-cosine                   
+# Val. Acc.:  0.37439                      
+# Epochs:     48                     
+# LR:         0.0001                     
+# L2:         0.01                      
+# Betas:      (0.9, 0.95)                             
+#############################################################
