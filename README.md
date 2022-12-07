@@ -19,5 +19,7 @@ After installing all necessary dependencies, activate your environment and run t
 $ python run_sample_program.py
 ```
 
+This sample program runs several of our pre-trained models with various forms of data reduction. Our most successful form of reduction so far has been in reducing the original 128 channels to 15 channels close to the parietal lobe and, more specifically, the sensorimotor cortex. There's still quite a bit of exploration to do, and more formal results will be released soon. 
+
 ## Questions
 Feel free to direct any comments, questions, or requests to soren.j.madsen@gmail.com. This is a work in progress to make more accessible, and it won't be at the top of my list for a little while. 
